@@ -1,0 +1,38 @@
+name: Docs site
+
+# Builds the MkDocs Material site and publishes it to the `gh-pages` branch.
+# One-time setup in the repo (see README "Reading the docs"):
+#   1. Settings → Actions → General → Workflow permissions → "Read and write permissions"
+#   2. Settings → Pages → Build and deployment → Source: "Deploy from a branch" → branch: gh-pages / (root)
+
+on:
+  push:
+    branches:
+      - main
+      - claude/crossfit-programming-system-c2kzq8
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      - ".github/workflows/docs.yml"
+      - "CLAUDE.md"
+      - "ROADMAP.md"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: pip install -r requirements-docs.txt
+      - name: Build & deploy to gh-pages
+        run: mkdocs gh-deploy --force

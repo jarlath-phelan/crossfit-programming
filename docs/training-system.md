@@ -17,7 +17,7 @@ and the same logic holds.
 [`functional-design.md`](functional-design.md) is the *app UX*; [`nutrition.md`](nutrition.md) is *fueling*;
 [`decisions.md`](decisions.md) is the *log of athlete choices*; and
 [`testing-protocol.md`](testing-protocol.md) is the *Week 1–2 gentle baseline block*.
-The guardrails this doc must obey live in [`../CLAUDE.md`](../CLAUDE.md).
+The guardrails this doc must obey live in [`CLAUDE.md`](CLAUDE.md).
 
 ---
 
@@ -402,7 +402,7 @@ dates mislead. Re-test at each deload. **Tendons first, no rush — longevity ov
 
 > The baseline numbers below are **placeholders until measured** in the Week 1–2 testing block. Do not
 > fabricate them — see [`testing-protocol.md`](testing-protocol.md) and the open calibration items in
-> [`../CLAUDE.md`](../CLAUDE.md).
+> [`CLAUDE.md`](CLAUDE.md).
 
 ### 7.1 Strict HSPU pathway — *limiter: overhead strength + overhead ROM*
 
@@ -464,7 +464,7 @@ and moves better,"* **not** "less soreness" — stretching does not reduce DOMS.
 ## 8. How the system keeps evolving
 
 The AI coach re-plans on three nested loops, and **leaves past sessions immutable** — it only rewrites
-today-forward in `generated/` (see [`../CLAUDE.md`](../CLAUDE.md) and [`architecture.md`](architecture.md)).
+today-forward in `generated/` (see [`CLAUDE.md`](CLAUDE.md) and [`architecture.md`](architecture.md)).
 
 **Daily loop — readiness gate.** Ingest overnight HRV trend vs the SWC band + the subjective check + any
 manual override → the deterministic engine emits GREEN/AMBER/RED and the day's session per §5. The system

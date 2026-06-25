@@ -60,6 +60,18 @@ CLAUDE.md     guardrails + research priors the planning agent must obey
 | [`docs/decisions.md`](docs/decisions.md) | The **decision log** — every design choice and its rationale, with "revisit when" triggers |
 | [`ROADMAP.md`](ROADMAP.md) | The **plan** — phased, each phase ships something usable on its own |
 
+### Reading the docs as a site
+
+The docs are also published as a clean, paginated, searchable site (MkDocs Material) at
+**https://jarlath-phelan.github.io/crossfit-programming/** — easier on the eyes than scrolling raw
+markdown. It deploys automatically via `.github/workflows/docs.yml`. One-time repo setup to switch it on:
+
+1. **Settings → Actions → General → Workflow permissions →** "Read and write permissions".
+2. Re-run the **Docs site** workflow (Actions tab) so it publishes the `gh-pages` branch.
+3. **Settings → Pages → Source:** "Deploy from a branch" → branch **`gh-pages`** / `(root)`.
+
+To preview locally: `pip install -r requirements-docs.txt && mkdocs serve` → open `http://localhost:8000`.
+
 ---
 
 ## Make it yours (the fork promise)

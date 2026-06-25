@@ -19,7 +19,7 @@ this doc cites it heavily); [`training-system.md`](training-system.md) is the *c
 land in the day and the week); [`functional-design.md`](functional-design.md) is the *app UX*;
 [`decisions.md`](decisions.md) is the *log of athlete choices* that set these defaults; and
 [`testing-protocol.md`](testing-protocol.md) is the *Week 1–2 baseline block*.
-The guardrails the planner obeys live in [`../CLAUDE.md`](../CLAUDE.md).
+The guardrails the planner obeys live in [`CLAUDE.md`](CLAUDE.md).
 
 A few ground rules, mirroring [`science-foundations.md`](science-foundations.md):
 

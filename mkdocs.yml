@@ -1,0 +1,81 @@
+site_name: Open Programming
+site_description: An open-source, forkable system for adaptive CrossFit + wellness programming.
+site_url: https://jarlath-phelan.github.io/crossfit-programming/
+repo_url: https://github.com/jarlath-phelan/crossfit-programming
+repo_name: crossfit-programming
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant      # fast in-app page loads
+    - navigation.tracking     # url updates as you scroll
+    - navigation.top          # back-to-top button
+    - navigation.footer       # << prev / next >> pagination at the bottom of every page
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+# Reading-friendly, grouped navigation with prev/next pagination between pages.
+nav:
+  - Home: index.md
+  - Start here:
+      - Decision Log: decisions.md
+  - The Plan (the coach):
+      - Training System: training-system.md
+      - Science Foundations: science-foundations.md
+      - Nutrition & Fuelling: nutrition.md
+      - Week 1–2 Testing: testing-protocol.md
+  - The App (the build):
+      - App UX (Functional Design): functional-design.md
+      - Architecture: architecture.md
+      - Data Model: data-model.md
+  - Reference:
+      - Agent Guardrails (CLAUDE.md): CLAUDE.md
+      - Roadmap: ROADMAP.md

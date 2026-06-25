@@ -17,7 +17,7 @@ ring muscle-up — but every number here is illustrative. Swap in your own and t
 [`functional-design.md`](functional-design.md) is how the app *captures and re-tests* them;
 [`nutrition.md`](nutrition.md) is fueling around the harder test days;
 [`decisions.md`](decisions.md) is the *log of athlete choices* this block implements.
-The guardrails this block obeys live in [`../CLAUDE.md`](../CLAUDE.md).
+The guardrails this block obeys live in [`CLAUDE.md`](CLAUDE.md).
 
 ---
 
@@ -48,7 +48,7 @@ The guardrails this block obeys live in [`../CLAUDE.md`](../CLAUDE.md).
 
 6. **Honest gaps over invented numbers.** If a marker can't be measured safely or cleanly (pain, a missed
    GREEN day, equipment), **record it as "deferred," not a fabricated value.** A placeholder gate is
-   better than a wrong number. (Mirrors the open-calibration rule in [`../CLAUDE.md`](../CLAUDE.md).)
+   better than a wrong number. (Mirrors the open-calibration rule in [`CLAUDE.md`](CLAUDE.md).)
 
 7. **Spine caution is built in.** With any structural spine asymmetry or back history, **nothing in this block
    loads end-range spinal flexion.** The only spine-relevant tests are **unloaded ROM reaches**. See §6.

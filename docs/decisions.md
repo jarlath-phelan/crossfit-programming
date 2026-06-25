@@ -21,7 +21,7 @@ flagged as **pending Week 1–2 testing** rather than invented.
 [`architecture.md`](architecture.md) is the *software*; [`data-model.md`](data-model.md) is the *schemas*;
 [`functional-design.md`](functional-design.md) is the *app UX*; [`nutrition.md`](nutrition.md) is *fueling*;
 [`testing-protocol.md`](testing-protocol.md) is the *Week 1–2 baseline block* that resolves the pending items.
-The guardrails these decisions had to satisfy live in [`../CLAUDE.md`](../CLAUDE.md).
+The guardrails these decisions had to satisfy live in [`CLAUDE.md`](CLAUDE.md).
 
 **How to read an entry.** Each decision is: **Decision** (what we chose) · **Why** (one line) · **Revisit
 when** (the trigger that should make you reopen it). Decisions captured **2026-06-25** unless noted. A few
@@ -35,7 +35,7 @@ have no "revisit when" because they are stable design priors, not tunable knobs.
 Decision: program in undulating ~6-week emphasis blocks that roll indefinitely, never building toward a
 competition date. Why: the goal is consistency, longevity, and confidence — not a podium — so peaking risk
 and taper cost buy nothing here. Revisit when: the athlete actually signs up for a dated competition and
-*wants* to peak (this is a guardrail in [`../CLAUDE.md`](../CLAUDE.md), so changing it is a deliberate act).
+*wants* to peak (this is a guardrail in [`CLAUDE.md`](CLAUDE.md), so changing it is a deliberate act).
 
 **1.2 — 5 sessions/week, 45–60 min, unhurried.**
 Decision: default to 5 days/week, 45–60 minutes each, deliberately *not* rushed. Why: the athlete wants room
@@ -138,7 +138,7 @@ loaded Jefferson curl) as something to approach cautiously, behind a screen. Why
 consideration that is asymptomatic and unrestricted but warrants respect — the upside of heavy end-range flexion
 doesn't justify the risk here. Revisit when: a movement screen (optionally with a physio) explicitly clears
 heavier end-range loading, or symptoms ever appear (then back off immediately). **Pending:** confirm low-back
-history before loading end-range flexion (open calibration item, see [`../CLAUDE.md`](../CLAUDE.md)).
+history before loading end-range flexion (open calibration item, see [`CLAUDE.md`](CLAUDE.md)).
 
 ---
 
