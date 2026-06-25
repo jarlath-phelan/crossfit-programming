@@ -1,0 +1,42 @@
+# =========================================================================
+#  PRIVACY — this repo is PUBLIC. Real personal data stays LOCAL/private.
+#  Only sanitized templates (*.example.md) and READMEs are committed.
+# =========================================================================
+
+# Your real athlete profile (keep a local copy; see profile/README.md)
+/profile/athlete-profile.md
+/profile/*.private.md
+/profile/*.local.*
+
+# Your logged history — readiness check-ins and workout logs are health data
+/history/readiness/*
+/history/logs/*
+
+# ...but keep the structure, examples, and docs tracked
+!**/README.md
+!**/*.example.md
+!**/.gitkeep
+
+# =========================================================================
+#  Build / tooling (used from later phases)
+# =========================================================================
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json
