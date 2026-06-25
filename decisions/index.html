@@ -1,0 +1,1677 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open-source, forkable system for adaptive CrossFit + wellness programming.">
+      
+      
+      
+        <link rel="canonical" href="https://jarlath-phelan.github.io/crossfit-programming/decisions/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../training-system/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Decision Log - Open Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#decisions-the-log-of-why-this-program-is-built-the-way-it-is" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Programming" class="md-header__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Decision Log
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Programming" class="md-nav__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Programming
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Log
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-training-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Training structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-conditioning-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Conditioning / running
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-strength-physique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Strength / physique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mobility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Skills
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recovery-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Recovery / readiness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-chronotype-caffeine-sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Chronotype / caffeine / sleep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-nutrition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Nutrition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-supplements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Supplements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-app-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. App / UX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-architecture-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Architecture / product
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Privacy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. License
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-progress-tracking-patience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Progress tracking / patience
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-open-items-to-revisit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Open items / to revisit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Plan (the coach)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Plan (the coach)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../science-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nutrition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nutrition & Fuelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1–2 Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The App (the build)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The App (the build)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App UX (Functional Design)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLAUDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Guardrails (CLAUDE.md)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-training-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Training structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-conditioning-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Conditioning / running
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-strength-physique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Strength / physique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mobility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Skills
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recovery-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Recovery / readiness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-chronotype-caffeine-sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Chronotype / caffeine / sleep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-nutrition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Nutrition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-supplements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Supplements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-app-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. App / UX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-architecture-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Architecture / product
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Privacy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. License
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-progress-tracking-patience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Progress tracking / patience
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-open-items-to-revisit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Open items / to revisit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="decisions-the-log-of-why-this-program-is-built-the-way-it-is">Decisions — the log of why this program is built the way it is<a class="headerlink" href="#decisions-the-log-of-why-this-program-is-built-the-way-it-is" title="Permanent link">&para;</a></h1>
+<p><em>This is the </em><em>decision log</em><em> (a lightweight set of ADRs — "Architecture Decision Records", here covering
+training as well as software). Every meaningful choice baked into this repo — from the periodization model
+to the protein target to the license — was a deliberate call made during an athlete interview. This file
+records </em><em>the choice, the one-line reason, and a "revisit when" trigger</em><em> so future-you (and anyone who
+forks this) can see the reasoning instead of guessing, and can change a decision on purpose rather than by
+accident.</em></p>
+<p>This doc is <strong>forkable and generic</strong>. It is written for "the athlete" / "you" so anyone can clone the repo
+and re-decide. The running example throughout — a 39-year-old, fast-twitch, lower-body-dominant masters
+CrossFitter, re-onboarding conditioning after a detraining gap, chasing a strict HSPU and a strict ring
+muscle-up while building an upper-body physique — is just an example that makes each decision concrete. The
+<strong>private specifics</strong> of that athlete (exact loads, spinal-curvature details, gym name) live only in the
+gitignored <code>profile/</code>, never here. Where a decision depends on a number we haven't measured yet, it is
+flagged as <strong>pending Week 1–2 testing</strong> rather than invented.</p>
+<p><strong>Companion docs:</strong>
+<a href="../training-system/"><code>training-system.md</code></a> is the <em>coach</em> (the logic these decisions configure);
+<a href="../science-foundations/"><code>science-foundations.md</code></a> is the <em>why</em> in depth (the evidence behind the calls);
+<a href="../architecture/"><code>architecture.md</code></a> is the <em>software</em>; <a href="../data-model/"><code>data-model.md</code></a> is the <em>schemas</em>;
+<a href="../functional-design/"><code>functional-design.md</code></a> is the <em>app UX</em>; <a href="../nutrition/"><code>nutrition.md</code></a> is <em>fueling</em>;
+<a href="../testing-protocol/"><code>testing-protocol.md</code></a> is the <em>Week 1–2 baseline block</em> that resolves the pending items.
+The guardrails these decisions had to satisfy live in <a href="../CLAUDE/"><code>CLAUDE.md</code></a>.</p>
+<p><strong>How to read an entry.</strong> Each decision is: <strong>Decision</strong> (what we chose) · <strong>Why</strong> (one line) · <strong>Revisit
+when</strong> (the trigger that should make you reopen it). Decisions captured <strong>2026-06-25</strong> unless noted. A few
+have no "revisit when" because they are stable design priors, not tunable knobs.</p>
+<hr />
+<h2 id="1-training-structure">1. Training structure<a class="headerlink" href="#1-training-structure" title="Permanent link">&para;</a></h2>
+<p><strong>1.1 — No peaking; continuous rolling ~6-week emphasis blocks.</strong>
+Decision: program in undulating ~6-week emphasis blocks that roll indefinitely, never building toward a
+competition date. Why: the goal is consistency, longevity, and confidence — not a podium — so peaking risk
+and taper cost buy nothing here. Revisit when: the athlete actually signs up for a dated competition and
+<em>wants</em> to peak (this is a guardrail in <a href="../CLAUDE/"><code>CLAUDE.md</code></a>, so changing it is a deliberate act).</p>
+<p><strong>1.2 — 5 sessions/week, 45–60 min, unhurried.</strong>
+Decision: default to 5 days/week, 45–60 minutes each, deliberately <em>not</em> rushed. Why: the athlete wants room
+to train <em>and</em> socialize at the box; an unhurried session he looks forward to beats a crammed one he skips.
+Revisit when: available time per session changes, or adherence data shows sessions routinely running long/short.</p>
+<p><strong>1.3 — The week undulates hard/easy; no back-to-back MetCons.</strong>
+Decision: alternate higher-stress days (intensity/conditioning) with lower-stress days (strength/skill/mobility);
+never stack two hard conditioning days, especially on a sore day. Why: this athlete gets very sore and protects
+recovery; spacing the stress is what makes 5 days/week sustainable. Revisit when: recovery markers (soreness
+logs, HRV trend) show he tolerates tighter spacing — or the opposite, and we need more easy days.</p>
+<p><strong>1.4 — Busy-week floor is 2 days; protect the goal stimuli.</strong>
+Decision: on a 2-day week, run two full-body sessions that prioritize strict-skill/strength plus one short
+quality conditioning hit and a wellness/mobility block — and <em>don't chase everything</em>. Why: strength is
+maintained at 1–2×/week and weekly volume (not frequency) drives hypertrophy, so a 2-day week can hold the
+line if it spends its budget on the goals (see <a href="../science-foundations/"><code>science-foundations.md</code></a> and
+<a href="../training-system/"><code>training-system.md</code></a>). Revisit when: the true weekly day-count floor turns out to be
+different in practice (this is partly an <strong>open calibration item</strong> — confirm the real floor).</p>
+<p><strong>1.5 — Mornings open with a 12–15 min active ramp.</strong>
+Decision: every session begins with a temperature-raising active ramp before any heavy, explosive, or
+high-CNS strict work. Why: morning tissue is cold and stiff; a proper ramp is the cheapest injury-prevention
+and performance lever for a masters athlete training AM. Revisit when: never as a default (it's a guardrail) —
+only the <em>content</em> of the ramp evolves with ROM re-tests.</p>
+<hr />
+<h2 id="2-conditioning-running">2. Conditioning / running<a class="headerlink" href="#2-conditioning-running" title="Permanent link">&para;</a></h2>
+<p><strong>2.1 — Polarized conditioning model: lots of short-sharp + a Zone-2 base.</strong>
+Decision: bias conditioning to high-quality sprint/power work plus easy steady aerobic volume, with little
+time in the "grey zone" middle. Why: the athlete asked for "whatever's optimal," is fast-twitch by nature,
+and polarized distribution is the well-supported way to build an aerobic base without blunting power. Revisit
+when: a goal changes (e.g. he decides he wants to race <em>fast</em>, not just finish), or threshold work becomes a
+specific need.</p>
+<p><strong>2.2 — Keep 10-mile road-race capacity always available (capacity, not speed).</strong>
+Decision: maintain the ability to complete a ~10-mile run year-round via the Zone-2 base, without ever
+specifically peaking for it. Why: he runs it roughly annually and wants it "doable" on demand — capacity is a
+maintainable trait, race-speed is not worth the peaking cost (ties to <strong>1.1 no peaking</strong>). Revisit when: he
+sets an actual finish-time goal, which would re-introduce some tempo/threshold work.</p>
+<p><strong>2.3 — Re-onboard conditioning gently over 4–8 weeks; bias early work fast-twitch.</strong>
+Decision: ramp Grace/Fran-type intensity in over 4–8 weeks rather than testing hard early; lead with his
+sprint/power strengths. Why: he's detrained but genuinely talented here — re-onboarding gently avoids the
+classic "crush week 1, get hurt or burn out" failure, and starting with strengths builds confidence. Revisit
+when: the Week 1–2 light benchmark and the first few weeks of logs show he can absorb more.</p>
+<p><strong>2.4 — Use the full modality menu (run/hills, rower, bike, ski-erg).</strong>
+Decision: rotate across running, hill sprints, rower, assault/echo bike, and ski-erg. Why: he enjoys all of
+them; variety sustains adherence and spreads connective-tissue load instead of hammering one pattern. Revisit
+when: a niggle (e.g. knees) makes a specific modality unwise for a block.</p>
+<hr />
+<h2 id="3-strength-physique">3. Strength / physique<a class="headerlink" href="#3-strength-physique" title="Permanent link">&para;</a></h2>
+<p><strong>3.1 — Bias upper-body volume to the goals; maintain legs.</strong>
+Decision: target 12–18 hard sets/week each for chest and for back/pulling; hold legs at ~6–9 maintenance
+sets/week. Why: he is already lower-body dominant and wants a V-taper plus strong midline — so build where the
+goal and the deficit are, and merely <em>defend</em> the leg strength he already owns. Revisit when: the monthly
+re-baseline shows chest/back volume is too much (recovery cost) or too little (no progress), or leg strength
+starts slipping below maintenance.</p>
+<p><strong>3.2 — Physique emphasis: chest, shoulders/delts, upper back/lats, core; arms indirect.</strong>
+Decision: program directly for chest, delts, lats/upper back, and midline; let arms grow from the compound
+pulling/pressing. Why: this is the athlete's stated aesthetic goal <em>and</em> it doubles as skill work — delts feed
+HSPU, lats feed the muscle-up. Revisit when: aesthetic priorities change, or a re-test shows arms are a
+limiter for a target skill.</p>
+<p><strong>3.3 — Maintain, don't build, lower-body strength.</strong>
+Decision: keep squatting/hinging at a maintenance dose, not a progressive-overload focus. Why: lower body is
+already his strength and the program's bottleneck is upstairs; spending recovery on legs would tax the upper
+goals. Revisit when: lower-body strength regresses, or his goals shift toward a leg-dominant target.</p>
+<p><strong>3.4 — Unilateral + anti-rotation emphasis.</strong>
+Decision: weave single-limb and anti-rotation work through the strength and accessory slots. Why: it addresses
+a known left/right asymmetry (also an explicit athlete goal) and builds a more robust, balanced midline. Revisit
+when: re-tests show the asymmetry has closed enough to de-emphasize, or a new imbalance appears.</p>
+<hr />
+<h2 id="4-mobility">4. Mobility<a class="headerlink" href="#4-mobility" title="Permanent link">&para;</a></h2>
+<p><strong>4.1 — Mobility is a primary training target, not a cooldown.</strong>
+Decision: drive ROM with light, full-ROM <em>loaded</em> end-range work, not just passive stretching, and give it real
+daily time. Why: the athlete loves mobility, wants lots of it, and is tight in ways that gate his goals — loaded
+end-range builds usable, controllable range. Revisit when: ROM re-tests plateau and a different modality (e.g.
+PNF, more frequency) is worth trying.</p>
+<p><strong>4.2 — Prioritize overhead / t-spine first, then hips, hamstrings, ankles.</strong>
+Decision: spend the most mobility budget on overhead and thoracic-spine range. Why: it pays off three ways at
+once — general ROM, HSPU position, and a stronger overhead press — so it's the highest-leverage area. Revisit
+when: the overhead/t-spine re-test reaches a "good enough" gate and hips/hamstrings/ankles become the limiter.</p>
+<p><strong>4.3 — Conservative spinal loading; controlled/light end-range over heavy loaded flexion.</strong>
+Decision: favor controlled, lightly loaded end-range spinal work; treat heavy loaded end-range flexion (e.g. a
+loaded Jefferson curl) as something to approach cautiously, behind a screen. Why: the athlete has a spinal
+consideration that is asymptomatic and unrestricted but warrants respect — the upside of heavy end-range flexion
+doesn't justify the risk here. Revisit when: a movement screen (optionally with a physio) explicitly clears
+heavier end-range loading, or symptoms ever appear (then back off immediately). <strong>Pending:</strong> confirm low-back
+history before loading end-range flexion (open calibration item, see <a href="../CLAUDE/"><code>CLAUDE.md</code></a>).</p>
+<hr />
+<h2 id="5-skills">5. Skills<a class="headerlink" href="#5-skills" title="Permanent link">&para;</a></h2>
+<p><strong>5.1 — Strict before kipping.</strong>
+Decision: build strict-strength prerequisites (press, pull, dip, false grip) before layering kipping/dynamic
+HSPU and muscle-ups. Why: strict strength is the durable base; kipping onto an unprepared shoulder/elbow is how
+masters athletes get hurt. Revisit when: never as a default (guardrail) — only which strict gate is "next"
+changes as gates are met.</p>
+<p><strong>5.2 — Headline skill goals: strict HSPU and a strict ring muscle-up.</strong>
+Decision: make strict HSPU and a strict ring MU the two north-star skills the blocks orient around. Why: they
+are the athlete's stated aspirations and they align with the physique emphasis (delts/lats), so skill and
+aesthetic work reinforce each other. Revisit when: a skill is <em>owned</em>, at which point a new north-star is chosen.</p>
+<p><strong>5.3 — False-grip strength is the muscle-up's rate-limiter; treat it as a tendon-paced project.</strong>
+Decision: program false-grip hang/holds patiently as the gating element for the strict MU, progressing
+conservatively. Why: the athlete can currently hold a false grip only a few seconds — it's the explicit limiter,
+and grip/elbow connective tissue adapts slowly. Revisit when: false-grip hang time (a Week 1–2 baseline) reaches
+its gate in <a href="../training-system/"><code>training-system.md</code></a> §7. <strong>Pending:</strong> the false-grip hang baseline is unmeasured.</p>
+<p><strong>5.4 — Cap new upper-body gymnastics volume at ~+10%/week.</strong>
+Decision: grow upper-body gymnastics volume slowly, ~+10%/week, and hold when in doubt. Why: tendons are the
+governor — connective tissue lags muscle, and this is the single biggest injury lever for a masters athlete.
+Revisit when: never as a default (guardrail); the <em>absolute</em> numbers update once baseline gymnastics volume is
+measured.</p>
+<hr />
+<h2 id="6-recovery-readiness">6. Recovery / readiness<a class="headerlink" href="#6-recovery-readiness" title="Permanent link">&para;</a></h2>
+<p><strong>6.1 — Deterministic GREEN/AMBER/RED rule engine, not an LLM judgment.</strong>
+Decision: the day-of readiness tier is computed by a fixed offline rule in <code>library/autoregulation/</code>; the agent
+plans <em>across</em> days, the engine <em>gates</em> the day. Why: a 6am gating decision must be instant, offline, explainable,
+and reproducible — a deterministic rule is all three; an LLM call is none. Revisit when: the rule itself needs
+re-tuning (e.g. after re-baselining the SWC band), but the <em>deterministic</em> nature is a fixed design prior.</p>
+<p><strong>6.2 — Manual override always wins.</strong>
+Decision: a subjective check-in can override the wearable-derived tier in either direction. Why: subjective
+readiness out-predicts wearable HRV in the literature, and the athlete knows things the watch doesn't. Revisit
+when: never as a default (guardrail); it is a core principle.</p>
+<p><strong>6.3 — Readiness inputs in priority: Bevel (Apple Watch) → Whoop → manual.</strong>
+Decision: use Bevel (on the Apple Watch) as the primary HRV source, Whoop as a second source when
+re-subscribed, and a manual G/A/R tap as the always-available fallback. Why: it matches the hardware the
+athlete actually has now, with graceful degradation when nothing synced. Revisit when: the Whoop subscription
+is live (then wire its API — see open items), or the hardware mix changes.</p>
+<p><strong>6.4 — Morning check-in is one tap; score entry optional.</strong>
+Decision: the default check-in is a single "overall feel" tap, with optional manual score entry if a wearable
+synced. Why: friction kills daily logging at 6am — one tap gets done; a form doesn't. Revisit when: usage shows
+the one-tap signal is too coarse to drive good gating.</p>
+<p><strong>6.5 — First 14 days are "still calibrating."</strong>
+Decision: for the first ~14 days, communicate that there's no personal HRV baseline yet and lean on subjective
+input. Why: HRV gating is meaningless without a personal baseline band; saying so is more honest than faking
+precision. Revisit when: 14 days of data exist and the SWC band can be computed.</p>
+<p><strong>6.6 — Never zero on RED; but a true rest day is allowed.</strong>
+Decision: RED defaults to meditation + hip/hamstring mobility + an easy flush (always <em>something</em>), but on a
+genuine back-off day a full rest day is permitted — wellness is the default <em>offer</em>, not a mandate. Why: doing
+<em>something</em> gentle aids recovery and adherence, yet forcing activity on a wrecked athlete is counterproductive.
+Revisit when: never as a default (the "never zero" floor is a guardrail); the rest-day allowance is the human's
+call to make.</p>
+<p><strong>6.7 — Wellness blocks are first-class programming.</strong>
+Decision: a daily ~20-min block (paced breathing ≈6 breaths/min / resonance + hip/hamstring flow) is real
+programming and the default RED-day session. Why: for this athlete, sleep <em>quality</em> is the main recovery
+limiter, and resonance breathing is a low-cost, evidence-supported lever on it. Revisit when: never as a default
+(guardrail); content evolves with what actually helps his sleep.</p>
+<hr />
+<h2 id="7-chronotype-caffeine-sleep">7. Chronotype / caffeine / sleep<a class="headerlink" href="#7-chronotype-caffeine-sleep" title="Permanent link">&para;</a></h2>
+<p><strong>7.1 — Train mostly AM; PM is fine when it suits.</strong>
+Decision: default to morning sessions but allow PM without penalty. Why: the athlete is an in-between
+chronotype with no strong evening performance drop, so timing can flex to life. <strong>Pending:</strong> chronotype is a
+stated self-assessment, not yet validated — confirm over the first weeks. Revisit when: logs show a consistent
+AM-vs-PM performance or adherence difference.</p>
+<p><strong>7.2 — Caffeine: ~285 mg (3 mg/kg) on hard days only, AM-only, cycled.</strong>
+Decision: dose caffeine pre-session on the hardest skill/intensity days only, in the morning, and cycle it
+(not every day). Why: it's an effective ergogenic where it matters, and restricting it to AM/hard days protects
+sleep and preserves its effect by avoiding tolerance. Revisit when: sleep quality suffers — then titrate the
+dose down (this is the explicit instruction). <strong>Pending:</strong> the exact mg derives from bodyweight (private) and
+caffeine/sleep sensitivity, both to confirm.</p>
+<p><strong>7.3 — Lean on wellness/breathing for sleep; watch caffeine timing.</strong>
+Decision: treat sleep quality as the #1 recovery limiter and address it primarily through the wellness block
+and caffeine timing rather than supplements first. Why: the athlete sleeps 7–9h but restless — duration is fine,
+quality is the lever, and breathing/timing are the cheapest interventions. Revisit when: sleep stays poor
+despite these, at which point investigate further (environment, screening).</p>
+<hr />
+<h2 id="8-nutrition">8. Nutrition<a class="headerlink" href="#8-nutrition" title="Permanent link">&para;</a></h2>
+<p><strong>8.1 — Protein-first; eyeball the rest.</strong>
+Decision: set a clear daily protein target (~1.6–2.2 g/kg) and give simple fueling principles for everything
+else — no obsessive macro logging. Why: the athlete explicitly doesn't want to log everything; protein is the
+macro that most moves recomposition and recovery, so anchor on it and keep the rest principle-based. Revisit
+when: progress stalls and a short period of tighter tracking would diagnose why. See <a href="../nutrition/"><code>nutrition.md</code></a>.</p>
+<p><strong>8.2 — Ignore the scale; judge by mirror and performance.</strong>
+Decision: track progress by physique and performance, not bodyweight. Why: with simultaneous slow recomp the
+scale is noisy and misleading; the athlete's goals are aesthetic and performance-based anyway. Revisit when: a
+specific weight-class or health reason makes scale weight relevant.</p>
+<p><strong>8.3 — Bias toward fast, high-protein options.</strong>
+Decision: default food guidance to quick high-protein choices alongside home cooking. Why: the athlete mixes
+cooking with convenience and a high protein target is easier to hit with low-friction options. Revisit when:
+his cooking/convenience balance changes.</p>
+<p><strong>8.4 — Flag the Monday-after-alcohol recovery cost.</strong>
+Decision: note that weekend social drinking can blunt early-week recovery and plan Mondays accordingly. Why:
+the athlete drinks socially mostly on weekends; surfacing the recovery impact lets autoregulation expect a
+possible Monday dip rather than be surprised by it. Revisit when: his drinking pattern changes.</p>
+<hr />
+<h2 id="9-supplements">9. Supplements<a class="headerlink" href="#9-supplements" title="Permanent link">&para;</a></h2>
+<p><strong>9.1 — Creatine monohydrate, 5 g/day.</strong>
+Decision: recommend 5 g/day creatine, daily. Why: it's the most evidence-backed performance/lean-mass
+supplement and is safe and cheap. Revisit when: never on efficacy grounds; only if the athlete chooses to stop.</p>
+<p><strong>9.2 — Whey protein to hit the target.</strong>
+Decision: use whey as a convenient tool to reach the daily protein number, not as a requirement. Why: it's the
+fastest way to close a protein gap on busy days — a means to <strong>8.1</strong>, not a separate goal. Revisit when: protein
+target is consistently met from food alone.</p>
+<p><strong>9.3 — Collagen 15 g + vitamin C, ~60 min pre-session.</strong>
+Decision: take ~15 g collagen with vitamin C roughly an hour before training. Why: it's the nutritional arm of
+the <strong>tendon-is-the-governor</strong> rail — timed pre-load is the protocol with the most support for connective-tissue
+synthesis. Revisit when: the evidence base shifts, or tendon tolerance is no longer a limiter. See
+<a href="../science-foundations/"><code>science-foundations.md</code></a>.</p>
+<p><strong>9.4 — Vitamin D + omega-3 for recovery/sleep.</strong>
+Decision: suggest vitamin D and omega-3 as general recovery/sleep support. Why: both are commonly low and
+plausibly help recovery and sleep at low cost/risk. Revisit when: bloodwork (vitamin D especially) would let
+the dose be set on data rather than a default. <strong>Pending:</strong> doses are generic until/if labs inform them.</p>
+<p><strong>Overall supplements note:</strong> the athlete currently takes none and is open to suggestions — so these are
+<em>proposals to trial</em>, introduced one at a time, not a stack to start at once.</p>
+<hr />
+<h2 id="10-app-ux">10. App / UX<a class="headerlink" href="#10-app-ux" title="Permanent link">&para;</a></h2>
+<p><strong>10.1 — Show both lb and kg everywhere.</strong>
+Decision: display loads in both pounds and kilograms. Why: the athlete thinks partly in each, and dual units
+remove mental math at the bar with near-zero cost. Revisit when: a forker wants a single-unit preference toggle.</p>
+<p><strong>10.2 — Meditation block: interval bell + optional paced-breathing visual.</strong>
+Decision: ship an interval-bell meditation (set total duration + a 1–5 min bell interval) plus an optional
+~6 breaths/min paced-breathing visual; unguided by default, with an occasional external link. Why: the athlete
+wants minimal, unguided structure that supports resonance breathing — the wellness-block tool, kept simple.
+Revisit when: usage shows he wants guided content built in. See <a href="../functional-design/"><code>functional-design.md</code></a>.</p>
+<p><strong>10.3 — WOD timer: AMRAP/EMOM/intervals/for-time/Tabata, loud beeps + vibration, wake-lock.</strong>
+Decision: build a full-feature WOD timer covering the common CrossFit formats, with loud audio, vibration, and
+a screen wake-lock. Why: it's the highest-frequency in-session surface — it must be unmissable across the gym
+and never sleep mid-workout. Revisit when: a format he uses isn't covered.</p>
+<p><strong>10.4 — Logging is "done + how it felt" + the key result.</strong>
+Decision: keep logging to a quick completion tap, a subjective feel, and the timer/key result. Why: low-friction
+logging is logging that actually happens — and "how it felt" feeds autoregulation. Revisit when: he wants richer
+per-set logging for a specific analysis.</p>
+<p><strong>10.5 — Device roles: iPhone in-hand, old iPad as the gym display, Watch via phone haptics.</strong>
+Decision: target the iPhone as the primary device, repurpose an old iPad as a dedicated large gym display (the
+runner must look good big), and drive Watch haptics from the phone for now. Why: it matches the hardware the
+athlete already owns and the way he'll actually use it in the gym. Revisit when: a native Watch app is built
+(see open items).</p>
+<p><strong>10.6 — Print/PDF is low priority.</strong>
+Decision: defer the printable/chalkboard PDF path. Why: it's a real design goal (one source, two renderers) but
+not a daily need — the screen comes first. Revisit when: the app surface is solid and a printed program is wanted.</p>
+<hr />
+<h2 id="11-architecture-product">11. Architecture / product<a class="headerlink" href="#11-architecture-product" title="Permanent link">&para;</a></h2>
+<p><strong>11.1 — Local-first PWA now; hosted version later.</strong>
+Decision: ship a local-first, offline-always PWA driven by Claude Code now; a hosted multi-user version is
+explicitly later. Why: the daily-use surface (timer, today's WOD, readiness, logging) must work offline at 6am
+and can ship in days; hosting is scope the v1 doesn't need. Revisit when: more than one athlete needs it, or
+cross-device sync becomes a real requirement (see open items). See <a href="../architecture/"><code>architecture.md</code></a>.</p>
+<p><strong>11.2 — Stack: Next.js + TypeScript + Zod, Dexie/IndexedDB, deterministic autoreg engine, Claude Code skills.</strong>
+Decision: keep the chosen stack — typed Zod source of truth, local IndexedDB via Dexie, an offline rule engine,
+and Claude Code skills as the re-planning loop. Why: it delivers the "one source of truth, two renderers,
+AI-proposes/human-decides" principles with minimal moving parts. Revisit when: a principle in
+<a href="../architecture/"><code>architecture.md</code></a> §1 would be better served by a different tool.</p>
+<p><strong>11.3 — The AI edits files; every plan change is a reviewable git diff.</strong>
+Decision: Claude Code writes only to <code>generated/</code> and leaves a <code>rationale.md</code>; the human reviews each commit.
+Why: it keeps the human in control, makes every change explainable, and leaves an audit trail. Revisit when:
+never as a default (it's a core principle and a guardrail).</p>
+<p><strong>11.4 — Native Watch app and wearable APIs are deferred.</strong>
+Decision: phone-driven Watch haptics now; a native watchOS app and direct wearable APIs (e.g. Whoop) come later.
+Why: v1 ships the daily surface first; native wrappers and integrations are additive, not blocking. Revisit
+when: the daily loop is stable and a wearable API or native Watch app earns its complexity (see open items).</p>
+<hr />
+<h2 id="12-privacy">12. Privacy<a class="headerlink" href="#12-privacy" title="Permanent link">&para;</a></h2>
+<p><strong>12.1 — Real profile and history are gitignored; publish a sanitized template only.</strong>
+Decision: keep the athlete's real <code>profile/</code> and <code>history/</code> out of git; publish only a scrubbed
+template/example. Why: the repo is public and forkable but the athlete's data is private — the engine should be
+shareable without leaking personal specifics. Revisit when: never as a default; the <em>mechanism</em> for persisting
+private data is an open item below.</p>
+<p><strong>12.2 — Scrub the previously-pushed real profile from git history and force-push.</strong>
+Decision: remove the real profile from existing git history and force-push the cleaned history (athlete
+approved). Why: gitignoring going forward doesn't help data already committed — it has to be expunged. Revisit
+when: done and verified; then this is closed. <strong>Caveat to surface:</strong> force-pushing rewrites history for any
+existing clones/forks.</p>
+<p><strong>12.3 — Refer to the athlete generically in all published docs.</strong>
+Decision: every published doc uses "the athlete"/"you" and omits private specifics (exact loads, spinal-curvature
+details, gym name); private values live only in the gitignored profile. Why: forkability + privacy — the logic
+travels, the person doesn't. Revisit when: never as a default (this is the rule this whole doc set follows).</p>
+<hr />
+<h2 id="13-license">13. License<a class="headerlink" href="#13-license" title="Permanent link">&para;</a></h2>
+<p><strong>13.1 — MIT.</strong>
+Decision: license the repo MIT. Why: it's the simplest, most permissive choice — maximally forkable, minimal
+friction for anyone who wants to build on it, matching the open-source intent. Revisit when: a future need (e.g.
+a hosted commercial version, or a desire for share-alike) argues for a different license. See
+<a href="../LICENSE"><code>../LICENSE</code></a>.</p>
+<hr />
+<h2 id="14-progress-tracking-patience">14. Progress tracking / patience<a class="headerlink" href="#14-progress-tracking-patience" title="Permanent link">&para;</a></h2>
+<p><strong>14.1 — Advance by ownership gates, not dates.</strong>
+Decision: progress movements when ownership criteria are met (e.g. ~5 clean controlled reps / hold standards),
+not on a calendar. Why: it ties load to demonstrated capacity, which is safer and more honest than
+date-based progression — especially with the tendon governor. Revisit when: never as a default (guardrail); the
+<em>gate values</em> update after Week 1–2 testing.</p>
+<p><strong>14.2 — Track skill/strength gates primarily; ROM by periodic re-test; no mandatory photos.</strong>
+Decision: make skill/strength gates the primary progress signal, re-test ROM in a periodic block (not
+continuously), and don't require progress photos. Why: it matches what the athlete cares about and keeps daily
+friction low; continuous ROM testing is noise, periodic is signal. Revisit when: he <em>wants</em> photos, or ROM needs
+tighter monitoring during a mobility push.</p>
+<p><strong>14.3 — Tendons first, no rush — longevity over speed.</strong>
+Decision: bias every progression-rate decision toward caution. Why: the whole program is built for a long
+healthy training life, not fast PRs; under-reaching slightly is cheap, an injury is expensive. Revisit when:
+never as a default (it's the program's governing temperament).</p>
+<hr />
+<h2 id="15-open-items-to-revisit">15. Open items / to revisit<a class="headerlink" href="#15-open-items-to-revisit" title="Permanent link">&para;</a></h2>
+<p>These are <strong>deliberately unresolved</strong> — either pending measurement, or scoped out of v1 on purpose. They are
+collected here so nothing important hides in a sub-section.</p>
+<p><strong>Pending Week 1–2 testing</strong> (see <a href="../testing-protocol/"><code>testing-protocol.md</code></a> — these resolve the placeholder
+gates in <a href="../training-system/"><code>training-system.md</code></a> §7 and the readiness SWC band in §5):
+- Strict press 1RM (or rep-max).
+- Max strict (dead-hang) pull-ups.
+- Max strict ring dips.
+- False-grip hang time — the <strong>muscle-up rate-limiter</strong> (decision <strong>5.3</strong>).
+- ROM markers: forward fold / toe-touch, overhead test, ankle dorsiflexion, hip.
+- One light conditioning benchmark (e.g. a short sprint or 2k row), kept sub-maximal, to anchor re-onboarding.</p>
+<p><strong>Pending confirmation (don't fabricate — ask or screen):</strong>
+- True weekly day-count floor (decision <strong>1.4</strong> assumes 2).
+- Chronotype self-assessment validated against actual AM/PM performance (decision <strong>7.1</strong>).
+- Caffeine/sleep sensitivity, to titrate the dose (decision <strong>7.2</strong>).
+- Low-back history, before any heavier end-range spinal loading (decision <strong>4.3</strong>).
+- Baseline upper-body gymnastics volume, to anchor the ~+10%/week cap in absolute terms (decision <strong>5.4</strong>).
+- Vitamin D status (and other labs), to move supplement doses off generic defaults (decision <strong>9.4</strong>).</p>
+<p><strong>Scoped out of v1 / to revisit later:</strong>
+- <strong>Private-data persistence.</strong> Gitignored data won't persist in the public repo <em>or</em> an ephemeral container.
+  Recommend a local copy and/or a future <strong>private data repo or git submodule</strong> so the profile/history survive
+  (open follow-up to decision <strong>12.1</strong>).
+- <strong>Whoop API integration.</strong> Wire it once the subscription is live (follow-up to decision <strong>6.3 / 11.4</strong>).
+- <strong>Native watchOS app.</strong> Currently phone-driven haptics; native app timing TBD (decision <strong>11.4 / 10.5</strong>).
+- <strong>Hosted / multi-user version.</strong> Local-first now; revisit if more than one athlete needs it (decision <strong>11.1</strong>).
+- <strong>Print/PDF (chalkboard) renderer.</strong> Deferred until the app surface is solid (decision <strong>10.6</strong>).</p>
+<hr />
+<p><em>When you change a decision, change it </em><em>here first</em><em> — edit the entry, note the new date, and then update the
+docs it touches. This log is the memory of </em>why<em>; keep it current and the rest of the system stays explainable.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../training-system/" class="md-footer__link md-footer__link--next" aria-label="Next: Training System">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Training System
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

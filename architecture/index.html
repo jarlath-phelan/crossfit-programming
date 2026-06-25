@@ -1,0 +1,1515 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open-source, forkable system for adaptive CrossFit + wellness programming.">
+      
+      
+      
+        <link rel="canonical" href="https://jarlath-phelan.github.io/crossfit-programming/architecture/">
+      
+      
+        <link rel="prev" href="../functional-design/">
+      
+      
+        <link rel="next" href="../data-model/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Architecture - Open Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Programming" class="md-header__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Programming" class="md-nav__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Programming
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Plan (the coach)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Plan (the coach)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../science-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nutrition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nutrition & Fuelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1–2 Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The App (the build)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The App (the build)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App UX (Functional Design)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-guiding-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Guiding principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tech-stack-and-why-this-not-the-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tech stack — and why this, not the alternative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tech stack — and why this, not the alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2a-why-phone-haptics-first-and-why-the-native-watch-app-waits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2a. Why phone-haptics-first, and why the native Watch app waits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-model-the-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data model — the single source of truth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-core-experience-open-phone-hit-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The core experience: "open phone, hit START"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-repo-structure-built-for-forking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Repo structure — built for forking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-data-privacy-public-repo-private-athlete-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Data privacy — public repo, private athlete data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-how-claude-code-drives-continuous-re-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. How Claude Code drives continuous re-planning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-autoregulation-engine-deterministic-offline-instant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Autoregulation engine — deterministic, offline, instant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-v1-vs-later" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. v1 vs later
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLAUDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Guardrails (CLAUDE.md)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-guiding-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Guiding principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tech-stack-and-why-this-not-the-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tech stack — and why this, not the alternative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tech stack — and why this, not the alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2a-why-phone-haptics-first-and-why-the-native-watch-app-waits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2a. Why phone-haptics-first, and why the native Watch app waits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-model-the-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data model — the single source of truth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-core-experience-open-phone-hit-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The core experience: "open phone, hit START"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-repo-structure-built-for-forking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Repo structure — built for forking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-data-privacy-public-repo-private-athlete-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Data privacy — public repo, private athlete data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-how-claude-code-drives-continuous-re-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. How Claude Code drives continuous re-planning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-autoregulation-engine-deterministic-offline-instant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Autoregulation engine — deterministic, offline, instant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-v1-vs-later" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. v1 vs later
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
+<p><em>Technical architecture for this repo. It explains what we build, in what order, and why — the tech stack and its rationale, the web-first delivery strategy, the "hit START" runtime experience, how the data model is the single source of truth, the repo layout that makes it forkable, how the published repo keeps athlete data private, how Claude Code drives continuous re-planning, and a hard line between v1 and later.</em></p>
+<p>For the <strong>training logic</strong> (philosophy, periodization, readiness rules, progression gates) see <a href="../training-system/"><code>training-system.md</code></a>. For the <strong>schemas</strong> see <a href="../data-model/"><code>data-model.md</code></a>, for the <strong>app UX</strong> see <a href="../functional-design/"><code>functional-design.md</code></a>, and for the <strong>evidence basis</strong> see <a href="../science-foundations/"><code>science-foundations.md</code></a>. This document is the <strong>software</strong>; <code>training-system.md</code> is the <strong>coach</strong>. The data model in §3 is the bridge between them.</p>
+<hr />
+<h2 id="1-guiding-principles">1. Guiding principles<a class="headerlink" href="#1-guiding-principles" title="Permanent link">&para;</a></h2>
+<p>These are load-bearing. Every decision below traces back to one of them.</p>
+<ol>
+<li><strong>One source of truth, two renderers.</strong> Human-authored typed data compiles to <em>both</em> the app runtime <em>and</em> (later) the printable/chalkboard program. The phone screen and the big-display board render from the same <code>Session</code> objects, so they can never drift.</li>
+<li><strong>Local-first, offline-always.</strong> It is 6am and the box wifi is bad. Today's WOD, the timer, and logging must work with zero network, every time. Network is an enhancement, never a dependency.</li>
+<li><strong>The AI proposes; the data and the human decide.</strong> Day-of autoregulation is a deterministic, offline rule engine over data — not an opaque model call. The agent edits <em>files</em>; every change to your plan is a reviewable git diff.</li>
+<li><strong>Forkability is a feature.</strong> A stranger clones the repo, edits <em>their own</em> <code>profile/</code>, runs one Claude Code skill, and gets <em>their</em> program. "My data" vs "the engine" vs "my generated plan" are three clean, separate folders — and the data folder is <strong>private to each forker</strong> (§6).</li>
+<li><strong>v1 ships in days, not months.</strong> Build the daily-use surface first — timer, today's WOD, one-tap manual readiness, local logging, and a Claude-Code regeneration loop. Native wrappers, a <strong>native Apple Watch app</strong>, wearable APIs, and print are explicitly deferred. <strong>Pick the simplest thing that works on the phone in your hand.</strong></li>
+</ol>
+<hr />
+<h2 id="2-tech-stack-and-why-this-not-the-alternative">2. Tech stack — and why this, not the alternative<a class="headerlink" href="#2-tech-stack-and-why-this-not-the-alternative" title="Permanent link">&para;</a></h2>
+<p>The strategy is <strong>web-first (phone + big display) → native wrappers later → native Watch &amp; print as companions</strong>. One web codebase is the spine; everything else attaches to it.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Choice</th>
+<th>Why this, not the alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Framework</strong></td>
+<td><strong>Next.js (App Router) + React + TypeScript</strong></td>
+<td>One codebase that static-exports today for the PWA <em>and</em> can host server routes later (wearable webhooks, optional sync, a hosted regeneration endpoint). Mature, hireable, and AI-legible — Claude Code reads and writes it reliably.</td>
+</tr>
+<tr>
+<td><strong>Language / contract</strong></td>
+<td><strong>TypeScript + Zod</strong> everywhere</td>
+<td>Zod is the <em>single contract</em>: it validates human-authored data, generates the TS types the app consumes, and constrains AI-generated sessions to a shape that must parse. One schema, three jobs.</td>
+</tr>
+<tr>
+<td><strong>Styling / UI</strong></td>
+<td><strong>Tailwind + Radix / shadcn primitives</strong></td>
+<td>Fast to build, accessible, and easy to make large-touch-target for sweaty hands. The layout must be <strong>responsive and legible at large size</strong> (the old-iPad gym display, §4) as well as in-hand on a phone. A high-contrast dark "chalkboard" theme is a few utility classes, not a redesign.</td>
+</tr>
+<tr>
+<td><strong>Offline / install</strong></td>
+<td><strong>PWA</strong>: Workbox service worker + Web App Manifest; <strong>Screen Wake Lock API</strong>; <strong>Web Audio + Vibration API</strong> for timer cues</td>
+<td>Installs on the iPhone and the old iPad a person already owns, with no App Store gate. Caches today + the next ~14 days for offline. <strong>This is v1's entire delivery mechanism.</strong></td>
+</tr>
+<tr>
+<td><strong>Local data</strong></td>
+<td><strong>IndexedDB via Dexie</strong></td>
+<td>Instant offline logging that survives a mid-WOD reload. No server, no auth, no round-trip.</td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td><strong>Zustand</strong> for app/runtime state; <strong>XState</strong> (or a hand-rolled reducer) for the timer</td>
+<td>The timer is a finite state machine (<code>countdown → work → rest → round → done</code>). Modeling it explicitly makes it unit-testable and portable to a future native Watch app.</td>
+</tr>
+<tr>
+<td><strong>Native path</strong></td>
+<td><strong>Capacitor</strong> wrapping the <em>same</em> web build</td>
+<td>Additive, not a rewrite: the existing PWA becomes the iOS/Android app. <strong>Expo/React Native is rejected</strong> — it would force a full rewrite of the web app to reach the stores, throwing away the spine.</td>
+</tr>
+<tr>
+<td><strong>Watch</strong></td>
+<td><strong>Native Apple Watch app (SwiftUI), deferred to later</strong></td>
+<td>See the tradeoff below — a PWA cannot drive real watchOS haptics, so v1 stays phone-driven and the Watch app is a separate, later codebase consuming a tiny "today + timer" payload.</td>
+</tr>
+<tr>
+<td><strong>Print / chalkboard</strong></td>
+<td><strong>React-PDF / Satori → PNG/PDF</strong>, plus a <code>print:</code> Tailwind view — <strong>deprioritized to later</strong></td>
+<td>One render path from the same <code>Session</code> objects → whiteboard-ready output and a PDF printout. No second authoring system. The big-screen <strong>board view runs in v1</strong> (it's just responsive web); PDF/print export is a later nicety.</td>
+</tr>
+<tr>
+<td><strong>AI engine (v1)</strong></td>
+<td><strong>Claude Code skills in-repo</strong> — no hosted service</td>
+<td>Free, transparent, forkable. The "continuously evolving AI coach" is literally the agent rewriting <code>generated/</code> on a rolling window, committed to git. A hosted API endpoint is a <em>later</em> convenience for non–Claude-Code users.</td>
+</tr>
+<tr>
+<td><strong>License</strong></td>
+<td><strong>MIT</strong></td>
+<td>Maximally permissive so anyone can fork, adapt, and ship their own coach.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The through-line:</strong> every choice protects principles 1 and 2. The web build is the single artifact Capacitor and the future Watch app attach to. Zod is the single contract the renderers and the AI share. Dexie keeps START instant when the network is gone.</p>
+<h3 id="2a-why-phone-haptics-first-and-why-the-native-watch-app-waits">2a. Why phone-haptics-first, and why the native Watch app waits<a class="headerlink" href="#2a-why-phone-haptics-first-and-why-the-native-watch-app-waits" title="Permanent link">&para;</a></h3>
+<p>The athlete wears an Apple Watch and a Watch app is genuinely wanted — but it is deliberately <strong>later</strong>, and the reason is a hard platform constraint, not a preference:</p>
+<ul>
+<li><strong>A PWA cannot produce watchOS haptics.</strong> The web <code>Vibration API</code> runs on the <em>phone</em>; there is no web path to the Watch's Taptic Engine. Driving a real wrist tap on each interval/round boundary requires a <strong>native watchOS app</strong> (SwiftUI + WatchKit), which is a <em>separate</em> Swift codebase, signing/provisioning, and an App Store submission — a whole second platform.</li>
+<li><strong>The phone already does everything v1 needs.</strong> For someone training with the phone in-hand or in a pocket nearby, the <strong>Web Audio beep + phone Vibration API + screen wake-lock</strong> cover the timer-cue job completely. That is the simplest thing that works, and it ships in days.</li>
+<li><strong>So v1 is phone-driven audio + haptics; the native Watch app is a later companion.</strong> When it lands, it consumes the same tiny "current movement + timer FSM" payload the architecture already exposes (§2 <em>State</em> row keeps the timer portable). Deferring it keeps v1 to one codebase and avoids paying the native-Watch tax before the core daily loop is proven.</li>
+</ul>
+<hr />
+<h2 id="3-data-model-the-single-source-of-truth">3. Data model — the single source of truth<a class="headerlink" href="#3-data-model-the-single-source-of-truth" title="Permanent link">&para;</a></h2>
+<p>All entities are <strong>Zod schemas</strong> in <code>library/schema/</code>. Validating authored data, typing the app, and constraining AI output all read from these same definitions. A database is deliberately rejected here: a DB would hide the truth from git, from diffs, and from a forker.</p>
+<p>The complete entity reference — <code>AthleteProfile</code>, <code>Goal</code>, <code>Movement</code>, <code>Session</code>, the <code>Block</code> union (<code>Warmup</code> / <code>Strength</code> / <code>GymnasticsSkill</code> / <code>Conditioning</code> / <code>Mobility</code> / <code>Meditation</code> / <code>Note</code>), <code>TimerConfig</code>, <code>Mesocycle</code> / <code>ProgramCalendar</code>, <code>ReadinessEntry</code>, and <code>WorkoutLog</code> — is documented in <strong><a href="../data-model/"><code>data-model.md</code></a></strong> (the canonical, implementable schema spec). The <em>training semantics</em> of those entities live in <strong><a href="../training-system/"><code>training-system.md</code></a></strong>.</p>
+<p>The architecturally important properties of that model:</p>
+<ul>
+<li><strong>A <code>Session</code> is one day</strong>: an ordered list of typed <code>Block</code>s. Each block is both <strong>renderable</strong> (to phone/board/PDF) and <strong>runnable</strong> (by the runner). There is no separate "display format."</li>
+<li><strong>Every conditioning block carries a declarative <code>TimerConfig</code></strong> (<code>amrap</code> / <code>for-time</code> / <code>emom</code> / <code>intervals</code> / <code>tabata</code>). The runner's timer is driven by this config, never hand-coded per workout — so <em>every</em> generated WOD is instantly runnable and instantly board-renderable.</li>
+<li><strong>Loads are unit-agnostic and displayed in BOTH lb and kg.</strong> The data stores a canonical numeric load; the renderer shows lb and kg side by side everywhere a weight appears, so the athlete never does mental conversion mid-session.</li>
+<li><strong>Each block carries GREEN / AMBER / RED variants or a scaling rule.</strong> This is what lets the runner autoregulate <em>locally and offline</em> (§4, §7) without an LLM call.</li>
+<li><strong><code>ReadinessEntry</code> and <code>WorkoutLog</code> are structured</strong>, so the AI reasons over <em>trends</em> (weekly volume per pattern, benchmark drift, pain flags, tier distribution) rather than prose. <code>ReadinessEntry</code> accepts either a <strong>typed HRV/recovery score</strong> (from a wearable) <strong>or</strong> a one-tap subjective tier — see §4 and §7.</li>
+</ul>
+<hr />
+<h2 id="4-the-core-experience-open-phone-hit-start">4. The core experience: "open phone, hit START"<a class="headerlink" href="#4-the-core-experience-open-phone-hit-start" title="Permanent link">&para;</a></h2>
+<p>This is the surface the athlete touches every morning. It must be boring, instant, and bulletproof. The full UX lives in <strong><a href="../functional-design/"><code>functional-design.md</code></a></strong>; here is the architecture-level shape.</p>
+<p><strong>Device targets (v1):</strong></p>
+<ul>
+<li><strong>iPhone, in-hand / in-pocket</strong> — the primary surface. One-tap check-in, START, the runner, logging.</li>
+<li><strong>An old iPad as a dedicated gym display</strong> — props up across the room as a large board; the layout is <strong>responsive and legible at distance</strong> (big type, high contrast). Same web build, same <code>Session</code> objects.</li>
+<li><strong>Apple Watch — later</strong> (native app, §2a). v1 leans on phone audio + haptics.</li>
+</ul>
+<p><strong>Morning check-in</strong> = a <strong>one-tap overall-feel</strong> prompt (minimal friction). It optionally accepts a <strong>typed score</strong> (paste/enter the wearable's recovery/HRV number) and, separately, an optional <strong>session score</strong> entry. Inputs are <strong>hybrid</strong> (§7): if a wearable score is available the athlete types it; otherwise they tap GREEN / AMBER / RED. Manual tap always wins.</p>
+<p><strong>Home screen</strong> = one big card: today's session title, the readiness tier as a color, and a full-width <strong>START</strong>.</p>
+<ol>
+<li><strong>START</strong> → full-screen <strong>Session Runner</strong>. Screen Wake Lock engages; the screen never sleeps mid-WOD.</li>
+<li>The runner walks the session's blocks in order: warm-up checklist → strength/skill (inline set logging, loads in <strong>lb + kg</strong>) → conditioning (<strong>the timer takes over</strong>) → mobility → meditation (an interval bell over a 0.1 Hz / ~6-breaths-per-min paced-breathing animation).</li>
+<li>The <strong>timer</strong> is the FSM driven by the block's <code>TimerConfig</code>: huge countdown, current movement + reps in oversized type, <strong>loud audio beep + phone vibration</strong> on each interval/round boundary, auto-advancing rounds, and result capture (rounds or time) on stop.</li>
+<li><strong>Everything logs locally to IndexedDB as it happens.</strong> Nothing blocks on the network. A reload mid-session loses nothing.</li>
+<li><strong>Readiness downshift:</strong> if today is AMBER/RED, the runner pre-selects the scaled variant of each block (e.g. RED swaps the MetCon for the meditation + hip-mobility floor session). A one-tap toggle lets the athlete re-pick the tier on the spot — <strong>the human override always wins.</strong></li>
+<li><strong>Quick "done + how it felt" logging.</strong> After the session, a low-friction action captures <em>done</em>, an overall how-it-felt rating, and the timer/key result, then serializes the day's <code>WorkoutLog</code> into <code>history/logs/</code> for the AI to read on its next pass. No mandatory field grind.</li>
+</ol>
+<p>The <strong>same</strong> <code>Session</code> objects render the <strong>board view</strong> (<code>/board/today</code>, v1) and a <strong>PDF export</strong> (later). Build it once; surface it where it's needed.</p>
+<hr />
+<h2 id="5-repo-structure-built-for-forking">5. Repo structure — built for forking<a class="headerlink" href="#5-repo-structure-built-for-forking" title="Permanent link">&para;</a></h2>
+<p>Three top-level zones map directly onto the mental model "my data vs the engine vs my plan." Note that the <strong>data zone is private to each forker</strong> — the public repo ships only a sanitized template (§6).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>crossfit-programming/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─ README.md                  # &quot;Fork → copy the example profile → edit → run /replan → train&quot;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─ LICENSE                    # MIT
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├─ CLAUDE.md                  # planning philosophy, research priors, guardrails for the agent
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├─ .gitignore                 # ignores real profile/ + history/ (see §6)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├─ docs/
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│  ├─ architecture.md         # this document — the software
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│  ├─ training-system.md      # the coaching logic
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  ├─ data-model.md           # the canonical entity schemas
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│  ├─ functional-design.md    # the app UX
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  ├─ nutrition.md            # fueling guidance
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│  ├─ science-foundations.md  # the evidence basis, with citations
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│  ├─ testing-protocol.md     # week 1–2 baseline testing
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│  └─ decisions.md            # the decision log
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├─ profile.example/           # SANITIZED TEMPLATE — published; forker copies → profile/
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│  ├─ athlete.ts              #   AthleteProfile (generic placeholders)
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│  ├─ goals.ts                #   ranked goals + advancement criteria
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│  ├─ equipment.ts            #   what their box has
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│  └─ readiness-prefs.ts      #   SWC settings, caffeine/collagen toggles
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>├─ profile/                   # ATHLETE-OWNED TRUTH — *gitignored*, private to each forker
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│  └─ …                       #   (created by copying profile.example/, never committed publicly)
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>├─ library/                   # SHARED ENGINE / DATA — forkers inherit, can extend
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│  ├─ schema/                 #   Zod schemas = the contract
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│  ├─ movements/              #   movement library + progressions + scaling rules
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│  ├─ templates/              #   block/session archetypes (HSPU block, MU block, Z2…)
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│  └─ autoregulation/         #   deterministic GREEN/AMBER/RED engine (pure TS, tested)
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>├─ generated/                 # AI-OWNED, GIT-TRACKED PLAN — machine writes, human reviews
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│  ├─ mesocycles/             #   current block plan + rationale.md
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│  └─ calendar/               #   dated Session objects (rolling window)
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>├─ history/                   # FEEDBACK LOOP — *gitignored*, private to each forker
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│  ├─ readiness/              #   daily ReadinessEntry
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│  └─ logs/                   #   WorkoutLog per session
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>├─ app/                       # Next.js PWA
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│  ├─ (runner)/ (board)/      #   runner UI, big-display board view
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│  ├─ components/
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│  └─ lib/timer/  lib/store/  #   timer FSM, Zustand/Dexie store
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>├─ scripts/                   # build: data → app bundle; data → PDF/PNG (print later)
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>├─ .claude/skills/            # the AI engine as Claude Code skills
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│  ├─ onboard/ replan/ today/ deload/
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>└─ tests/
+</code></pre></div>
+<p><strong>The three ownership zones:</strong></p>
+<ul>
+<li><strong>Data (yours, private):</strong> <code>profile/</code>, <code>history/</code> — edited by the human (or written by the app), and <strong>gitignored</strong> in the public repo (§6). The published artifact is <code>profile.example/</code> only.</li>
+<li><strong>Engine (shared):</strong> <code>library/</code>, <code>app/</code>, <code>scripts/</code>, <code>.claude/</code> — the forkable machine.</li>
+<li><strong>Generated (the AI's):</strong> <code>generated/</code> — written by the agent, reviewed via <code>git diff</code>, regenerated on a rolling window. The app <strong>reads</strong> <code>generated/</code> + <code>profile/</code>; it never writes to <code>generated/</code>.</li>
+</ul>
+<p><strong>Onboarding a stranger</strong> (the forkability promise, end to end):</p>
+<ol>
+<li>Fork + clone, open in Claude Code.</li>
+<li><strong>Copy <code>profile.example/</code> → <code>profile/</code></strong> (which is gitignored) and edit it — or run <code>/onboard</code>, which interviews them and writes <code>profile/*</code>.</li>
+<li>Run <code>/replan</code> → the agent reads <code>profile/</code> + <code>library/</code> + (empty) <code>history/</code> and writes a 1–2 week <code>generated/calendar/</code>.</li>
+<li><code>npm run dev</code> or install the PWA → hit START.</li>
+</ol>
+<hr />
+<h2 id="6-data-privacy-public-repo-private-athlete-data">6. Data privacy — public repo, private athlete data<a class="headerlink" href="#6-data-privacy-public-repo-private-athlete-data" title="Permanent link">&para;</a></h2>
+<p><strong>This repo is published PUBLIC under MIT, but the athlete's data is private.</strong> The architecture keeps those two facts compatible.</p>
+<ul>
+<li><strong>Real <code>profile/</code> and <code>history/</code> are gitignored.</strong> The only data artifact in the public repo is <strong><code>profile.example/</code></strong> — a sanitized template with generic placeholders (no real weights, no medical specifics, no gym name, no personal identifiers). Everything published refers to "the athlete" / "you" generically. A forker <strong>copies the example into the gitignored <code>profile/</code></strong> and fills in their own truth, which never leaves their machine.</li>
+<li><strong>Persistence caveat — read this before relying on it.</strong> Because real <code>profile/</code> and <code>history/</code> are gitignored, <strong>they are not version-controlled and do not persist in the public repo</strong> (and will not survive an ephemeral/cloud container that is recreated from the repo). Your private data lives only on local disk. Recommended persistence options:</li>
+<li>keep a <strong>local backup</strong> of <code>profile/</code> + <code>history/</code> (e.g. a regular copy or a local-only git repo), and/or</li>
+<li>point <code>profile/</code> + <code>history/</code> at a <strong>separate private repo or git submodule</strong> — the public engine repo stays public and MIT, your data repo stays private. This is the recommended path once the data is worth protecting long-term.</li>
+<li><strong>How a forker supplies their own data.</strong> Fork the public engine → <code>cp -r profile.example profile</code> → edit <code>profile/</code> locally → (optionally) back it up to a private repo/submodule → run <code>/replan</code>. The engine never assumes your data is committed publicly; the app reads it straight off local disk.</li>
+<li><strong>One-time history scrub.</strong> If real profile data was ever committed to the public history, it must be <strong>scrubbed from git history and force-pushed</strong> (the athlete has approved this), then added to <code>.gitignore</code> so it cannot be re-committed.</li>
+</ul>
+<p>The net effect: the <strong>engine is open and forkable</strong>, while <strong>each person's truth stays on their own machine</strong> by default.</p>
+<hr />
+<h2 id="7-how-claude-code-drives-continuous-re-planning">7. How Claude Code drives continuous re-planning<a class="headerlink" href="#7-how-claude-code-drives-continuous-re-planning" title="Permanent link">&para;</a></h2>
+<p>The "AI coach" is not a hosted model; in v1 it is <strong>Claude Code skills operating on the repo</strong>. The program "continuously evolves" because the agent rewrites the near future on a rolling cadence, and every rewrite is a git commit you can read and revert.</p>
+<p><strong>Inputs are immutable to the agent's pen; only <code>generated/</code> is its output.</strong> It reads <code>profile/</code> (truth), <code>library/</code> (engine + priors), and <code>history/</code> (feedback). It writes <code>generated/</code>.</p>
+<p><strong>Rolling-window regeneration</strong> keeps history stable while letting tomorrow adapt:</p>
+<ul>
+<li><strong><code>/today</code></strong> — fast. Reads today's <code>ReadinessEntry</code>, adjusts <em>only today's</em> tier/scaling.</li>
+<li><strong><code>/replan</code></strong> — reads <code>profile/</code> + <code>library/</code> + the last N weeks of <code>history/</code>, then rewrites the <strong>next 1–2 weeks</strong> of <code>generated/calendar/</code>, leaving past sessions immutable. Fires data-gated advancement (e.g. <em>"logged 5 clean wall-HSPU negatives → progress to deficit"</em>) rather than calendar-gated bumps.</li>
+<li><strong><code>/deload</code></strong> — inserts a lighter week when the readiness trend / accumulated fatigue warrants it (autoregulated, not fixed).</li>
+<li><strong>Mesocycle re-baseline every 4–6 weeks</strong> — recomputes the HRV SWC band from <code>history/</code>, re-weights volume toward lagging goals, and rewrites <code>generated/mesocycles/rationale.md</code>.</li>
+</ul>
+<p><strong>Automation:</strong> a Claude Code <code>loop</code>/cron skill can run <code>/replan</code> weekly and <code>/today</code> each morning so the plan evolves without manual prompting — but each change remains a reviewable commit.</p>
+<p><strong>Guardrails live in <code>CLAUDE.md</code></strong>, encoding the research priors from <a href="../training-system/"><code>training-system.md</code></a> (tendons are the governor, strict-before-kipping, AM ramp-up, mobility as loaded end-range, autoregulation = consistency not peaking) and hard limits (cap upper-body progression ~+10%/wk, legs at maintenance, never zero on RED). The agent plans <em>within</em> these rails; it does not invent them per run.</p>
+<hr />
+<h2 id="8-autoregulation-engine-deterministic-offline-instant">8. Autoregulation engine — deterministic, offline, instant<a class="headerlink" href="#8-autoregulation-engine-deterministic-offline-instant" title="Permanent link">&para;</a></h2>
+<p>Day-of readiness must not depend on a model call. <code>library/autoregulation/</code> is a <strong>pure, tested function</strong>: <code>(ReadinessEntry, swcConfig) → Tier</code>.</p>
+<p><strong>Hybrid input, in priority order:</strong> a typed <strong>wearable recovery/HRV score</strong> when available — <strong>Bevel</strong> (Apple Watch) as the primary source, <strong>Whoop</strong> as a second source when subscribed — otherwise a <strong>manual one-tap GREEN / AMBER / RED</strong>. Either drives the same deterministic rule.</p>
+<ul>
+<li><strong>GREEN</strong> — rolling HRV in/above the SWC band <em>and</em> subjective OK → full session: heavy/skill work fresh, sprinty MetCon.</li>
+<li><strong>AMBER</strong> — lower SWC edge / rising variability / moderate subjective fatigue → keep skill + strength, cut MetCon volume ~30–50%, drop to Zone 2.</li>
+<li><strong>RED</strong> — below band for multiple days <em>or</em> a manual "exhausted, busy day" override → meditation + hip/hamstring mobility + an easy flush only.</li>
+<li><strong>Manual override always wins</strong> — subjective readiness out-predicts wearable HRV in the literature, and it is first-class in the data model.</li>
+<li><strong>Calibration window</strong> — the first ~14 days have no personal HRV baseline; the app surfaces a "still calibrating" note and leans on the subjective tap until the band is built.</li>
+</ul>
+<p>This runs <strong>in-app with zero LLM call</strong>, so START is instant. The split is clean: <strong>the LLM <em>plans</em> (across days); the rule engine <em>gates</em> (on the day).</strong></p>
+<hr />
+<h2 id="9-v1-vs-later">9. v1 vs later<a class="headerlink" href="#9-v1-vs-later" title="Permanent link">&para;</a></h2>
+<p><strong>v1 — ship this first:</strong></p>
+<ul>
+<li>PWA on <strong>iPhone (in-hand) + old iPad (large gym display, responsive/legible)</strong>: home card, full-screen Session Runner, the timer FSM (AMRAP/EMOM/intervals/for-time/tabata) with wake-lock + <strong>phone audio/haptic</strong> cues, inline set logging with <strong>loads in lb + kg</strong>, IndexedDB local store.</li>
+<li>Zod data model + <code>library/</code> + <code>profile/</code> (copied from <code>profile.example/</code>) + render of today's session.</li>
+<li><strong>One-tap morning check-in</strong> with optional typed score; deterministic GREEN/AMBER/RED engine with <strong>hybrid input (Bevel score or manual tap)</strong> + manual override + "still calibrating" note.</li>
+<li><strong>Big-display board view</strong> (<code>/board/today</code>).</li>
+<li>Quick <strong>"done + how it felt"</strong> logging → <code>history/logs/</code>.</li>
+<li>Claude Code skills <code>/onboard</code>, <code>/replan</code>, <code>/today</code>, <code>/deload</code>; <code>generated/</code> tracked in git, <code>profile/</code> + <code>history/</code> <strong>gitignored</strong> (§6); <code>profile.example/</code> published.</li>
+<li><strong>MIT <code>LICENSE</code></strong> + <code>.gitignore</code> for private data.</li>
+</ul>
+<p><strong>Later — additive, never a rewrite:</strong></p>
+<ul>
+<li><strong>Native Apple Watch app</strong> (SwiftUI) for real wrist haptics + current-movement/timer mirror (§2a) — the main deferred platform.</li>
+<li><strong>Capacitor</strong> native iOS/Android wrappers (App Store / Play Store) over the same web build.</li>
+<li><strong>Wearable ingestion</strong> — Bevel / Whoop / HealthKit via webhooks → auto-fills <code>ReadinessEntry.hrv</code> so the score doesn't need typing (manual subjective check-in stays).</li>
+<li><strong>Print / PDF export</strong> of the board (deprioritized; the responsive board view covers v1).</li>
+<li><strong>Optional hosted regeneration endpoint</strong> (Anthropic API serverless function) so non–Claude-Code users get continuous re-planning; plus a sync server + accounts for multi-athlete / coach use, and a <strong>private data repo/submodule</strong> convention for persisting <code>profile/</code> + <code>history/</code> (§6).</li>
+<li><strong>Richer analytics</strong> — volume-per-muscle dashboards, benchmark trend, ROM re-test tracking.</li>
+</ul>
+<hr />
+<h2 id="10-open-questions">10. Open questions<a class="headerlink" href="#10-open-questions" title="Permanent link">&para;</a></h2>
+<p>These are unresolved and worth flagging before they calcify. (Several earlier questions are now <strong>decided</strong>: Watch = native, later; phone-haptics for v1; data is gitignored with a published example; license is MIT; readiness input is Bevel-primary / Whoop-second / manual fallback.)</p>
+<ol>
+<li><strong>Log write-back path in v1.</strong> Does the app commit <code>WorkoutLog</code> files directly (needs a tiny local dev server or the File System Access API), or does the user run a Claude Code skill that ingests an in-app export? This sets how "hands-off" the daily loop feels before there is any backend.</li>
+<li><strong>Private-data persistence convention.</strong> Confirm the recommended shape for surviving real <code>profile/</code> + <code>history/</code> across machines/containers: local backup only, a private sibling repo, or a git submodule pointed at a private repo. Pick a default and document it in the README.</li>
+<li><strong>Wearable data access reality.</strong> Confirm Bevel / Whoop API/webhook terms and HealthKit availability for programmatic HRV-trend pulls, or accept that v1 stays on a <strong>typed score or manual tap</strong> until ingestion lands.</li>
+<li><strong>SWC bootstrap.</strong> The first ~14 days have no personal HRV baseline. Confirm the population-prior → personal-band bootstrap and exactly how the app communicates "still calibrating."</li>
+<li><strong>Native Watch trigger + payload.</strong> Decide what moves the Watch app from "later" to "now," and lock the minimal "today + timer FSM" payload it consumes so the v1 web timer stays portable to it.</li>
+<li><strong>Hosting model for the eventual regeneration endpoint.</strong> Fully local / Claude-Code-only (max forkability, zero cost) vs an optional Anthropic-API serverless function (broader audience, but adds keys/cost/secrets to the fork).</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../functional-design/" class="md-footer__link md-footer__link--prev" aria-label="Previous: App UX (Functional Design)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                App UX (Functional Design)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../data-model/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Model">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Data Model
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

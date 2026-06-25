@@ -1,0 +1,2268 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open-source, forkable system for adaptive CrossFit + wellness programming.">
+      
+      
+      
+        <link rel="canonical" href="https://jarlath-phelan.github.io/crossfit-programming/training-system/">
+      
+      
+        <link rel="prev" href="../decisions/">
+      
+      
+        <link rel="next" href="../science-foundations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Training System - Open Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#training-system-how-the-program-works" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Programming" class="md-header__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Training System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Programming" class="md-nav__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Programming
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Plan (the coach)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Plan (the coach)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training System
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-philosophy-the-rules-everything-else-obeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Philosophy — the rules everything else obeys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-periodization-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Periodization model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Periodization model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-macro-shape-rolling-6-week-emphasis-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Macro shape — rolling ~6-week emphasis blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rotating-emphasis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Rotating emphasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-why-this-fits-the-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Why this fits the goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-weekly-templates-flexible-2-3-4-5-6-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Weekly templates — flexible 2 / 3 / 4 / 5 / 6 days
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Weekly templates — flexible 2 / 3 / 4 / 5 / 6 days">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-undulating-hardeasy-default-5-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The undulating hard/easy default (5 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-graceful-degradation-rule-when-days-get-cut-decide-in-this-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Graceful-degradation rule — when days get cut, decide in this order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-the-2-day-minimum-week-rule-the-floor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 The 2-day minimum-week rule (the floor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-3-4-6-day-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 3 / 4 / 6-day templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-conditioning-the-polarized-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Conditioning — the polarized model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-anatomy-of-a-single-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Anatomy of a single session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-readiness-autoregulation-green-amber-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Readiness autoregulation — green / amber / red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Readiness autoregulation — green / amber / red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-the-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-the-traffic-light-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 The traffic-light rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-class-advisory-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Class-advisory integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tendon-masters-spine-safeguards-woven-through-every-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tendon, masters &amp; spine safeguards (woven through every block)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-progression-tracking-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Progression tracking &amp; gates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Progression tracking &amp; gates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-strict-hspu-pathway-limiter-overhead-strength-overhead-rom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Strict HSPU pathway — limiter: overhead strength + overhead ROM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-strict-ring-muscle-up-pathway-limiter-false-grip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Strict ring muscle-up pathway — limiter: false grip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-mobility-rom-markers-periodic-re-test-not-continuous-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Mobility / ROM markers (periodic re-test, not continuous logging)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-physique-midline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Physique / midline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-how-the-system-keeps-evolving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. How the system keeps evolving
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-one-paragraph-version-for-the-athlete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. One-paragraph version for the athlete
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../science-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nutrition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nutrition & Fuelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1–2 Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The App (the build)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The App (the build)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App UX (Functional Design)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLAUDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Guardrails (CLAUDE.md)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-philosophy-the-rules-everything-else-obeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Philosophy — the rules everything else obeys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-periodization-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Periodization model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Periodization model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-macro-shape-rolling-6-week-emphasis-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Macro shape — rolling ~6-week emphasis blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rotating-emphasis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Rotating emphasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-why-this-fits-the-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Why this fits the goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-weekly-templates-flexible-2-3-4-5-6-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Weekly templates — flexible 2 / 3 / 4 / 5 / 6 days
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Weekly templates — flexible 2 / 3 / 4 / 5 / 6 days">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-undulating-hardeasy-default-5-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The undulating hard/easy default (5 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-graceful-degradation-rule-when-days-get-cut-decide-in-this-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Graceful-degradation rule — when days get cut, decide in this order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-the-2-day-minimum-week-rule-the-floor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 The 2-day minimum-week rule (the floor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-3-4-6-day-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 3 / 4 / 6-day templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-conditioning-the-polarized-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Conditioning — the polarized model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-anatomy-of-a-single-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Anatomy of a single session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-readiness-autoregulation-green-amber-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Readiness autoregulation — green / amber / red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Readiness autoregulation — green / amber / red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-the-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-the-traffic-light-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 The traffic-light rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-class-advisory-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Class-advisory integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tendon-masters-spine-safeguards-woven-through-every-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tendon, masters &amp; spine safeguards (woven through every block)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-progression-tracking-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Progression tracking &amp; gates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Progression tracking &amp; gates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-strict-hspu-pathway-limiter-overhead-strength-overhead-rom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Strict HSPU pathway — limiter: overhead strength + overhead ROM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-strict-ring-muscle-up-pathway-limiter-false-grip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Strict ring muscle-up pathway — limiter: false grip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-mobility-rom-markers-periodic-re-test-not-continuous-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Mobility / ROM markers (periodic re-test, not continuous logging)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-physique-midline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Physique / midline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-how-the-system-keeps-evolving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. How the system keeps evolving
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-one-paragraph-version-for-the-athlete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. One-paragraph version for the athlete
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="training-system-how-the-program-works">Training System — How the Program Works<a class="headerlink" href="#training-system-how-the-program-works" title="Permanent link">&para;</a></h1>
+<p><em>Coach-facing reference. This is the </em><em>coach</em><em>: it explains the logic the AI planner and the human
+follow — the philosophy, the periodization model, the weekly templates, how a single session is built,
+the daily readiness rules, the progression gates, the mobility markers, and how the whole thing keeps
+re-planning itself.</em></p>
+<p>This doc is <strong>forkable and generic</strong>. It is written for "the athlete" / "you" so anyone can clone the
+repo and adapt it. The illustrative case running through it — a fast-twitch, lower-body-dominant masters
+CrossFitter re-onboarding conditioning, chasing strict HSPU and a strict ring muscle-up while building an
+upper-body physique — is just that: an example that makes the rails concrete. Swap in your own profile
+and the same logic holds.</p>
+<p><strong>Companion docs:</strong>
+<a href="../science-foundations/"><code>science-foundations.md</code></a> is the <em>why</em> (the evidence behind every rail here);
+<a href="../architecture/"><code>architecture.md</code></a> is the <em>software</em>; <a href="../data-model/"><code>data-model.md</code></a> is the <em>schemas</em>;
+<a href="../functional-design/"><code>functional-design.md</code></a> is the <em>app UX</em>; <a href="../nutrition/"><code>nutrition.md</code></a> is <em>fueling</em>;
+<a href="../decisions/"><code>decisions.md</code></a> is the <em>log of athlete choices</em>; and
+<a href="../testing-protocol/"><code>testing-protocol.md</code></a> is the <em>Week 1–2 gentle baseline block</em>.
+The guardrails this doc must obey live in <a href="../CLAUDE/"><code>CLAUDE.md</code></a>.</p>
+<hr />
+<h2 id="1-philosophy-the-rules-everything-else-obeys">1. Philosophy — the rules everything else obeys<a class="headerlink" href="#1-philosophy-the-rules-everything-else-obeys" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>No peaking, ever.</strong> You train for life, not a date. We run <strong>continuous rolling ~6-week emphasis
+   blocks</strong>, not competition periodization. Training builds the same strength and muscle regardless of
+   the calendar, so there is nothing to peak — only consistent, progressive exposure biased toward the
+   goals.</p>
+</li>
+<li>
+<p><strong>Tendons are the governor — not muscle, not lungs, not motivation.</strong> In a masters athlete (late 30s+)
+   muscle protein synthesis and hypertrophy potential are essentially young-adult level, but collagen
+   turnover declines from the mid-30s and <strong>tendons adapt on a ~12-week clock while muscle and neural
+   gains arrive in days to weeks.</strong> Strength <em>will</em> outpace tissue tolerance. Every new upper-body
+   gymnastics load is ramped slowly (<strong>≤~10%/week</strong>), with heavy-slow tempo and eccentric overload doing
+   double duty as strength <em>and</em> tissue-resilience work. The shoulder is the #1 CrossFit injury site and
+   the target skills (HSPU, ring MU, kipping) are top mechanisms — so we <strong>build strict before kipping</strong>
+   and cap kipping volume.</p>
+</li>
+<li>
+<p><strong>Same reps, two goals.</strong> The physique goals (bigger chest, fuller delts, thicker upper back/lats,
+   visible strong midline) and the skill goals (strict HSPU, strict ring MU) are built from the <em>same</em>
+   pressing and pulling work. We program one block of work and count it twice. This is the single
+   highest-leverage decision in the system: delts feed the HSPU, lats feed the muscle-up, and both build
+   the V-taper.</p>
+</li>
+<li>
+<p><strong>Legs and conditioning are MAINTAINED, not built.</strong> A lower-body-dominant, fast-twitch athlete is
+   already strong and fast; this one explicitly does not want more leg size. Legs run at <strong>maintenance
+   (~6–9 hard sets/week)</strong>; conditioning is <em>preserved and gently re-onboarded</em>, not chased. This frees
+   recovery for the upper body we actually want to grow.</p>
+</li>
+<li>
+<p><strong>Sustainability beats intensity.</strong> Sessions are <strong>45–60 minutes, unhurried</strong> — there is room to
+   train <em>and</em> socialize, not a go-go-go stopwatch grind. A session must never leave you wrecked for
+   work the next day. This athlete gets <strong>very sore</strong> and protects recovery, so the week <strong>undulates
+   hard/easy</strong> and we <strong>never stack back-to-back MetCons</strong> on sore days. Consistency over years is the
+   product; a heroic week that costs three is a loss.</p>
+</li>
+<li>
+<p><strong>Recovery is first-class programming.</strong> The ~20-minute breathing + mobility block is real training,
+   not a cooldown. It is protected on busy weeks like a strength session, and it is the <strong>default</strong>
+   RED-day session — <em>offered</em>, never forced (see §5).</p>
+</li>
+<li>
+<p><strong>Science-based, not over-optimized.</strong> Caffeine, collagen, and HRV gating are used <em>strategically</em>
+   (hard days, situationally, cycled), not religiously. The effects of meditation and HRV-gating are
+   framed honestly as modest consistency and injury-risk levers, not magic. See
+   <a href="../science-foundations/"><code>science-foundations.md</code></a>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2-periodization-model">2. Periodization model<a class="headerlink" href="#2-periodization-model" title="Permanent link">&para;</a></h2>
+<h3 id="21-macro-shape-rolling-6-week-emphasis-blocks">2.1 Macro shape — rolling ~6-week emphasis blocks<a class="headerlink" href="#21-macro-shape-rolling-6-week-emphasis-blocks" title="Permanent link">&para;</a></h3>
+<p>Instead of phases that build to a peak, the program cycles <strong>~6-week blocks</strong>. Every block carries the
+<em>same</em> permanent priority hierarchy but rotates which limiter gets the slight extra emphasis, and ends
+with a planned light week.</p>
+<p><strong>Permanent priority hierarchy (every block, in order):</strong></p>
+<ol>
+<li>Strict gymnastics strength — strict HSPU &amp; strict ring-MU progressions</li>
+<li>Upper-body hypertrophy — chest, delts, lats/upper back, visible/strong midline</li>
+<li>Hip / hamstring / overhead ROM (a daily training target, not a cooldown)</li>
+<li>Conditioning <strong>maintenance</strong> (re-onboarded over the first 4–8 weeks; polarized — see §3.5)</li>
+<li>Lower-body strength at <strong>maintenance only</strong></li>
+</ol>
+<p><strong>The ~6-week block shape:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Intent</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td>Re-introduce / accumulate</td>
+<td>Conservative loads, establish the RIR (reps-in-reserve) feel, volume at the low end of target</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td>Progress</td>
+<td>Add ~1–2 hard sets/muscle/week toward the 12–18 target; add load / deficit / tempo to skill work (still ≤~10%/wk gymnastics volume growth)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Highest block volume/intensity</td>
+<td>Still sub-maximal (1–3 RIR), highest accumulated volume</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Deload</strong> (autoregulated)</td>
+<td>Cut to top sets only, drop conditioning to Zone 2, keep skill at low volume, protect the recovery block. <strong>Re-test the gates (§7) at the end of this week.</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Deloads are a <strong>fatigue-management</strong> tool, not a peaking tool. Plan one roughly every 4–6 weeks, but
+pull it earlier if AMBER/RED days are accumulating.</p>
+<h3 id="22-rotating-emphasis">2.2 Rotating emphasis<a class="headerlink" href="#22-rotating-emphasis" title="Permanent link">&para;</a></h3>
+<p>Each block leans slightly harder on one limiter while maintaining the others:</p>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Primary emphasis</th>
+<th>Maintained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td><strong>Pressing</strong> — HSPU (pike → deficit → negatives), DB/overhead press, ring dips</td>
+<td>Pulling, mobility, conditioning</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td><strong>Pulling</strong> — strict/weighted pull-ups, false-grip rows, MU transition negatives</td>
+<td>Pressing, mobility, conditioning</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td><strong>Integration</strong> — full strict skill attempts, press + pull combined, more midline + conditioning re-load</td>
+<td>All, conditioning slightly raised</td>
+</tr>
+</tbody>
+</table>
+<p>Rotate A → B → C → A. Because pressing and pulling both feed chest/back hypertrophy, <strong>physique gains
+accrue continuously regardless of which skill is emphasized.</strong></p>
+<h3 id="23-why-this-fits-the-goals">2.3 Why this fits the goals<a class="headerlink" href="#23-why-this-fits-the-goals" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Hypertrophy and strict-strength reward <strong>time-under-program and progressive weekly volume</strong>, which
+  rolling blocks deliver without taper math.</li>
+<li>The re-test at each deload converts the program into a <strong>self-correcting loop</strong>: gates passed →
+  advance the progression; gates stalled → repeat or regress the rung. This is the hook the AI uses to
+  re-plan (§8).</li>
+</ul>
+<hr />
+<h2 id="3-weekly-templates-flexible-2-3-4-5-6-days">3. Weekly templates — flexible 2 / 3 / 4 / 5 / 6 days<a class="headerlink" href="#3-weekly-templates-flexible-2-3-4-5-6-days" title="Permanent link">&para;</a></h2>
+<p>The athlete's preference is <strong>5 days/week</strong> of 45–60 min unhurried sessions, with the week <strong>undulating
+hard → easy</strong> (a hard strict-skill/strength day is followed by a lighter strength-and-mobility day). The
+day count flexes with life; the templates below are the menu, and the planner picks the row that matches
+the realistic day-count for the week.</p>
+<p><strong>Session "ingredients":</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S</strong></td>
+<td>Strict skill/strength (HSPU + MU progressions) — the protected priority</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>Hypertrophy accessory (chest, delts, lats/upper back, midline) — includes <strong>unilateral + anti-rotation</strong> work</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Conditioning — polarized: sprints/hills <em>or</em> Zone-2 base; all modalities (run, row, bike, ski)</td>
+</tr>
+<tr>
+<td><strong>M</strong></td>
+<td>Mobility + ~20-min breathing/wellness block (daily, first-class)</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>Lower-body maintenance (low volume)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="31-the-undulating-hardeasy-default-5-days">3.1 The undulating hard/easy default (5 days)<a class="headerlink" href="#31-the-undulating-hardeasy-default-5-days" title="Permanent link">&para;</a></h3>
+<p>This is the <strong>target week</strong>. Note the deliberate rhythm: no two MetCon-style conditioning hits land
+back-to-back, and every hard-CNS skill day is followed by something the body can absorb while sore.</p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Type</th>
+<th>Composition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (Mon)</td>
+<td><strong>Hard</strong></td>
+<td>Ramp → <strong>S press</strong> (fresh CNS) → <strong>H chest/delts/midline</strong> → <strong>M</strong></td>
+</tr>
+<tr>
+<td>2 (Tue)</td>
+<td>Easy</td>
+<td>Ramp → light <strong>S pull volume</strong> / grease-the-groove → mobility-heavy <strong>M</strong> + extended overhead/t-spine</td>
+</tr>
+<tr>
+<td>3 (Wed)</td>
+<td><strong>Hard</strong></td>
+<td>Ramp → <strong>S pull</strong> → <strong>H back/lats/midline</strong> → short quality <strong>C</strong> (sprinty or machine intervals) → <strong>M</strong></td>
+</tr>
+<tr>
+<td>4 (Thu)</td>
+<td>Easy</td>
+<td>Ramp → <strong>H</strong> unilateral + anti-rotation focus + light <strong>L</strong> maintenance → <strong>M</strong></td>
+</tr>
+<tr>
+<td>5 (Fri)</td>
+<td><strong>Hard</strong></td>
+<td>Ramp → <strong>S integration</strong> (press + pull, lower volume) → polarized <strong>C</strong> (sprints/hills <em>or</em> Zone-2 base) → <strong>M</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Hard days carry the high-CNS strict work and the one conditioning hit; easy days bank skill volume,
+hypertrophy accessories, unilateral/anti-rotation correction, and mobility. The two conditioning touches
+(Day 3, Day 5) are separated by a day, and the heaviest pressing (Day 1) and pulling (Day 3) never share
+a 24-hour window.</em></p>
+<h3 id="32-graceful-degradation-rule-when-days-get-cut-decide-in-this-order">3.2 Graceful-degradation rule — when days get cut, decide in this order<a class="headerlink" href="#32-graceful-degradation-rule-when-days-get-cut-decide-in-this-order" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Protect first:</strong> strict skill (S) at <strong>2×/week</strong> + the daily M block.</li>
+<li><strong>Shed first:</strong> accessory hypertrophy <em>volume</em> (H), then conditioning <em>volume</em> (keep 1–2 short quality
+   pieces), then lower-body (L) — legs are already maintained and tolerate low frequency.</li>
+<li><strong>Never cut:</strong> the M block. On a zero-capacity day it <em>becomes</em> the session (RED default, §5).</li>
+</ol>
+<blockquote>
+<p>The research that licenses this: <strong>strength is maintained on as little as 1–2 sessions/week</strong>, and
+<strong>total weekly volume (not frequency) is the primary hypertrophy driver</strong>. So a thin week loses very
+little if the few sessions still hit the protected stimuli. See
+<a href="../science-foundations/"><code>science-foundations.md</code></a> §7.</p>
+</blockquote>
+<h3 id="33-the-2-day-minimum-week-rule-the-floor">3.3 The 2-day minimum-week rule (the floor)<a class="headerlink" href="#33-the-2-day-minimum-week-rule-the-floor" title="Permanent link">&para;</a></h3>
+<p>On a genuinely busy week, <strong>two days is the floor, and it is enough to hold everything that matters</strong> —
+<em>if</em> those two days are full-body and prioritized correctly. Do <strong>not</strong> try to touch every goal; protect
+the goal <em>stimuli</em> and let the rest coast:</p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Type</th>
+<th>Composition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Full-body, skill-led</td>
+<td>Ramp → <strong>S press emphasis</strong> (heaviest protected window) → <strong>H chest/delts</strong> → <strong>M</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Full-body, skill-led</td>
+<td>Ramp → <strong>S pull emphasis</strong> + false-grip → <strong>H back/lats + one unilateral/anti-rotation piece</strong> → <strong>one short quality C hit</strong> (sprint or 5–8 min interval) → <strong>M</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Rationale, grounded in the evidence:</p>
+<ul>
+<li><strong>Both strict skills get one exposure each</strong> (press Day 1, pull Day 2) — strict strength holds at
+  1–2×/week.</li>
+<li><strong>Weekly hypertrophy volume is consolidated</strong>, not spread — fine, because volume drives the
+  adaptation and you can do more sets per session when you only train twice.</li>
+<li><strong>One short conditioning hit</strong> maintains the engine without a recovery tax.</li>
+<li><strong>Mobility/wellness rides every session</strong> and is the fallback if even a second day evaporates.</li>
+</ul>
+<p>A 2-day week costs almost nothing long-term, because the readiness gate (§5) guarantees the hard work
+lands on days the body can actually absorb it.</p>
+<h3 id="34-3-4-6-day-templates">3.4 3 / 4 / 6-day templates<a class="headerlink" href="#34-3-4-6-day-templates" title="Permanent link">&para;</a></h3>
+<p><strong>3-day week</strong></p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Composition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ramp → <strong>S (press emphasis)</strong> → <strong>H chest/back</strong> → short <strong>C</strong> (machine intervals) → <strong>M</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ramp → <strong>S (pull emphasis)</strong> → <strong>H back/midline + unilateral/anti-rotation</strong> → <strong>M</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ramp → mixed strict skill → short sprinty <strong>C</strong> → light <strong>L</strong> → <strong>M</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>4-day week</strong></p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Composition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ramp → <strong>S press</strong> → <strong>H chest/delts/midline</strong> → <strong>M</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ramp → <strong>S pull</strong> → <strong>H back/lats/midline</strong> → short <strong>C</strong> (machine or sprint) → <strong>M</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ramp → conditioning focus (polarized) + light <strong>L</strong> maintenance → <strong>M</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ramp → <strong>S integration</strong> (press + pull, lower volume) → <strong>H unilateral/anti-rotation</strong> → <strong>M</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>6-day week — when capacity is high</strong></p>
+<p>Add the 6th day as <strong>low-CNS volume that does not compete for recovery</strong>: grease-the-groove submaximal
+pulls / false-grip work, ring support holds, Zone-2 machine aerobic base, and extra loaded mobility.
+<strong>Never</strong> a second hard-CNS skill day inside the same 48 h. Keep M daily.</p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Composition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>S press</strong> + H chest/midline + <strong>M</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>S pull</strong> + H back/lats + short <strong>C</strong> + <strong>M</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Conditioning (polarized: sprints/hills) + light <strong>L</strong> + <strong>M</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>S integration</strong> + H delts/midline + unilateral/anti-rotation + <strong>M</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Skill <em>volume</em> (grease-the-groove pulls, false-grip hangs, ring support) + extended loaded mobility + <strong>M</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Low-CNS Zone-2 aerobic base + grease-the-groove pulls/false-grip + loaded mobility + <strong>M</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-conditioning-the-polarized-model">3.5 Conditioning — the polarized model<a class="headerlink" href="#35-conditioning-the-polarized-model" title="Permanent link">&para;</a></h3>
+<p>Conditioning is <strong>polarized</strong>: most sessions are either <strong>short, sharp, high-quality</strong> (sprints, hill
+sprints, short hard intervals — playing to fast-twitch strength) <strong>or</strong> <strong>easy Zone-2 aerobic base</strong>;
+little time is spent grinding the lactic middle. A <strong>~10-mile road-race running capacity is kept
+<em>available</em> year-round</strong> — capacity, not speed, and never peaked.</p>
+<ul>
+<li><strong>All modalities are in play:</strong> running, hill sprints, rower, assault/echo bike, ski-erg. The planner
+  rotates them to spread joint stress; <strong>running carries the most impact and the most aerobic↔strength
+  interference</strong>, so early in re-onboarding it is the <em>least</em> used and machines (bike/row/ski) carry the
+  base.</li>
+<li><strong>Gentle 4–8 week re-onboard.</strong> A detrained-but-talented engine returns fast; tissue and aerobic base
+  need the ramp. Bias the <em>early</em> weeks toward the fast-twitch strengths (short sprints/intervals) and
+  let Zone-2 volume accumulate slowly. Don't crush Grace/Fran-type intensity in the first month — ramp
+  it over 4–8 weeks.</li>
+<li><strong>No back-to-back MetCons</strong> on sore days; conditioning touches are spaced across the undulating week.</li>
+<li><strong>Resistance before endurance</strong> within any session that has both (see §4).</li>
+</ul>
+<hr />
+<h2 id="4-anatomy-of-a-single-session">4. Anatomy of a single session<a class="headerlink" href="#4-anatomy-of-a-single-session" title="Permanent link">&para;</a></h2>
+<p>Total ~45–60 min of training (unhurried, with room to socialize), plus the ~20-min M block (post-session
+or evening). The order is fixed because each placement is doing a specific job.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[pre]        CAFFEINE TIMING (cycled, situational): ~3 mg/kg (~285 mg, the FULL dose)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>             45–60 min PRE, AM-ONLY, ONLY on hard GREEN strength/skill or sprint days.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>             Cycle it (not every day). Titrate DOWN if sleep quality suffers — sleep is
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>             the main recovery limiter here. Skip on deload / RED / low-recovery days.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>[0:00–0:15]  RAMP-UP — mandatory, 12–15 min, active &amp; temperature-raising
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>             • General: bike/row 2–3 min to raise core temp
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>             • Dynamic mobility: leg swings, hip openers, banded scap/shoulder prep,
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>               wrist prep (especially before false-grip days)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>             • Movement-specific ramp sets: empty → 40% → 60% → 75% → working load
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>             • DYNAMIC ONLY. No static holds &gt;30–60 s here (they cost power).
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[work block] PRIORITY 1 — STRICT SKILL / STRENGTH (fresh CNS)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>             • HSPU rung AND/OR MU rung, per block emphasis
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>             • Heavy-slow tempo (3–4 s eccentric) and/or eccentric negatives
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>             • Quality reps, 1–3 RIR, NEVER grind to failure on skill
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>             • This is the protected, injury-sensitive window.
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>[work block] PRIORITY 2 — HYPERTROPHY ACCESSORY (count the sets)
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>             • Chest / delts / lats-upper-back / midline, 6–15 reps, 1–3 RIR
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>             • UNILATERAL + ANTI-ROTATION woven in to correct L/R asymmetry
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>               (single-arm DB press/row, split-stance work, Pallof, suitcase carries,
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>               offset loading) — corrective, not optional
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>             • Shoulder-sparing tools: ring dips, weighted pull-ups, DB incline,
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>               slow eccentrics, ab-wheel/fallouts, loaded carries
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>             • Conservative midline flexion only (see §6 on spinal loading)
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>[work block] CONDITIONING — lift-before-MetCon order preserved (only on days with C)
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>             • Polarized: short sprints/hills/intervals OR easy Zone-2 base
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>             • Re-onboarding: machine-biased (bike/row/ski); running used least early
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>             • No back-to-back MetCons across days
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>[post/eve]   ~20-MIN M BLOCK — first-class, non-negotiable
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>             • 5–10 min paced breathing @ ~6 breaths/min (resonance frequency)
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>             • Mobility priorities (big daily footprint): OVERHEAD / T-SPINE first
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>               (pays off 3 ways — ROM + HSPU + press), then HIPS, HAMSTRINGS, ANKLES
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>             • Light, full-ROM LOADED end-range work (not just passive stretching)
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>             • Conservative spinal loading — see §6
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>             • This is also the DEFAULT RED-day session (offered, not forced).
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>             • Main breathing dose belongs later (away from the training sympathetic
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>               spike), so the next-day HRV/sleep benefit actually registers.
+</code></pre></div>
+<p><strong>Three placement rules that drive the order:</strong></p>
+<ul>
+<li><strong>High-CNS strict work goes early, fresh, after the ramp</strong> — best adaptation, lowest injury risk.</li>
+<li><strong>Long static holds (&gt;60 s) are banished from the pre-lift warm-up</strong> (they cost ~4–7.5% strength) and
+  parked in the post-session / evening M block, where they also serve ROM best.</li>
+<li><strong>Resistance before endurance</strong> preserves dynamic strength; the only interference cost (explosive
+  power) lands on a quality no longer chased.</li>
+</ul>
+<hr />
+<h2 id="5-readiness-autoregulation-green-amber-red">5. Readiness autoregulation — green / amber / red<a class="headerlink" href="#5-readiness-autoregulation-green-amber-red" title="Permanent link">&para;</a></h2>
+<p>The day-of decision is a <strong>deterministic rule</strong> in <code>library/autoregulation/</code>, not an LLM judgment. The
+planner schedules <em>across</em> days; the rule engine <em>gates</em> on the day. See
+<a href="../science-foundations/"><code>science-foundations.md</code></a> §3 for the evidence and
+<a href="../data-model/"><code>data-model.md</code></a> / <a href="../architecture/"><code>architecture.md</code></a> for where it runs.</p>
+<h3 id="51-the-engine">5.1 The engine<a class="headerlink" href="#51-the-engine" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Build your own SWC band.</strong> Run a 14-day familiarization at re-onboarding. During this window there
+  is <strong>no personal baseline yet</strong> — the app says "still calibrating" and leans on subjective input. Log
+  morning HRV (Apple Watch Ultra 2 → <strong>Bevel</strong>; <strong>Whoop</strong> overnight HRV when available). Compute a
+  personal baseline mean and SD. <strong>GREEN band = 7-day rolling lnRMSSD within mean ± 0.5×SD.</strong> Use <em>your</em>
+  data — masters parasympathetic baselines differ from population norms.</li>
+<li><strong>Hybrid daily gate, in priority order:</strong> (a) wearable HRV trend vs the band, <strong>and</strong> (b) a quick
+  subjective check-in (one-tap overall feel, optional detail), with (c) a <strong>manual override</strong> that can
+  force AMBER/RED regardless of the band. <strong>Subjective measures out-predict HRV, so self-report wins —
+  manual override always wins.</strong></li>
+<li><strong>Watch direction, not a single number.</strong> A multi-day downward trend or rising HRV variability (CV) is
+  the back-off trigger. A suddenly <em>very high</em> HRV after hard weeks can mean parasympathetic saturation /
+  overreaching, not great recovery. A wearable "recovery %" is one directional input, never gospel.</li>
+<li><strong>Re-baseline the SWC every 4–6 weeks</strong> as conditioning returns.</li>
+</ul>
+<h3 id="52-the-traffic-light-rules">5.2 The traffic-light rules<a class="headerlink" href="#52-the-traffic-light-rules" title="Permanent link">&para;</a></h3>
+<p>Scale <strong>intensity &amp; high-CNS work first, then volume, then modality.</strong> On GREEN/AMBER we never go to
+zero. <strong>On RED, a true full rest day is allowed</strong> — wellness is the <em>default offer</em>, not a mandate.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Trigger</th>
+<th>Strict skill (P1)</th>
+<th>Hypertrophy (P2)</th>
+<th>Conditioning</th>
+<th>Mobility / Wellness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GREEN</strong></td>
+<td>Rolling HRV in/above band, stable CV, feels good</td>
+<td>Full — heaviest loads, deficit/negatives, full attempts, fresh &amp; early. Caffeine OK.</td>
+<td>Full target volume, 1–3 RIR</td>
+<td>Planned hard / sprinty / polarized work</td>
+<td>Full daily M</td>
+</tr>
+<tr>
+<td><strong>AMBER</strong></td>
+<td>Lower edge of band, rising CV, moderate fatigue, or moderate subjective</td>
+<td><strong>Keep it</strong> (low-fatigue, high-priority) but trim volume ~30–50%; no max-effort negatives; no rushed reps</td>
+<td>Drop to top sets / ~30–50% volume cut</td>
+<td>Zone 2 / lighter loads; <strong>skip max-effort sprints</strong></td>
+<td>Full daily M</td>
+</tr>
+<tr>
+<td><strong>RED</strong></td>
+<td>Below band 1+ days, downtrend, OR manual "exhausted / brutal week" override</td>
+<td><strong>Swap out</strong> — no heavy/eccentric CNS load</td>
+<td>None, or light scap/cuff prehab only</td>
+<td>None, or easy aerobic flush</td>
+<td><strong>The ~20-min breathing + hip/hamstring mobility block is OFFERED as the session — but a true full rest day is a valid choice. Don't force activity.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Skill-specific guardrails:</strong></p>
+<ul>
+<li>Strict HSPU and MU work (CNS- <em>and</em> tendon-demanding) is programmed on <strong>GREEN / early-AMBER only</strong>,
+  placed first.</li>
+<li><strong>Eccentric / negative work is the first thing trimmed on a non-green day</strong> — it's the most
+  tissue-damaging and masters tissue recovers slower. Trim eccentrics before you trim conditioning.</li>
+</ul>
+<h3 id="53-class-advisory-integration">5.3 Class-advisory integration<a class="headerlink" href="#53-class-advisory-integration" title="Permanent link">&para;</a></h3>
+<p>Training is mostly AM, sometimes PM, and the local box runs classes
+<strong>Mon–Fri at 6:30am, ~9:30am (occasional), 12pm, 4:30pm, 5:45pm</strong>. The system <strong>advises whether a given
+class fits the day's plan</strong> rather than blindly subbing it in:</p>
+<ul>
+<li>If the day calls for <strong>protected strict-skill/strength (P1)</strong> or a <strong>hard sprint piece</strong>, a generic
+  class MetCon may not fit — flag the conflict and suggest doing the strict work first / treating the
+  class as the day's conditioning, or training solo.</li>
+<li>If the day is a <strong>conditioning or easy day</strong> and a class WOD aligns (or can be lightly scaled to the
+  polarized intent and "no back-to-back MetCon" rule), the system can <strong>recommend a specific class time</strong>
+  that fits the schedule and readiness tier.</li>
+<li>On <strong>AMBER/RED</strong>, advise <em>against</em> a high-intensity class and offer the scaled session or wellness
+  block instead.</li>
+</ul>
+<p>The principle: the class is a <em>resource the planner reasons about</em>, not a substitute for the plan. See
+<a href="../functional-design/"><code>functional-design.md</code></a> for how this surfaces in the app.</p>
+<hr />
+<h2 id="6-tendon-masters-spine-safeguards-woven-through-every-block">6. Tendon, masters &amp; spine safeguards (woven through every block)<a class="headerlink" href="#6-tendon-masters-spine-safeguards-woven-through-every-block" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Progress new upper-body gymnastics volume ≤~10%/week</strong>, even when it feels easy — strength outpaces
+  tendon readiness.</li>
+<li><strong>Heavy-slow resistance (3–4 s tempo) + eccentric overload</strong> is the primary strength engine for
+  pressing/pulling/dips. It builds the chest/delts/lats you want <em>and</em> the tendon stiffness to tolerate
+  MU/HSPU — judged over 12+ week horizons.</li>
+<li><strong>Strict before kipping; cap kipping volume.</strong> The shoulder is the dominant injury site.</li>
+<li><strong>Scapular + eccentric external-rotation cuff prehab, 2×/week</strong> — banded ER with slow eccentrics,
+  prone Y/T/W, serratus / wall-slide upward rotation. Targets the exact age-related risk factors (GIRD,
+  weak external rotators, scapular dyskinesis). <strong>This is not optional accessory fluff.</strong></li>
+<li><strong>Unilateral + anti-rotation as correction, not garnish.</strong> With a noticeable L/R imbalance, single-arm
+  pressing/rowing, split-stance and offset loading, Pallof presses, and suitcase carries train the
+  weaker side up to the stronger and build a midline that resists rotation. Train the <strong>weaker side
+  first</strong> and <strong>match its reps on the strong side</strong> (don't let the strong side run away).</li>
+<li><strong>Conservative spinal loading (spine-cautious).</strong> ROM and a strong midline are goals, but <strong>spinal
+  flexion under load is approached cautiously</strong>: favor <strong>light, controlled, full-ROM end-range</strong> work
+  over heavy loaded flexion. Introduce loaded end-range spinal flexion (e.g. Jefferson curl) <strong>only</strong>
+  after confirming no relevant low-back history, start essentially unloaded, and progress load slowly.
+  <strong>Optional physio screen note:</strong> with structural spine asymmetry, a movement screen with a physio
+  before adding meaningful loaded end-range flexion is a reasonable, cheap insurance step — flag it,
+  don't mandate it. Build the midline mostly from <strong>anti-extension / anti-rotation</strong> (below), which carry
+  the asymmetry benefit without the loaded-flexion risk.</li>
+<li><strong>False-grip is ramped:</strong> build to ~30–45 s of total hang time before high-volume false-grip pulling.
+  Early wrist/elbow pain = back off volume, do not push through. Wrist mobility goes into the M block.</li>
+<li><strong>Collagen pre-load (optional, cheap):</strong> 15 g gelatin / hydrolyzed collagen + ~50 mg vitamin C (or OJ)
+  ~30–60 min before gymnastics/tendon days — roughly doubles collagen-synthesis markers in middle-aged
+  adults. See <a href="../nutrition/"><code>nutrition.md</code></a>.</li>
+<li><strong>Conditioning re-onboarding:</strong> machine-biased (bike/row/ski) for 4–8 weeks to spare joints; ramp
+  Grace/Fran intensity gradually. Sprinty fast-twitch capacity returns fast; tissue and aerobic base
+  need the ramp.</li>
+</ul>
+<hr />
+<h2 id="7-progression-tracking-gates">7. Progression tracking &amp; gates<a class="headerlink" href="#7-progression-tracking-gates" title="Permanent link">&para;</a></h2>
+<p>Advancement is triggered by <strong>ownership</strong> — roughly <strong>5 clean, controlled reps</strong> or a hold standard —
+<strong>not by calendar dates</strong>. Long levers (tall athletes) make pressing/pulling skill genuinely slower, so
+dates mislead. Re-test at each deload. <strong>Tendons first, no rush — longevity over speed.</strong></p>
+<blockquote>
+<p>The baseline numbers below are <strong>placeholders until measured</strong> in the Week 1–2 testing block. Do not
+fabricate them — see <a href="../testing-protocol/"><code>testing-protocol.md</code></a> and the open calibration items in
+<a href="../CLAUDE/"><code>CLAUDE.md</code></a>.</p>
+</blockquote>
+<h3 id="71-strict-hspu-pathway-limiter-overhead-strength-overhead-rom">7.1 Strict HSPU pathway — <em>limiter: overhead strength + overhead ROM</em><a class="headerlink" href="#71-strict-hspu-pathway-limiter-overhead-strength-overhead-rom" title="Permanent link">&para;</a></h3>
+<p>Establish the strict-press benchmark first. A practical HSPU gateway is roughly <strong>0.65–0.75× BW strict
+press</strong>; a bodyweight strict press is the elite/long-term horizon (long levers make it harder — favoring
+top-heavy mass improves the ratio). <strong>Overhead mobility (t-spine + shoulder flexion) is a co-limiter</strong> —
+which is exactly why overhead/t-spine ROM sits first in the daily M block (it pays off three ways: ROM,
+HSPU, press).</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Rungs (advance when ~5 clean controlled reps owned)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Box pike push-ups 3–5×5 + DB strict press + 30–45 s wall handstand holds (shoulder/scap control)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Wall pike → <strong>deficit</strong> pike 3–5×3 (≥2-inch deficit) + hollow-body/midline</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Wall HSPU eccentric negatives</strong> (3–5 s lower) 3–5×3 — the highest-yield bridge to the first rep</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>Re-test strict HSPU ~wk 8–16</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-strict-ring-muscle-up-pathway-limiter-false-grip">7.2 Strict ring muscle-up pathway — <em>limiter: false grip</em><a class="headerlink" href="#72-strict-ring-muscle-up-pathway-limiter-false-grip" title="Permanent link">&para;</a></h3>
+<p>A 4–6 month project layered on top of re-onboarding. <strong>The false-grip hang is the rate-limiter</strong> — if a
+solid false grip isn't there, that <em>is</em> the program. <strong>Gates before any transition work:</strong> ~8–10 strict
+dead-hang pull-ups, 3–5 chest-to-sternum pull-ups, 5–10 strict ring dips, a solid <strong>10 s+ false-grip
+hang</strong>, false-grip ring rows to lower chest. If short on any, those are the program.</p>
+<p>Assistance ladder (easiest → hardest):</p>
+<ol>
+<li>False-grip hangs / rows</li>
+<li>Banded / foot-assisted transitions</li>
+<li>Jumping MU into slow eccentric</li>
+<li>Low-ring feet-on-ground strict reps</li>
+<li>
+<p>Full strict</p>
+</li>
+<li>
+<p><strong>Engine:</strong> grease-the-groove submaximal pulling 2–3×/week (~40–60% of max reps, never to failure) +
+  weekly <strong>false-grip eccentrics and 3–5 s MU negatives</strong> (low volume, 4–6 quality reps — high tendon
+  stress).</p>
+</li>
+</ol>
+<h3 id="73-mobility-rom-markers-periodic-re-test-not-continuous-logging">7.3 Mobility / ROM markers (periodic re-test, not continuous logging)<a class="headerlink" href="#73-mobility-rom-markers-periodic-re-test-not-continuous-logging" title="Permanent link">&para;</a></h3>
+<p>ROM is checked at the <strong>testing block and at each deload re-test</strong> — periodic, not a daily chore.</p>
+<ul>
+<li>Forward fold / toe-touch reach (sit-and-reach)</li>
+<li>Overhead test (shoulder flexion / wall-test)</li>
+<li>Ankle dorsiflexion (knee-to-wall)</li>
+<li>Deep-squat hold comfort &amp; depth; 90/90 hip internal-rotation</li>
+</ul>
+<p><strong>Expectation-setting:</strong> noticeably looser in 2–4 weeks; measured ROM change by ~6–12 weeks; then
+<strong>maintenance</strong> (~2–3×/week floor keeps gains — they hold for weeks but slowly regress). Sold as <em>"feels
+and moves better,"</em> <strong>not</strong> "less soreness" — stretching does not reduce DOMS.</p>
+<h3 id="74-physique-midline">7.4 Physique / midline<a class="headerlink" href="#74-physique-midline" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Track by <strong>mirror and performance — ignore the scale</strong> (ab visibility is largely a leanness function).</li>
+<li>Weekly hard-set audit: <strong>chest 12–18, back/pulling 12–18, legs ≤6–9.</strong></li>
+<li>Midline built as <strong>trained, overloaded</strong> anti-extension (ab-wheel/fallout, RKC plank, deficit hollow)
+  and <strong>anti-rotation</strong> (Pallof, suitcase carries, offset loading) — <strong>not</strong> high-rep sit-ups, and with
+  conservative loaded flexion (§6).</li>
+</ul>
+<hr />
+<h2 id="8-how-the-system-keeps-evolving">8. How the system keeps evolving<a class="headerlink" href="#8-how-the-system-keeps-evolving" title="Permanent link">&para;</a></h2>
+<p>The AI coach re-plans on three nested loops, and <strong>leaves past sessions immutable</strong> — it only rewrites
+today-forward in <code>generated/</code> (see <a href="../CLAUDE/"><code>CLAUDE.md</code></a> and <a href="../architecture/"><code>architecture.md</code></a>).</p>
+<p><strong>Daily loop — readiness gate.</strong> Ingest overnight HRV trend vs the SWC band + the subjective check + any
+manual override → the deterministic engine emits GREEN/AMBER/RED and the day's session per §5. The system
+<em>proposes</em>; the athlete can always override down (and on RED, choose true rest). It logs RIR, completed
+sets, and a quick "how it felt." It also runs the <strong>class-advisory</strong> (§5.3) for the day.</p>
+<p><strong>~6-week loop — block rollover.</strong> At each deload, review:
+- <strong>(a) Gate re-tests</strong> — HSPU/MU benchmarks, ROM markers.
+- <strong>(b) Volume tolerance</strong> — did chest/back actually hit 12–18 sets at ≤3 RIR without AMBER spikes?
+- <strong>(c) Adherence pattern</strong> — how many days/week realistically happened (and was the 2-day floor hit on
+  thin weeks?).</p>
+<p>Then advance / repeat / regress each progression rung on <strong>ownership</strong> (~5 clean controlled reps), rotate
+the A → B → C emphasis, and reset volume targets. Advancement is demonstrated capacity, <strong>not the
+calendar.</strong></p>
+<p><strong>4–6 week loop — recalibration.</strong> Re-baseline the SWC from fresh wearable data (parasympathetic baseline
+shifts during re-onboarding), re-check the protein / physique trend, and re-tune volume targets and the
+conditioning ramp as MetCon capacity returns.</p>
+<p><strong>Data the coach reviews:</strong> morning lnRMSSD trend + CV; subjective scores + overrides; logged
+sets/loads/RIR + "how it felt"; gate re-test results; ROM markers; the mirror/performance trend; actual
+days/week; and <strong>flagged pain</strong> (wrist/elbow/shoulder → auto-cut false-grip / kipping / eccentric
+volume).</p>
+<p><strong>Transparency principle:</strong> the system <em>proposes</em>, the athlete <em>can override</em>, and it <em>explains</em> — e.g.
+<em>"HRV down 2 days + you flagged a brutal work week → today's session is offered as the ~20-min breathing +
+mobility block, or take a full rest day; we'll bank the HSPU negatives for tomorrow if you're green."</em> A
+wearable's recovery % is one directional input among several, never gospel.</p>
+<hr />
+<h2 id="9-one-paragraph-version-for-the-athlete">9. One-paragraph version for the athlete<a class="headerlink" href="#9-one-paragraph-version-for-the-athlete" title="Permanent link">&para;</a></h2>
+<p>You train 45–60 minutes, mostly mornings, at a pace that leaves room to actually enjoy the gym — and the
+week breathes: hard days alternate with easier strength-and-mobility days, and we never stack two
+MetCons when you're sore. Your strict handstand-push-up and muscle-up work goes <em>first, while you're
+fresh</em> — that's where both the real progress and the injury risk live, so we go slow on tissue even when
+it feels easy (false grip is the muscle-up gate; overhead strength and shoulder ROM are the HSPU gate).
+The same pressing and pulling that earn those skills build your chest, shoulders, and back, and we add
+single-arm and anti-rotation work to even out your left/right. Your legs and engine are already strong;
+we <em>maintain</em> them — conditioning stays polarized (short sprints and hills plus an easy aerobic base,
+your 10-miler always in reach) and re-onboards gently. Mobility is real training every day — overhead and
+t-spine first, then hips, hamstrings, ankles — with light loaded end-range work and a cautious approach to
+loading your spine. On busy weeks two good full-body days hold everything that matters; on bad days the
+system offers you 20 minutes of breathing and mobility, or simply tells you to rest — and you always have
+the final say. Nothing here is about a PR or a date. It's about moving better, looking the way you want,
+and still doing all of it decades from now.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../decisions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Decision Log">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Decision Log
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../science-foundations/" class="md-footer__link md-footer__link--next" aria-label="Next: Science Foundations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Science Foundations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

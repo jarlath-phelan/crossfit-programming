@@ -1,0 +1,1795 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open-source, forkable system for adaptive CrossFit + wellness programming.">
+      
+      
+      
+        <link rel="canonical" href="https://jarlath-phelan.github.io/crossfit-programming/science-foundations/">
+      
+      
+        <link rel="prev" href="../training-system/">
+      
+      
+        <link rel="next" href="../nutrition/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Science Foundations - Open Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#science-foundations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Programming" class="md-header__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Science Foundations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Programming" class="md-nav__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Programming
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Plan (the coach)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Plan (the coach)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Foundations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-morning-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Morning Training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-meditation-and-stretching-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Meditation and Stretching Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-readiness-autoregulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Readiness Autoregulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-skill-progressions-strict-hspu-and-strict-muscle-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Skill Progressions (Strict HSPU and Strict Muscle-Up)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Skill Progressions (Strict HSPU and Strict Muscle-Up)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strict-handstand-push-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strict Handstand Push-Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-ring-muscle-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strict Ring Muscle-Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-masters-athlete-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Masters-Athlete Adjustments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mobility-methods-hip-and-hamstring-rom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mobility Methods (Hip and Hamstring ROM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-upper-body-balance-hypertrophy-and-concurrent-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Upper-Body Balance (Hypertrophy and Concurrent Training)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-the-evidence-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A note on the evidence quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nutrition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nutrition & Fuelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1–2 Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The App (the build)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The App (the build)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App UX (Functional Design)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLAUDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Guardrails (CLAUDE.md)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-morning-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Morning Training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-meditation-and-stretching-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Meditation and Stretching Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-readiness-autoregulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Readiness Autoregulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-skill-progressions-strict-hspu-and-strict-muscle-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Skill Progressions (Strict HSPU and Strict Muscle-Up)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Skill Progressions (Strict HSPU and Strict Muscle-Up)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strict-handstand-push-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strict Handstand Push-Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-ring-muscle-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strict Ring Muscle-Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-masters-athlete-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Masters-Athlete Adjustments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mobility-methods-hip-and-hamstring-rom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mobility Methods (Hip and Hamstring ROM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-upper-body-balance-hypertrophy-and-concurrent-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Upper-Body Balance (Hypertrophy and Concurrent Training)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-the-evidence-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A note on the evidence quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="science-foundations">Science Foundations<a class="headerlink" href="#science-foundations" title="Permanent link">&para;</a></h1>
+<p>This document explains the <strong>evidence basis</strong> for the key design choices in this
+training program. It is written so that anyone who forks this repo can understand
+<em>why</em> the program is built the way it is, and can judge for themselves how strongly
+each choice is supported.</p>
+<p>A few ground rules for reading this:</p>
+<ul>
+<li><strong>Honesty about uncertainty is a feature.</strong> Where the evidence is strong, it says
+  so. Where a recommendation rests on coaching consensus, mechanism, or extrapolation
+  from adjacent research rather than a direct trial, it says that too.</li>
+<li><strong>Most of the underlying studies were done on younger, often untrained, often male
+  lab subjects.</strong> This program is built for a 39-year-old, long-trained athlete
+  re-onboarding after a detraining gap. Directions of effect transfer well; exact
+  magnitudes may be smaller and more variable for an experienced athlete near his
+  structural ceiling.</li>
+<li>The program targets <strong>wellness, longevity, confidence, and physique</strong> — not
+  competition or PRs. Recommendations are tuned for <em>consistency and tissue health</em>
+  over squeezing out maximal performance.</li>
+<li>Each section ends with a <strong>"What this means for the program."</strong> summary.</li>
+</ul>
+<p>The athlete profile used throughout (so the reasoning is concrete) is a fast-twitch,
+lower-body-dominant athlete who trains in the morning, wants upper-body gymnastics
+strength (strict handstand push-ups and muscle-ups), a bigger chest and visible core,
+better hip/hamstring mobility — explicitly <em>not</em> more leg size — and wants long-distance
+<em>capacity</em> (a 10-mile road race available year-round) without chasing speed. The athlete
+also carries an asymmetric structural quirk (a noticeable left/right imbalance) and a
+restless-but-adequate sleep pattern, both of which shape specific choices below. Forkers
+should substitute their own profile; the principles are general.</p>
+<hr />
+<h2 id="1-morning-training">1. Morning Training<a class="headerlink" href="#1-morning-training" title="Permanent link">&para;</a></h2>
+<p>The program runs in the morning, by choice and logistics. This raises a fair worry:
+isn't the body weaker and less powerful early in the day?</p>
+<p><strong>The acute deficit is real, and it is largest for explosive power.</strong> Maximal strength
+tends to peak in the late afternoon/early evening (~16:00–20:00) and is lowest in the
+early morning (~06:00–10:00). The swing is biggest for explosive, anaerobic tasks:
+across roughly 22 Wingate studies, peak power was ~2–10% better and mean power ~2–12%
+better in the afternoon/evening (Souissi et al., 2004/2007). Slow maximal strength
+swings much less — a 2024 team-sport meta-analysis found countermovement jump and
+agility significantly worse in the morning but <strong>no</strong> significant time-of-day effect on
+isometric strength or squat jump (Frontiers Sports &amp; Active Living, 2024; PMC11782285).
+A fast-twitch, power-dominant athlete will tend to <em>feel</em> this morning dip more on
+explosive work than a slow-strength athlete would.</p>
+<p><strong>The cause is mostly peripheral — and that's why it's fixable.</strong> Reviews attribute the
+morning-to-evening rise primarily to lower core/muscle temperature and intrinsic
+(non-neural) muscle factors, not to reduced neural drive (APS/Physiology, 2021;
+PMC8425416). Caffeine raises morning strength <em>without</em> changing muscle electrical
+activity, which is consistent with a peripheral, not central, limiter. Because the
+problem is largely "the muscle is cold," it responds to interventions that warm it up.</p>
+<p><strong>Three levers shrink or erase the morning deficit:</strong></p>
+<ol>
+<li><strong>An extended, active warm-up.</strong> Raising morning body temperature to match the
+   afternoon largely abolishes the explosive-power difference. A 15-minute active
+   warm-up produced higher morning Wingate power than a 5-minute one, and a prolonged
+   warm-up improved morning loaded jumps (Racinais/Souissi, <em>Int J Sports Med</em>, 2011;
+   PMID 21305444). Active beats passive warm-up for jump height.</li>
+<li><strong>Caffeine (~3 mg/kg, ~45–60 min pre-session).</strong> A triple-blind RCT showed caffeine
+   raised back-squat velocity and power in both morning and evening and counteracted
+   the morning decline at light loads, again without altering muscle electrical activity
+   (<em>Eur J Appl Physiol</em>, 2025; PMC12528362). A 2025 female crossover restored morning
+   neuromuscular performance to evening levels. This is best reserved for the hardest
+   morning sessions (heavy strict strength, skill work, sprinty conditioning); halving
+   or skipping it on low-recovery days protects sleep and caffeine sensitivity.</li>
+<li><strong>Habit (diurnal specificity).</strong> Training at a fixed hour raises performance
+   <em>specifically at that hour</em>. After weeks of morning-only training, the usual
+   morning-to-evening strength gap disappeared in morning-trained groups but persisted
+   in evening-trained controls (Sedliak; Grgic et al., 2019 meta-analysis,
+   <em>Chronobiology International</em>; PMID 30704301). Mechanistically, early training can
+   shift the skeletal-muscle circadian clock earlier (shown in mice).</li>
+</ol>
+<p><strong>Crucially, time of day does not change <em>long-term</em> gains.</strong> The Grgic et al. (2019)
+meta-analysis concluded that absolute strength and hypertrophy gains do <strong>not</strong> differ
+between morning and evening training. Morning lifting builds just as much muscle and
+strength; the only durable difference is <em>when</em> that strength is best expressed. So a
+morning lift may read slightly below a lifetime best set at another time — that is an
+expression effect, not lost capacity.</p>
+<p>One sequencing note: avoid long static stretching right before explosive morning work,
+which can blunt power; use dynamic, ramped movement instead (PMC3734300). More on this
+in §3 and §6.</p>
+<p><em>Caveat:</em> most of these data come from young men in lab settings; for an experienced
+39-year-old, magnitudes are likely smaller and more variable. Chronotype matters — a
+true evening-type forced into mornings may retain a residual deficit longer.</p>
+<p><strong>What this means for the program.</strong> Morning training does not cap strength or
+hypertrophy — judge progress by trend over weeks, not by chasing an evening-style 1RM.
+Build a <em>real</em> ramp-up (target ~12–15 minutes of active, temperature-raising work,
+finishing with progressive ramp sets) before any heavy or explosive piece; this is
+where the morning power deficit gets erased. Use caffeine strategically and <em>only</em> on the
+hardest sessions: a full ~3 mg/kg dose taken in the morning (~45–60 min pre), reserved for
+heavy strict-strength, skill, or sprinty days, and cycled rather than taken daily — since
+this athlete's main recovery limiter is sleep <em>quality</em>, not duration, AM-only timing and a
+willingness to titrate the dose down if sleep suffers protect the larger recovery lever.
+Place fresh-CNS skill and strength work (strict HSPU, muscle-up strength,
+heavy pressing) early in the primed window, conditioning after. Expect morning output
+to climb in the first 4–8 weeks partly from clock adaptation — don't mistake it for
+fleeting "newbie magic."</p>
+<hr />
+<h2 id="2-meditation-and-stretching-integration">2. Meditation and Stretching Integration<a class="headerlink" href="#2-meditation-and-stretching-integration" title="Permanent link">&para;</a></h2>
+<p>The program treats a ~20-minute mindfulness + mobility block as first-class
+programming, not an optional add-on. Here is what that block can and cannot do.</p>
+<p><strong>Mindfulness reliably nudges the stress and recovery systems — modestly.</strong> A
+meta-analysis of mindfulness interventions found a small-to-moderate reduction in
+salivary cortisol (Hedges <em>g</em> ≈ 0.41, <em>p</em> = 0.025), with moderate heterogeneity
+(Sanada et al., <em>Frontiers in Physiology</em>, 2016). A broader 2023 meta-analysis found
+only <em>small</em> effects on inflammation and stress biomarkers (PMC10003032). The effect is
+real but should not be oversold.</p>
+<p><strong>It raises vagally-mediated HRV and parasympathetic tone</strong> — directly relevant to a
+program driven by a wearable readiness score. A 10-day online RCT showed increased HRV
+during both day and night in the mindfulness group, alongside sleep-quality gains
+(PMC7746169).</p>
+<p><strong>The single most reliable lever inside a 20-minute block is slow-paced breathing,
+not meditation content per se.</strong> Breathing near ~6 breaths/min (~0.1 Hz, an individual
+"resonance frequency") maximizes respiratory sinus arrhythmia and raises time-domain
+HRV (SDNN, RMSSD) in a dose-response way (Laborde et al., PMC8656666; Steffen et al.,
+PMC5575449). Resonance frequency is individual and best found empirically with a
+wearable (test ~4.5–6.5 breaths/min). This argues for scripting a meaningful chunk of
+the block as explicit paced breathing rather than open "just sit" time.</p>
+<p><strong>In athletes specifically, the wellness case is strong.</strong> Mindfulness practice is
+associated with better sleep, lower pre-sleep arousal and anxiety, improved mood and
+"readiness to train," and markedly lower next-day injury risk — NCAA Division I athletes
+were roughly "half as likely" to be injured the day after practicing (McGehee et al.,
+PMC10916770; rowers' sleep/performance data, <em>Front. Psychol.</em>, 2020). The injury figure
+is <strong>observational</strong> (mindful athletes may already be lower-risk), so treat it as an
+association, not proven causation.</p>
+<p><strong>Now the honest part about stretching.</strong> Two findings reshape how mobility is
+programmed:</p>
+<ul>
+<li><strong>Stretching does not meaningfully reduce soreness/DOMS.</strong> A Cochrane review (12
+  studies, including a 2377-person trial) found no effect of pre/post stretching on DOMS
+  at 24/48/72 h versus passive recovery (Herbert et al., CD004577). Its value is
+  range-of-motion and movement quality, <em>not</em> recovery. Frame it honestly: "moves
+  better / feels better," not "less sore."</li>
+<li><strong>Long static holds before training transiently impair strength and power, but only
+  when misused.</strong> A 104-study meta-analysis found acute static stretching reduced
+  strength −5.4%, power −1.9%, explosive −2.0%; the effect is dose-dependent — ≤60 s per
+  muscle is a trivial 1–2% impairment, while &gt;60 s costs 4.0–7.5% (Simic et al., <em>Scand
+  J Med Sci Sports</em>, 2013). Complex tasks like jumps and sprints were not significantly
+  impaired. Short holds inside a full warm-up are harmless and may even lower injury
+  risk.</li>
+</ul>
+<p>The implication is about <strong>placement</strong>: keep long static and PNF holds out of the
+immediate pre-lift window, and keep the seated meditation block separate from the
+sympathetic spike of training (post-session or evening), where it best supports
+next-day HRV and sleep. Foam rolling is the better pre-session mobility tool — it raises
+ROM without the strength penalty (Wiewelhove et al., <em>Sports Medicine</em>, 2022).</p>
+<p><strong>What this means for the program.</strong> Treat the 20-minute block as non-negotiable
+programming, justified mainly by sleep, stress, mood, injury-risk reduction, and
+parasympathetic tone — not by a big performance jump (effects are modestly sized).
+Build explicit ~6-breath/min paced breathing into 5–10 minutes of it. Anchor the full
+block post-workout or in the evening; a 3–5 minute breathing reset right after training
+is a fine bonus, but the main dose belongs away from the training spike. For an athlete
+whose sleep is adequate in <em>hours</em> but restless in <em>quality</em>, the evening paced-breathing
+dose is doing double duty — it is the program's primary lever on the single most important
+recovery input (sleep quality), so treat it as a sleep tool, not just a stress tool. Keep
+pre-WOD mobility to foam rolling, dynamic work, and short (≤30–60 s) targeted holds. Stop
+selling stretching as soreness relief; sell it as ROM and movement quality, with sleep
+and load management doing the real recovery work.</p>
+<hr />
+<h2 id="3-readiness-autoregulation">3. Readiness Autoregulation<a class="headerlink" href="#3-readiness-autoregulation" title="Permanent link">&para;</a></h2>
+<p>The program adapts the daily session to a readiness signal (wearable HRV/recovery score
+plus a subjective check-in). The user can say "I'm exhausted, busy day" and the system
+de-loads. Here is why that is sound — and where its limits are.</p>
+<p><strong>Autoregulation matches or beats fixed plans while requiring less hard work.</strong> A
+meta-analysis of 8 RCTs found HRV-guided endurance prescription produced equal or
+greater aerobic improvement than predefined training, often in less time, because hard
+sessions land on days the athlete can absorb them (MDPI <em>Applied Sciences</em>, 2020,
+10:8532). An 11-week HRV-guided HIFT/CrossFit-style RCT showed the guided group did
+<em>fewer</em> moderate/high-intensity sessions yet reached similar-to-better fitness (MDPI
+<em>JFMK</em>, 2021, 6:102). The benefit is most visible in <strong>reducing non-responders and
+negative responders</strong> and protecting vagal recovery — i.e., it is a risk-management and
+consistency tool, not a magic performance multiplier (Manresa-Rocamora et al.,
+PMC8507742).</p>
+<p><strong>It helps strength/hypertrophy too, not just endurance.</strong> A 7-week resistance-training
+study in older women compared HRV-individualized recovery (train when RMSSD returned
+toward baseline) against a fixed schedule; the individualized group showed greater and
+notably <strong>more consistent</strong> gains in 1RM, muscle CSA, and rate of force development
+(<em>Front. Physiol.</em>, 2024; PMC11685108). A systematic review confirms both subjective
+(RPE/RIR) and objective (HRV, velocity-loss) autoregulation can enhance strength versus
+fixed loading (PMC7810043).</p>
+<p><strong>Subjective check-ins are as good as or better than the wearable.</strong> A systematic review
+concluded that "subjective self-reported measures trump commonly used objective
+measures" for tracking training response, including HRV (Saw, Main &amp; Gastin, <em>Br J
+Sports Med</em>, 2016; PMC4789708). The validated minimal instrument is a short morning
+score (e.g., sleep, fatigue, stress, soreness). Best practice is <strong>mixed-methods</strong>: the
+subjective score <em>and</em> the HRV trend — so a self-reported "I'm wrecked" should be able
+to force a back-off regardless of what the number says.</p>
+<p><strong>The validated engine is a trend, not a single number.</strong> The standard operational rule
+computes morning lnRMSSD, takes a 7-day rolling average, and compares it against a
+personal Smallest Worthwhile Change (SWC) band, typically baseline mean ± 0.5 × SD from
+a 1–2 week familiarization (Vesterinen/Nuuttila protocols). A rising <em>coefficient of
+variation</em> (instability), not just a low single value, flags accumulating fatigue. This
+maps cleanly onto traffic-light logic:</p>
+<ul>
+<li><strong>GREEN</strong> — rolling average within/above the SWC band, stable variability: run the
+  planned hard/heavy/sprinty work, with fresh-CNS skill work placed early.</li>
+<li><strong>AMBER</strong> — at the lower edge of the band, or rising variability/moderate fatigue:
+  keep low-fatigue priorities (skill/strength practice) but cut conditioning
+  volume ~30–50% and drop intensity (Zone 2 instead of sprints; lighter loads).</li>
+<li><strong>RED</strong> — below the band (or a multi-day downward trend, or the manual override): the
+  <em>default offer</em> is the 20-minute breathing/meditation + mobility block plus an easy
+  flush — de-loaded, not crushed. The wellness block is an offer, not a mandate: on a
+  genuinely bad day a true full rest day is a legitimate choice, and forcing token
+  activity over real rest is the wrong trade. The principle is "don't dig the hole," not
+  "always do something."</li>
+</ul>
+<p><strong>What to scale, in order:</strong> intensity and high-CNS-demand work first, then volume, then
+modality — on most red days keep <em>something</em> moving, but allow a true rest day when the
+signal (and the athlete) says so.</p>
+<p><strong>Wearable caveats matter.</strong> Consumer wearables are accurate enough for HRV/RHR <em>trends</em>
+(e.g., HRV concordance CCC ≈ 0.94, MAPE ≈ 8% vs ECG; Bellenger et al., <em>Sensors</em>, 2021),
+but proprietary "recovery %" scores are opaque and silently updated — treat them as one
+directional input, not gospel. Interpretation has traps: in fitter athletes a
+chronically <em>high</em> HRV can signal parasympathetic saturation (coasting), and a low value
+can mean either sympathetic overactivity or vagal saturation — so <strong>direction and
+context beat the absolute number.</strong> Masters athletes have a lower parasympathetic
+baseline than younger athletes, so the SWC must be built from the athlete's <em>own</em>
+baseline, not population norms, and re-baselined every 4–6 weeks during re-onboarding.</p>
+<p><em>Caveats:</em> most RCT evidence is in endurance populations; direct trials in
+functional-fitness or in trained 39-year-old men are sparse, and the strongest
+resistance-training data is in older women (n = 21). HRV reliably <em>detects</em>
+overreaching, but few studies are powered to show that HRV-guided plans reduce
+<strong>injuries</strong> specifically — so the injury-prevention rationale is plausible and
+indirect, not firmly established.</p>
+<p><strong>What this means for the program.</strong> Build the readiness band from the athlete's own
+data (14-day familiarization), not the wearable's generic color. Gate each day on a
+hybrid signal, and let the subjective override always win. Use the GREEN/AMBER/RED logic
+above, scaling intensity before volume before modality. Watch the <em>trend</em> (multi-day
+direction and variability), not a single reading, and remember a sudden very-high HRV
+after hard weeks can mean overreaching, not recovery. Sell autoregulation as what the
+evidence supports: consistency, fewer bad responses, and not digging a hole on a bad
+day — exactly the "science-based but not over-optimized" fit.</p>
+<hr />
+<h2 id="4-skill-progressions-strict-hspu-and-strict-muscle-up">4. Skill Progressions (Strict HSPU and Strict Muscle-Up)<a class="headerlink" href="#4-skill-progressions-strict-hspu-and-strict-muscle-up" title="Permanent link">&para;</a></h2>
+<p>Both target skills are <strong>strength projects built from progressions</strong>, not feats of skill
+luck. No HSPU- or muscle-up-specific RCT exists, so the <em>pathways</em> are well-triangulated
+coaching consensus; the supporting <em>mechanisms</em> (eccentric overload, training frequency)
+are peer-reviewed but extrapolated from adjacent strength and tendon research. Treat
+prerequisite numbers as heuristics to be measured against, not validated cutoffs.</p>
+<h3 id="strict-handstand-push-up">Strict Handstand Push-Up<a class="headerlink" href="#strict-handstand-push-up" title="Permanent link">&para;</a></h3>
+<p><strong>There is a real strength prerequisite.</strong> Coaching and strength-standard sources
+converge: the ability to press roughly bodyweight overhead is the practical ceiling, with
+a ~0.65–0.75× bodyweight strict press as the "intermediate gateway." Because the HSPU
+loads ~60–70%+ of bodyweight onto the shoulders, a strict press near bodyweight provides
+the needed margin — which is exactly why the lift is genuinely hard for tall, heavy
+athletes (long levers raise difficulty), and why deliberately adding <em>top-heavy</em> upper-body
+mass improves the strength-to-leverage ratio.</p>
+<p><strong>The consensus pathway is a graded vertical-pressing progression:</strong> full-ROM push-up →
+dip → box pike push-up → wall pike → deficit pike → wall HSPU negatives → strict HSPU.
+Each step raises the percentage of bodyweight pressed and verticalizes the torso toward
+the HSPU pattern (Barbell Physio; Training Think Tank; CrossFit.com). Seated/strict
+dumbbell press is the off-wall builder for athletes not yet comfortable inverting.</p>
+<p><strong>Eccentric (negative) overload is the highest-yield breakthrough tool.</strong> Slow (3–5 s)
+wall HSPU negatives let the athlete train the full ROM at a load above concentric
+capacity. Meta-analyses show eccentric-only training raises eccentric strength ~27% (vs
+~10% for concentric-only), with gains specific to the trained mode, and the most reliable
+results come from protocols of ≥8 weeks (Springer <em>Sports Medicine-Open</em>, 2025).</p>
+<p><strong>HSPU is more than pressing strength.</strong> It also demands shoulder-flexion ROM, inverted
+scapular control, and midline stability; trunk, triceps, and handstand-hold strength each
+independently cap capacity. So wall holds, hollow-body work, and overhead mobility belong
+in the progression, not just pressing reps.</p>
+<h3 id="strict-ring-muscle-up">Strict Ring Muscle-Up<a class="headerlink" href="#strict-ring-muscle-up" title="Permanent link">&para;</a></h3>
+<p><strong>Clear strict gates come before transition work, not after.</strong> Converging coaching
+consensus: roughly 8–10 strict dead-hang pull-ups, 3–5 chest-to-sternum (high) pull-ups,
+and 5–10 strict ring dips from a full lockout, plus a solid false-grip hang and false-grip
+ring rows to the lower chest (WODprep; Barbell Physio; HWPO). The single best predictor of
+transition success is <strong>pull height</strong> — how high you can pull the rings down your torso.</p>
+<p><strong>The false grip is the most common true bottleneck</strong> — more than raw pulling power. It
+mechanically shortens the arm, keeping the rings close so the elbows can rotate over the
+top; a neutral grip makes a strict transition essentially impossible regardless of
+strength (Rogue; Forge the Flow).</p>
+<p><strong>Eccentrics again do double duty.</strong> Slow muscle-up negatives and false-grip eccentric
+work build the specific transition strength <em>and</em> are the primary tendon-health stimulus.
+A 4-week eccentric program shifted EMG signatures during static ring elements in gymnasts
+(PMC8956077), and broader tendon literature shows high-load eccentric work drives the
+greatest collagen and stiffness adaptation (PMC7739434).</p>
+<p><strong>The assistance ladder, easiest to hardest:</strong> false-grip hangs and ring rows → banded /
+foot-assisted transitions → jumping muscle-ups into a slow eccentric → low-ring feet-on-
+ground strict reps → full strict rep (Bulldog Gear; WODprep; ABrotherAbroad). Each rung
+trains the high-pull-into-transition that is the actual sticking point.</p>
+<p><strong>Wrist and elbow are the at-risk tissues.</strong> In the false grip, load is borne by the
+flexed wrist and elbow; rushing false-grip volume is the dominant cause of medial/anterior
+elbow and wrist pain. Build false-grip hang time gradually (e.g., 30–45 s of total hang
+before high-volume false-grip pulling), and treat early elbow/wrist pain as a signal to
+reduce volume, not push through.</p>
+<h3 id="shared-principles">Shared principles<a class="headerlink" href="#shared-principles" title="Permanent link">&para;</a></h3>
+<p><strong>Frequency over per-session intensity.</strong> When weekly volume is equated, frequency has
+little independent effect — its value is letting you accumulate <em>quality</em> volume without
+fatigue spikes (Grgic et al., 2018; Schoenfeld/Grgic frequency meta-analyses). Practically,
+2–3 submaximal, never-to-failure exposures per week ("greasing the groove," ~40–60% of max
+reps) build the pattern and strength while protecting re-onboarding tissue. The two skills
+<strong>reinforce each other</strong>: pressing, pulling, scapular control, and midline work transfer
+across both, and toward the chest/back hypertrophy goals.</p>
+<p><strong>What this means for the program.</strong> Measure baselines first (strict press 1RM; max strict
+pull-ups and ring dips; false-grip hang and rows), then program against the gates. Run the
+HSPU pathway in phases (box/wall pike and shoulder control → deficit pike and midline →
+wall HSPU negatives as the breakthrough), re-testing around weeks 8–16. Build the muscle-up
+from its strict gates with eccentrics as the engine and false-grip tissue prep front-loaded.
+Use 2–3 submaximal exposures/week, place skill work fresh and early, advance only when ~5
+controlled clean reps are owned, and trim eccentric volume first (not conditioning) on red
+days, since eccentric work is the most tendon- and damage-stressful. Expect a multi-month
+horizon, judged on progression milestones, not calendar dates.</p>
+<hr />
+<h2 id="5-masters-athlete-adjustments">5. Masters-Athlete Adjustments<a class="headerlink" href="#5-masters-athlete-adjustments" title="Permanent link">&para;</a></h2>
+<p>A 39-year-old, 12-year-trained athlete is not a 25-year-old — but the differences are
+narrower and more specific than "everything is harder now." The single most important
+adjustment is about <strong>connective tissue</strong>.</p>
+<p><strong>Muscle and hypertrophy potential are essentially intact.</strong> The large "anabolic
+resistance" of aging is mostly a feature of <em>untrained</em> older adults; in trained masters
+(&gt;35 yr), protein metabolism is "indistinguishable from athletes half their age" (Moore et
+al., <em>Sports Medicine</em>, 2021; PMC8566396). Meaningful fiber-size attenuation appears mainly
+in 60+ cohorts, not 35–45. Practical dosing: ~0.3–0.4 g/kg protein per meal (~30–40 g for a
+~95 kg athlete), ~0.5 g/kg post-training, ~1.6–2.2 g/kg/day total. For top-heavy upper-body
+growth, the constraint is <em>training volume + protein + time</em>, not age.</p>
+<p><strong>Recovery from muscle-damaging work is meaningfully slower — but stimulus-dependent.</strong>
+Masters athletes take longer to recover <em>function</em> after high-intensity/eccentric/impact
+work (e.g., downhill running) than training-matched younger athletes, even with similar
+damage markers (Doering et al., <em>J Sci Med Sport</em>, 2019). Notably, a strength-matched
+eccentric <em>squat</em> study found <strong>no</strong> masters disadvantage — so the slower-recovery caveat
+applies most to high-rep impact and fatiguing MetCons, less to controlled strength sets
+(PMC8461049).</p>
+<p><strong>Tendon/connective tissue is the governor.</strong> This is the biggest genuine 39-vs-25
+difference. Collagen turnover and stiffness response begin declining in the mid-30s,
+non-enzymatic crosslinks accumulate and stiffen tissue, and tendon adapts on a ~12-week
+clock versus days-to-weeks for muscle — so strength routinely outpaces tendon readiness,
+the classic overuse-injury setup (J Appl Physiol, 2016). Disuse hits tendon hard and
+asymmetrically (2 weeks of immobilization cut tendon collagen synthesis ~80% in older men).
+For an athlete adding <em>new</em> upper-body gymnastics load, this is the central risk.</p>
+<p><strong>Heavy-Slow Resistance (HSR) is the best-evidenced way to build tendon capacity</strong> —
+controlled ~3–4 s tempo, heavy loads, ~3×/week for 12+ weeks. HSR improved patellar and
+Achilles tendinopathy with durable results superior to corticosteroid injection at
+follow-up, and shifted the collagen crosslink profile favorably (Kongsgaard et al., 2009;
+Beyer et al., 2015). Mapped to this program: tempo strict dips and ring dips, tempo strict
+pull-ups, slow eccentric HSPU negatives, and paused dumbbell/incline pressing build both the
+chest <em>and</em> the tendon stiffness to tolerate muscle-ups and HSPU.</p>
+<p><strong>In CrossFit, the shoulder is the dominant injury site</strong> (up to ~40% of injuries; rotator-
+cuff tendons ~45% of those), with the highest-risk movements being exactly the targeted
+gymnastics skills — kipping pull-ups, ring dips, overhead/Olympic lifts (JSSM CrossFit
+epidemiology; MDPI <em>JFMK</em>, 2025). This argues strongly for building <strong>strict strength and
+tissue capacity first</strong> and limiting high-rep kipping volume — which happens to align with
+the strict-HSPU / strict-MU goals.</p>
+<p><strong>Pre-loading collagen is a cheap, on-target lever.</strong> 15 g gelatin or hydrolyzed collagen +
+~50 mg vitamin C taken 30–60 min before tendon-loading work roughly <em>doubled</em> a collagen-
+synthesis marker (Shaw/Baar et al., <em>Am J Clin Nutr</em>, 2017; PMC5183725), and a 2024 RCT
+found hydrolyzed collagen plus 12 weeks of resistance training enhanced patellar-tendon
+adaptation in middle-aged men (PMC11917387). Long-term injury-prevention RCTs are still
+limited, so treat this as low-risk and biologically well-supported rather than proven to
+prevent injury.</p>
+<p><strong>Deloads are autoregulated, not fixed.</strong> Light weeks aid long-term progress by managing
+fatigue; for an athlete re-onboarding from detraining, deload <em>frequency</em> should flex with
+readiness and life stress (roughly every 4–6 weeks as a default, pulled earlier by red
+days). Volume dose-response work shows hypertrophy keeps rising with volume but strength
+shows steep diminishing returns — so the strength goals here do <strong>not</strong> need high volume,
+they need consistency and tissue tolerance (Pelland et al., 2025).</p>
+<p><strong>Frequency is the safety net on a compressed week.</strong> Maximal strength is <em>maintained</em> on
+as little as 1–2 sessions/week once built (Spiering et al., maintenance review; and the
+frequency meta-analyses in §4) — it is hypertrophy, driven by accumulated weekly <em>volume</em>,
+that suffers most when sessions are cut. This matters for a busy-week floor: when life
+collapses the week to two sessions, the right move is to protect the strict-skill/strength
+stimulus and one short quality conditioning hit (plus the wellness/mobility block) and let
+hypertrophy <em>volume</em> be the thing that's temporarily underfed, rather than trying to cram
+every goal into two days and recovering from none of them.</p>
+<p><em>Caveats:</em> the slower-recovery finding is stimulus-dependent and partly conflicting;
+precise 39-vs-25 hypertrophy gaps in a 12-year-trained athlete are inferred, not directly
+measured (likely small); tendon timelines come largely from lower-limb studies and are
+extrapolated to shoulder/elbow. At 39, individual recovery variability (sleep, work stress,
+nutrition) likely outweighs chronological age.</p>
+<p><strong>What this means for the program.</strong> Treat tendons, not muscle or lungs, as the limiter:
+progress new upper-body pressing/pulling/dip volume slowly (~+10%/week or less) and hold
+back even when it feels easy, because strength will outpace tissue. Build strict before
+kipping. Program the new upper-body work HSR-style (heavy, slow tempo, judged over 12+ week
+blocks). Pre-load collagen + vitamin C ~60 min before gymnastics days. Hit protein hard and
+evenly. Re-onboard conditioning conservatively — bias early MetCons toward low-impact machines
+(bike/row/ski) to spare joints while rebuilding the engine — and autoregulate deloads via
+the readiness score rather than fixing them on a calendar.</p>
+<hr />
+<h2 id="6-mobility-methods-hip-and-hamstring-rom">6. Mobility Methods (Hip and Hamstring ROM)<a class="headerlink" href="#6-mobility-methods-hip-and-hamstring-rom" title="Permanent link">&para;</a></h2>
+<p>The mobility goal is "feel better / move better" — more hip and hamstring range — with
+<em>no</em> added leg size or strength. The method choices below follow directly from that
+constraint and from what the evidence says actually drives durable ROM.</p>
+<p><strong>Loaded, full-ROM work is the highest-value method here.</strong> A systematic review found
+resistance training through full range produces ROM gains <em>equal to stretching</em> while also
+building strength through that range, with no moderating effect of age, sex, or training
+duration (Afonso/Behm et al., <em>Sports Medicine</em>, 2023; PMC9935664). A 2024 RCT confirmed
+full-ROM resistance training and static stretching produced equal flexibility gains, but
+resistance training additionally improved hip and back extensor strength (PMC11212372). The
+catch: gains are <strong>specific to the ranges actually loaded</strong>, so the movement must reach deep
+hip flexion / full hamstring length. For someone strong-but-tight, this is ideal — it
+re-purposes light, deep-range movement as "mobility that happens to load the tissue,"
+without a hypertrophy stimulus (loads stay light).</p>
+<p><strong>Most early "tightness" is the nervous system, not short muscle.</strong> Early ROM gains are
+predominantly increased stretch/pain <em>tolerance</em>, not tissue lengthening; under slow passive
+stretch the limit is subject sensation, and static stretching does not reliably lengthen
+fascicles or change muscle architecture (PMC12152101; PMC10271914). For a powerful,
+lower-body-dominant athlete whose nervous system aggressively <em>guards</em> end range, teaching
+it to produce force where it currently braces — i.e., loading the end range — addresses the
+actual limiter.</p>
+<p><strong>For the hamstrings specifically, long-length eccentrics add a structural adaptation that
+stretching doesn't.</strong> Eccentric training at long muscle length increased biceps femoris
+fascicle length ~9.3% (vs ~4.9% at short length), letting the muscle work effectively over a
+greater range while also building eccentric strength and resilience (<em>Front. Physiol.</em>, 2016;
+PMC4971444). Light RDLs / single-leg RDLs with a slow 3–4 s lowering to true end range, plus
+an occasional Nordic regression, are the best single tool for durable hamstring ROM.</p>
+<p><strong>PNF is not durably better than static stretching, so pick the most adherable method.</strong>
+Across hamstring studies, most found no significant difference between PNF and static for
+chronic ROM (J Sport Rehab, 2018; PMID 28182516). Both beat ballistic/dynamic for end range.
+The extra complexity of PNF isn't justified for a general-fitness athlete — pick whatever
+gets done daily.</p>
+<p><strong>The effective dose is small.</strong> Flexibility gains are largely captured at ~4 minutes per
+session and ~10 minutes per <em>week</em> per muscle group, with diminishing returns beyond that;
+individual holds need not exceed ~30 s, and frequency matters more than long single holds
+(PMC10980866). This makes a short daily floor routine genuinely low-cost.</p>
+<p><strong>Timeline and maintenance.</strong> Meaningful change appears in ~2–5 weeks and accrues over
+~5–15 weeks (average effect size ~0.93). Gains are durable — they persist above baseline for
+weeks after stopping — but slowly regress, and only "active" individuals retain them, so
+this is a permanent low-dose habit, not a fixed-end project (detraining meta-analysis,
+PMC12638565).</p>
+<p><strong>The Jefferson curl / deep-range loaded work</strong> builds controllable end-range hip and spine
+ROM under load, with the evidence-based proviso that <strong>loads stay light and progress slowly</strong>.
+The loaded-spinal-flexion debate (McGill-line caution vs tissue-adaptation view) is a
+load-management issue, not a contraindication: used as a light, slow-tempo, progressive
+tolerance-builder — not a 1RM lift — it is a reasonable middle ground. It also doubles as
+core/midline work. <strong>One athlete-specific qualifier:</strong> where there is a structural spinal
+consideration (e.g. an asymmetric curvature) or any low-back history, the conservative
+default is to favour controlled, very-light end-range work over aggressive loaded flexion,
+to start lighter and progress slower than the general guidance, and to clear loaded
+end-range spinal flexion with a physio screen first. Asymptomatic and unrestricted is not a
+reason to load fast; it is a reason to load <em>carefully</em>.</p>
+<p><strong>Placement protects strength.</strong> Long static holds (&gt;60 s/muscle) before lifting transiently
+cut force, but chronic flexibility work has no negative effect on strength — often neutral-to-
+slightly-positive (multilevel meta-analysis, PMC11336295; and §2). Any acute deficit recovers
+in ~10–20 minutes, but the clean fix is to keep long holds out of the pre-lift warm-up and put
+them at the end of the session or in the separate recovery block.</p>
+<p><em>Caveats:</em> most ROM data come from general/untrained populations, so magnitudes may be smaller
+and slower for a long-trained athlete near his structural ceiling. How much of any individual's
+tightness is neural guarding vs genuine architecture is unknown without assessment.</p>
+<p><strong>What this means for the program.</strong> Make loaded full-ROM lifting the <em>primary</em> mobility
+driver — light deep-range hip work (cossack squats, deep ATG split squats, elevated-heel deep
+squats) and long-length hamstring eccentrics (slow light RDLs) — explicitly kept light so it
+serves range/control, not size. Lean on the <em>unilateral</em> versions of these (single-leg RDLs,
+split squats, Cossacks) where there is a left/right asymmetry to address: they train each
+side independently and let the weaker/tighter side catch up rather than letting the dominant
+side carry the pattern. Add a light Jefferson curl (empty/very light bar, ultra-slow,
+2–3×/week) that doubles as midline work — kept extra-conservative, and screened first, where
+there is a spinal or low-back consideration (see above). Run a short daily static floor
+routine (90/90, couch stretch, hamstring/pancake holds, ~30 s each) inside the 20-minute
+recovery block — static is fine, skip PNF complexity; aim for ~10 min/week per area, which
+captures most of the benefit. Keep long static holds out of the morning warm-up. Expect to
+feel looser in 2–4 weeks and see measured change by ~6–12 weeks (track toe-touch reach,
+deep-squat hold, 90/90 photos), then maintain. This work is low-systemic-cost, so it stays
+<em>in</em> on red days — the ideal de-loaded fallback session.</p>
+<hr />
+<h2 id="7-upper-body-balance-hypertrophy-and-concurrent-training">7. Upper-Body Balance (Hypertrophy and Concurrent Training)<a class="headerlink" href="#7-upper-body-balance-hypertrophy-and-concurrent-training" title="Permanent link">&para;</a></h2>
+<p>The physique goal is a bigger chest, a stronger/visible core, and a more balanced
+upper-body — without losing conditioning and without adding leg size. The evidence is
+encouraging on every count.</p>
+<p><strong>Hypertrophy follows a dose-response in <em>weekly hard sets per muscle</em>.</strong> More than ~9
+sets/week beats lower volumes, with most gains captured around ~10–20 sets and diminishing
+(but non-zero) returns toward ~20–25 (Schoenfeld et al., 2017; Pelland et al. dose-response
+meta-regression, 2024–25). To actually <em>bias</em> growth toward chest and back, those muscles must
+be deliberately counted and pushed into that range while legs are held at maintenance — in the
+11–18 set range it takes roughly 8.5 extra weekly sets per additional detectable increment, so
+volume should be spent where growth is wanted.</p>
+<p><strong>The concurrent-training "interference effect" is much weaker than feared.</strong> A 43-study
+meta-analysis found that adding aerobic training did <strong>not</strong> meaningfully reduce maximal
+strength or hypertrophy, regardless of age, training status, or endurance modality (Schumann
+et al., 2022; PMC9474354). The one robust casualty is <strong>explosive/power output</strong> (~28%
+reduction with heavy endurance) — a quality this athlete explicitly no longer chases. So
+building upper-body muscle while keeping MetCons is fully viable.</p>
+<p><strong>Where interference does appear, modality and order are the levers.</strong> In the classic
+meta-analysis, concurrent <em>running</em> (not cycling) caused the only significant strength/
+hypertrophy decrements (Wilson et al., 2012), and over multi-week programs lifting <em>before</em>
+endurance preserved lower-body dynamic strength ~6.9% better than endurance-first (Eddens et
+al., 2017). This favors rowing/bike/ski-erg and short sprinty MetCons over high-volume running,
+and a lift-first session order on combined days.</p>
+<p><strong>A polarized conditioning distribution serves a fast-twitch athlete who <em>also</em> wants
+long-distance capacity.</strong> Polarized training — most aerobic work easy (Zone 2) and a small
+fraction genuinely hard, with little in the muddy middle — outperforms threshold-heavy
+distributions for aerobic development in trained athletes (Stöggl &amp; Sperlich, <em>Front.
+Physiol.</em>, 2014; Rosenblat et al. meta-analysis, 2019). It maps almost perfectly onto this
+athlete's preferences and physiology: keep the high-intensity end as the short, sharp,
+high-quality sprint and hill-sprint work he is built for and enjoys, and build the
+"10 miles is always doable" base out of low-stress Zone-2 volume (preferably on low-impact
+machines early in re-onboarding) rather than a diet of moderate-hard tempo running. Because
+the goal is <em>capacity, not a race time</em>, this base needs no peak and no taper — it is
+maintained year-round at a low, sustainable dose, which is exactly what a polarized,
+mostly-easy base costs.</p>
+<p><strong>Hypertrophy is load-flexible and does not require failure.</strong> Growth is comparable across
+~30–80% 1RM when effort is high, and training to failure gives only a <em>trivial</em> hypertrophy
+advantage over leaving 1–3 reps in reserve (Refalo/Robinson et al., 2023; PMC9935748). This
+means chest and back can be grown with gymnastics-friendly tools — rings, dips, weighted
+pull-ups, higher-rep dumbbell work, slow eccentrics — stopping 1–2 reps shy to manage fatigue
+and protect MetCon quality and aging shoulders. Failure adds disproportionate neuromuscular
+fatigue for little extra growth (PMC9908800), which is why RIR-based autoregulation fits.</p>
+<p><strong>The physique work and the skill work are the same work.</strong> Weighted/strict pull-ups, ring
+rows, and muscle-up transition negatives build the strict muscle-up <em>and</em> lat/upper-back
+thickness; pike-to-deficit push-ups, ring dips, and dumbbell pressing build the strict HSPU
+<em>and</em> chest/shoulders. Programmed as the lifting block and counted as chest/back sets, the
+gymnastics and hypertrophy goals reinforce rather than compete.</p>
+<p><strong>A visible, strong midline is built by training the trunk like a muscle</strong> — loaded,
+near-failure, anti-movement — not endless sit-ups. Anti-extension (ab-wheel/ring fallouts, RKC
+plank, deficit hollow holds), anti-rotation (Pallof), and loaded carries produce the highest
+trunk activation and stiffness; abs respond to progressive load like any muscle, while
+<em>visibility</em> is largely a body-fat function (PMC11036226; PMC11042841).</p>
+<p><em>Caveats:</em> most concurrent-training and dose-response data come from conventional resistance +
+steady-state endurance, not high-intensity CrossFit MetCons, which combine glycolytic
+conditioning <em>with</em> eccentric/load stress — so real-world recovery cost may be modestly higher
+than the null findings suggest, making readiness-driven autoregulation important. Per-muscle set
+targets are population averages with wide individual variation; the 12–18 range is a starting
+prescription to tune by recovery and visible progress. Gymnastics timelines are highly
+individual, and tall stature is a genuine leverage disadvantage for pressing/pulling skills.</p>
+<p><strong>What this means for the program.</strong> Explicitly <em>count</em> weekly hard sets: target ~12–18
+sets/week each for chest and back/pulling (the upper-end growth zone), while capping legs at
+~6–9 maintenance sets to hold size/strength with minimal fatigue. Make the gymnastics
+progressions double as the hypertrophy block. Order sessions lifting-first, MetCon-second on
+combined days, and favor erg/bike conditioning over high-volume running. Run conditioning
+<strong>polarized</strong> — mostly easy Zone-2 base plus a small, high-quality dose of the sprints and
+hill sprints a fast-twitch athlete is built for — and hold a year-round, un-peaked aerobic
+base so long-distance capacity stays available without a training block aimed at a date.
+Train chest and back near-but-not-to-failure (1–3 RIR) across a load spectrum with
+shoulder-friendly tools. Build the core deliberately with loaded anti-movement work and
+carries, paired with staying lean enough to see it; bias toward anti-rotation (Pallof,
+suitcase carries) and single-arm/single-leg work where a left/right imbalance needs
+correcting, so the asymmetry is trained <em>down</em> rather than reinforced by bilateral loading.
+Re-onboard conservatively — start chest/back near the low end (~8–10 sets) and ramp ~1–2
+sets/muscle/week toward target — and let readiness flex daily volume, which costs almost
+nothing in long-run growth when training stays sub-failure. The MetCons can stay: they don't
+meaningfully blunt the physique, and the only real interference cost lands on a quality no
+longer being chased.</p>
+<hr />
+<h2 id="a-note-on-the-evidence-quality">A note on the evidence quality<a class="headerlink" href="#a-note-on-the-evidence-quality" title="Permanent link">&para;</a></h2>
+<p>Several primary sources (notably some PMC and Frontiers full texts) returned access errors
+during research, so a few exact effect sizes and confidence intervals here are drawn from
+abstracts and search summaries rather than verified full-text PDFs. Directions and approximate
+magnitudes are reliable; precise figures should be double-checked against the cited primary
+sources before being treated as exact. Where a claim rests on coaching consensus, mechanism, or
+extrapolation rather than a direct trial, the text says so — that distinction is deliberate and
+should be preserved by anyone editing this document.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../training-system/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Training System">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Training System
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../nutrition/" class="md-footer__link md-footer__link--next" aria-label="Next: Nutrition &amp; Fuelling">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Nutrition & Fuelling
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
