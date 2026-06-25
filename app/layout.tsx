@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description:
     "Adaptive CrossFit + wellness programming — show up, hit START, the screen takes over.",
   applicationName: "Open Programming",
+  manifest: "/manifest.webmanifest",
+  icons: { icon: "/icon.svg", apple: "/icon.svg" },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

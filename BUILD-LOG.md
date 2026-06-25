@@ -12,6 +12,41 @@ thin demo UI), full-rigor quality bar, Vercel-import-ready, generic public demo 
 
 ## Decisions
 
+### D7 — Thin runner + WOD timer + meditation slice (+ Vercel deploy)
+Built the "show up, hit START, the screen takes over" demo on top of the existing
+schema/engine/demo. Kept it thin but genuinely working.
+
+- **Pure timer FSM** in `lib/timer/machine.ts` — a reducer (`initTimer`/`tickTimer`/`tick`) +
+  selectors (`remainingSec`/`currentRound`/`phase`/`done`) + `isBoundary`, driven by a
+  `TimerConfig`, modelling `countdown → work → rest → round → done` for all five timer types
+  (amrap, for-time, emom, intervals, tabata). No browser APIs, no wall-clock reads → fully
+  unit-tested (`lib/timer/machine.test.ts`, 17 tests covering every type, boundaries, countdown,
+  completion). The client component owns the real clock (`performance.now()` + `setInterval`) and
+  feeds elapsed deltas into the pure FSM.
+- **Browser-effect helpers** `lib/audio.ts` (Web Audio beep), `lib/haptics.ts` (`navigator.vibrate`),
+  `lib/wakeLock.ts` (Screen Wake Lock) — each feature-detected with a no-op SSR fallback. Not
+  unit-tested (browser-only), kept dead simple.
+- **App surface:** `app/page.tsx` Home card (today's demo session + tier chip + one-tap
+  GREEN/AMBER/RED selector run through `decideTier` for the engine note + big START); `app/runner/page.tsx`
+  full-screen runner that walks blocks in order (warmup checklist → strength/gymnastics with both
+  lb+kg → conditioning timer takeover → mobility per-side holds → meditation), applies the block
+  `variants` for the AMBER patch / RED skip downshift, allows re-picking the tier on the spot, and
+  ends with a 1–5 "how it felt" capture.
+- **Persistence:** chosen tier + "how it felt" go to **localStorage** (`lib/runner/store.ts`).
+  A real IndexedDB/Dexie store is intentionally out of scope for this thin slice.
+- **Today's session** is picked deterministically from `buildDemoBlock("2026-06-15").sessions[0]` —
+  no `Date.now()`/`new Date()` in module scope or in the FSM.
+- **PWA-lite:** `app/manifest.ts` (Next metadata route → `/manifest.webmanifest`) + `public/icon.svg`,
+  wired into `app/layout.tsx` metadata. No service worker / offline cache yet.
+- **Verified** with `npm run format` + full `npm run validate` (typecheck, lint, test, build) all
+  green, then drove the real app with `playwright-core` against system Chromium
+  (`e2e/shots.mjs`, kept out of the Vitest run under `e2e/`) — captured Home, conditioning timer
+  mid-WORK, and the meditation block; **zero console errors**.
+
+**Deploy on Vercel:** import the repo at vercel.com — framework auto-detects as Next.js, no env vars
+or secrets needed. Build command `next build`, output is the standard Next runtime (no static export,
+per D4), so server routes stay possible later. The app is import-ready as-is.
+
 ### D1 — Hand-rolled the Next.js scaffold instead of `create-next-app`
 `create-next-app` refuses a non-empty directory (the repo already has `docs/`, `profile/`, etc.)
 and runs interactively. Hand-rolling gives exact control over the structure to match

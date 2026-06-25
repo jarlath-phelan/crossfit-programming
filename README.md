@@ -99,6 +99,10 @@ This repo is in **Phase 0 — planning complete, build next**. What exists today
 - ✅ The **three-zone forkable structure** (`profile/` · `library/` · `generated/` + `history/`) with the
   privacy model in place: real data is git-ignored; only sanitized templates are published.
 - ✅ **Agent guardrails** and research priors (`CLAUDE.md`); **MIT** licensed.
+- ✅ A **thin but working app slice** — Home card (today's session + one-tap readiness tier) and a
+  full-screen **Session Runner** with a pure WOD-timer FSM (`lib/timer/`), conditioning takeover
+  (huge countdown + beep/haptics/wake-lock), per-side mobility, and an unguided meditation block
+  (interval bell + ~6 breaths/min pacer). PWA-lite + Vercel-import-ready (just connect the repo).
 - ⏳ Next (Phase 0 → 1): encode the Zod schemas + profile as typed data, the deterministic autoregulation
   engine, the Claude Code planning skills (`/onboard`, `/replan`, `/today`, `/deload`), and the PWA workout
   runner + timer. See [`ROADMAP.md`](ROADMAP.md).
