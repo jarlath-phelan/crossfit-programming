@@ -44,3 +44,6 @@ Thumbs.db
 # MkDocs build output
 site/
 .cache/
+
+# Next.js generated
+next-env.d.ts

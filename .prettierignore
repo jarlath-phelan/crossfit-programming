@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+site/
+coverage/
+package-lock.json
+*.md
+mkdocs.yml
