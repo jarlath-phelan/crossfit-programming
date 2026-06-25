@@ -36,3 +36,25 @@ import-ready; the owner connects it on vercel.com in the morning (no secrets nee
 ### D5 — Coverage gate on the engine
 `vitest.config.ts` enforces ≥95% statements / 100% functions on `library/autoregulation/**`.
 The autoregulation engine is the deterministic safety-critical core; it earns the strictest bar.
+
+### D6 — Code-generated demo over hand-written JSON
+Seed content (a 6-week Block A, 5 sessions/week ≈ 30 sessions) is produced by a small generator
+in `library/demo/` (`templates.ts` + `build.ts`) rather than ~30 hand-authored session JSON files.
+Rationale:
+- **Less error-prone.** Hand-writing 30 sessions invites drift — a misspelled movement id, a
+  warmup forgotten, a missing meditation tail, a back-to-back-MetCon slip. The generator encodes
+  the rails *once* (warmup-first, strict-skill-first, daily mobility + wellness tail, polarized
+  conditioning, no adjacent MetCons) so every emitted session obeys them by construction.
+- **Reusable.** The same `Session`/`Block`/`TimerConfig` shapes the generator emits are exactly what
+  the future `/replan` skill must produce. `build.ts` is a working precursor: a deterministic,
+  pure-function planner (`buildDemoBlock(startISODate)`) that takes a start date and returns
+  schema-valid output — no `Date.now()`/`new Date()` with no args, so it is fully testable.
+- **Testable as a contract.** `library/demo/demo.test.ts` asserts the rails structurally (every
+  session warmup-first / meditation-last, strict work before conditioning, no calendar-adjacent
+  MetCon-heavy days, all movement references resolve) and round-trips every entity through its Zod
+  schema. The athlete demo lives in `profile/athlete.example.json` (generic, publishable).
+- **Design calls noted:** (1) "MetCon-heavy" is defined as any conditioning timer *except* an easy
+  Zone-2 `intervals` piece (work ≥ rest); sprint intervals (short work / long recovery) count as
+  heavy. (2) The no-back-to-back check is applied to *calendar-adjacent* days only — a Fri→Mon
+  weekend gap resets it. (3) The `swcBaseline` ships as `status: "calibrating"` since a fresh fork
+  has no personal HRV history yet (first ~14 days), consistent with the readiness rails.

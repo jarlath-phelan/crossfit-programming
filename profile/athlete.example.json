@@ -1,0 +1,91 @@
+{
+  "id": "athlete-example",
+  "name": "Example Athlete",
+  "age": 39,
+  "sex": "M",
+  "heightCm": 188,
+  "weightKg": 96.5,
+  "bodyfatPct": 13,
+  "trainingAgeYears": 12,
+  "chronotype": "neutral",
+  "fiberBias": "fast-twitch",
+  "units": { "primary": "lb", "showBoth": true, "loadRoundingKg": 1.25 },
+  "strengthProfile": {
+    "lowerBodyDominant": true,
+    "posteriorChainStrong": true,
+    "asymmetryNote": "Structural L/R imbalance → unilateral + anti-rotation emphasis; conservative spinal loading until cleared."
+  },
+  "constraints": {
+    "sessionsPerWeekMin": 2,
+    "sessionsPerWeekTarget": 5,
+    "sessionsPerWeekMax": 6,
+    "timePerSessionMin": 60,
+    "unhurried": true,
+    "noBackToBackMetcons": true,
+    "hardConstraints": [
+      "build strict before kipping",
+      "legs at maintenance only",
+      "no heavy end-range spinal flexion until physio screen"
+    ]
+  },
+  "equipment": [
+    "barbell",
+    "dumbbells",
+    "rig",
+    "rings",
+    "wall",
+    "box",
+    "bench",
+    "plates",
+    "rower",
+    "bike-erg",
+    "ski-erg",
+    "ghd",
+    "bands",
+    "jump-rope",
+    "pvc",
+    "foam-roller",
+    "ab-mat"
+  ],
+  "nutrition": {
+    "pattern": "omnivore",
+    "approach": "protein-first",
+    "proteinTargetGPerKg": [1.6, 2.2],
+    "cookingStyle": "mixed-fast",
+    "alcohol": "social-weekends",
+    "logging": "none"
+  },
+  "supplements": ["creatine-mono", "whey", "collagen-vitc", "vitamin-d", "omega-3"],
+  "protocols": {
+    "caffeine": {
+      "use": true,
+      "mgPerHardDay": 285,
+      "onlyOnTiers": ["GREEN"],
+      "amOnly": true,
+      "cycle": true
+    },
+    "collagen": {
+      "use": true,
+      "gramsPerDay": 15,
+      "timingNote": "~45–60 min pre-session with vitamin C"
+    }
+  },
+  "readinessPrefs": {
+    "sourceOrder": ["bevel", "whoop", "manual"],
+    "swc": { "metric": "lnRMSSD", "bootstrapDays": 14, "bandSdMultiplier": 0.5, "rollingDays": 7 },
+    "subjective": {
+      "mode": "one-tap",
+      "oneTapTiers": ["GREEN", "AMBER", "RED"],
+      "allowOptionalScore": true
+    },
+    "manualOverrideWins": true
+  },
+  "benchmarks": { "Fran": "3:30", "Grace": "1:45" },
+  "goals": [
+    "goal-strict-hspu",
+    "goal-strict-ring-mu",
+    "goal-chest-back",
+    "goal-hip-ham-rom",
+    "goal-conditioning-maint"
+  ]
+}
