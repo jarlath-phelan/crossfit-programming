@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/CLAUDE/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/ROADMAP/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/architecture/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/data-model/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/decisions/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/functional-design/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/nutrition/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
+    </url>
+    <url>
+         <loc>https://jarlath-phelan.github.io/crossfit-programming/programming-guidelines/</loc>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/science-foundations/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/testing-protocol/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://jarlath-phelan.github.io/crossfit-programming/training-system/</loc>
-         <lastmod>2026-06-25</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
 </urlset>

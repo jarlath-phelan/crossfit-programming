@@ -1,0 +1,1527 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open-source, forkable system for adaptive CrossFit + wellness programming.">
+      
+      
+      
+        <link rel="canonical" href="https://jarlath-phelan.github.io/crossfit-programming/programming-guidelines/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Programming Guidelines — Time-Budgeting & Mobility Placement - Open Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programming-guidelines-time-budgeting-mobility-placement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Programming" class="md-header__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programming Guidelines — Time-Budgeting &amp; Mobility Placement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Programming" class="md-nav__button md-logo" aria-label="Open Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Programming
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jarlath-phelan/crossfit-programming" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    crossfit-programming
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Plan (the coach)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Plan (the coach)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../science-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Science Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nutrition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nutrition & Fuelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1–2 Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The App (the build)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The App (the build)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App UX (Functional Design)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLAUDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Guardrails (CLAUDE.md)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topic-a-session-time-budgeting-wall-clock-vs-working-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic A — Session time-budgeting: wall-clock vs working time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic A — Session time-budgeting: wall-clock vs working time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The core problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-a-class-actually-splits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a class actually splits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-overhead-figure-confirming-the-repo-placeholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The overhead figure — confirming the repo placeholder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-working-minutes-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended working-minutes table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-block-budget-guide-the-working-minutes-allocated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-block budget guide (the working minutes, allocated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical guidance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means-for-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this means for the program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncertainties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uncertainties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-b-mobility-stretching-timing-and-does-post-workout-mobility-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic B — Mobility / stretching: timing, and does post-workout mobility help?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic B — Mobility / stretching: timing, and does post-workout mobility help?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pre-workout-static-stretching-and-acute-strengthpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Pre-workout static stretching and acute strength/power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-does-mobility-chronically-improve-rom-and-by-what-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Does mobility chronically improve ROM — and by what mechanism?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-does-post-workout-mobility-help-recovery-reduce-doms-prevent-injury" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Does post-workout mobility help recovery / reduce DOMS / prevent injury?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-loaded-end-range-eccentric-work-vs-passive-static-stretching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Loaded / end-range / eccentric work vs passive static stretching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-net-recommendation-when-to-place-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Net recommendation — when to place mobility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-means-for-the-program_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this means for the program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncertainties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uncertainties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="programming-guidelines-time-budgeting-mobility-placement">Programming Guidelines — Time-Budgeting &amp; Mobility Placement<a class="headerlink" href="#programming-guidelines-time-budgeting-mobility-placement" title="Permanent link">&para;</a></h1>
+<p><em>Coach-facing reference, generic and forkable. This doc resolves two recurring planning questions
+the rails depend on but don't fully specify: (A) </em><em>how much of a session slot is actually usable
+working time</em><em>, so the planner budgets blocks to a realistic number instead of the wall-clock
+fantasy; and (B) </em><em>where mobility belongs in a session/day and what to honestly expect from it.</em>**</p>
+<p>It is written for "the athlete" / "you" so anyone can fork it. The illustrative case — a masters
+CrossFitter on 45–60 min unhurried sessions — is just an example; the numbers generalize.</p>
+<p><strong>Companion docs:</strong> <a href="../science-foundations/"><code>science-foundations.md</code></a> is the evidence base (this doc
+extends its §2 and §6 on stretching/mobility and adds the time-budgeting evidence the system docs
+assume); <a href="../training-system/"><code>training-system.md</code></a> §4 defines the single-session anatomy this doc
+budgets, and §5/§3 define the readiness tiers and weekly templates referenced below. The rails live
+in <a href="../CLAUDE/"><code>CLAUDE.md</code></a> (esp. rails 4, 8, 9).</p>
+<hr />
+<h2 id="topic-a-session-time-budgeting-wall-clock-vs-working-time">Topic A — Session time-budgeting: wall-clock vs working time<a class="headerlink" href="#topic-a-session-time-budgeting-wall-clock-vs-working-time" title="Permanent link">&para;</a></h2>
+<h3 id="the-core-problem">The core problem<a class="headerlink" href="#the-core-problem" title="Permanent link">&para;</a></h3>
+<p>A "60-minute session" is not 60 minutes of training. A meaningful slice is consumed by arrival,
+the coach brief (in a class), equipment gathering and setup, demonstration/scaling decisions, ramp
+warm-up, and the <strong>transitions between pieces</strong>. If the planner budgets blocks against the
+wall-clock number, every session runs long, the cooldown/mobility block (rail 9) gets cut first, and
+the "unhurried, room-to-socialize" intent (rail 4) collapses into a stopwatch grind. The fix is to
+<strong>budget every block against the <em>working</em> number, not the slot.</strong></p>
+<h3 id="how-a-class-actually-splits">How a class actually splits<a class="headerlink" href="#how-a-class-actually-splits" title="Permanent link">&para;</a></h3>
+<p>CrossFit's own coaching material treats the class as a <em>scripted timeline</em>, not an open hour. A
+class plan is expected to include "a whiteboard script (workout education), scaling options,
+equipment organization, timeline, general warm-up, specific warm-up, and cool-down" — i.e. setup and
+briefing are explicitly <em>planned-for</em> overhead, not slack (<a href="https://www.gowod.app/blog/what-is-a-crossfit-workout">CrossFit, "What Is a CrossFit Workout?",
+GOWOD</a>; <a href="https://www.crossfit.com/certificate-courses/level-1">CrossFit L1 coaching
+resources</a>). The class is built to fit "warmup,
+movement instruction and standards, set up and workout" inside the hour, which means a real chunk of
+the hour is <em>not</em> the workout.</p>
+<p>A widely-cited practitioner breakdown of a 60-min class puts <strong>program overview + warm-up at ~15 min
+and the workout itself (start to finish) at ~40 min</strong>, leaving ~5 min for transitions/setup
+(<a href="https://paragontrainingmethods.com/paragon-strength-metcon/">Paragon Training Methods, Strength/MetCon</a>).
+Note that the "~40 min workout" <em>itself</em> contains piece-to-piece transitions and the metcon's own
+internal rest — it is not 40 min of unbroken effort. CrossFit's briefing guidance reinforces that a
+good brief is <strong>a time-saver, not a time-sink</strong>: when athletes know how to set up, how many rounds,
+the target stimulus, and the expected duration before the clock starts, it "prevents wasting precious
+minutes" mid-piece (<a href="https://www.crossfit.com/pro-coach/crossfit-coaching-briefing-plan">CrossFit, "Why Having a Briefing Plan Can Dictate the Success of Your Class"</a>).</p>
+<p>Putting these together, a defensible class anatomy is:</p>
+<table>
+<thead>
+<tr>
+<th>Slot phase</th>
+<th>Class (coached)</th>
+<th>What it is</th>
+<th>Working time?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrival / brief / whiteboard</td>
+<td>~3–8 min</td>
+<td>Greeting, workout education, scaling, stimulus target</td>
+<td><strong>No</strong></td>
+</tr>
+<tr>
+<td>General + specific warm-up (ramp)</td>
+<td>~10–15 min</td>
+<td>Pulse-raise, mobility, movement-specific ramp sets</td>
+<td><strong>Partly</strong> (it's training, but not the target stimulus)</td>
+</tr>
+<tr>
+<td>Equipment setup + demo</td>
+<td>~2–5 min</td>
+<td>Loading bars, laying out stations, movement demo</td>
+<td><strong>No</strong></td>
+</tr>
+<tr>
+<td>Strength / skill</td>
+<td>~10–20 min</td>
+<td>The protected priority work</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>Transition to metcon</td>
+<td>~2–4 min</td>
+<td>Re-set equipment, re-brief, clock reset</td>
+<td><strong>No</strong></td>
+</tr>
+<tr>
+<td>MetCon / conditioning</td>
+<td>~8–25 min</td>
+<td>The conditioning stimulus (contains internal rest)</td>
+<td><strong>Mostly</strong></td>
+</tr>
+<tr>
+<td>Cooldown / mobility</td>
+<td>~0–10 min</td>
+<td>Often first to be cut when the slot overruns</td>
+<td><strong>Yes (if it survives)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-overhead-figure-confirming-the-repo-placeholder">The overhead figure — confirming the repo placeholder<a class="headerlink" href="#the-overhead-figure-confirming-the-repo-placeholder" title="Permanent link">&para;</a></h3>
+<p>The repo currently assumes <strong>~20–25% overhead</strong> as a placeholder. <strong>The evidence supports keeping
+that figure for a <em>coached class</em>, and lowering it for <em>solo</em> training.</strong></p>
+<ul>
+<li><strong>Coached class:</strong> Of a 60-min slot, roughly <strong>12–18 min is non-working overhead</strong> (brief +
+  setup + demos + the no-work portion of transitions) before you even count the ramp. That is
+  ~<strong>20–30%</strong> pure overhead, landing the repo's 20–25% placeholder at the <em>optimistic</em> end —
+  realistic for a well-run box with a tight brief, generous for a chatty class with long station
+  changes. <strong>Confirm 20–25% as the planning default for a coached class; use 25–30% for a
+  movement-heavy class with many station changes or a long whiteboard.</strong></li>
+<li><strong>Solo training</strong> (the athlete's usual mode for protected strict-skill days, per
+  <a href="../training-system/"><code>training-system.md</code></a> §5.3): there is <strong>no coach brief, no group
+  demonstration, no scaling discussion, and no waiting on a heat</strong> — the single largest overhead
+  buckets disappear. But you still gather and set up your own equipment between parts, and you have
+  <em>no coach pacing the clock</em>, so self-managed transitions can quietly bloat. Net: solo overhead is
+  <strong>lower but not zero — budget ~10–15%</strong>, dominated by equipment changes rather than talk. Solo
+  athletes also control their space, so they can <strong>pre-arrange equipment to improve session flow and
+  save time</strong> (<a href="https://www.samsonequipment.com/blog/mastering-the-art-of-solo-training/">Samson Equipment, "Mastering Solo Training"</a>) —
+  a lever a class athlete doesn't have.</li>
+</ul>
+<p><strong>Important nuance:</strong> the <strong>ramp warm-up is overhead against the <em>target stimulus</em> but is itself
+non-negotiable training</strong> (rail 8; <a href="../science-foundations/"><code>science-foundations.md</code></a> §1 — the morning
+power deficit is erased in the ramp, not the workout). So this doc separates two numbers: <em>pure
+overhead</em> (brief/setup/transition — genuinely lost time, minimize it) and the <em>ramp</em> (protected, ~12–15
+min, never cut). The working-minutes table below reserves both.</p>
+<h3 id="recommended-working-minutes-table">Recommended working-minutes table<a class="headerlink" href="#recommended-working-minutes-table" title="Permanent link">&para;</a></h3>
+<p>Reserve the ramp (rail 8) and pure overhead off the top, then budget the remainder to the work
+blocks. "Working minutes" = strength/skill + conditioning + cooldown mobility (the part that produces
+the target adaptation), <em>after</em> the ramp.</p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Ramp (protected)</th>
+<th>Pure overhead — class (~20–25%)</th>
+<th>Working min — <strong>class</strong></th>
+<th>Pure overhead — solo (~10–15%)</th>
+<th>Working min — <strong>solo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>30 min</strong></td>
+<td>8–10</td>
+<td>~6–7</td>
+<td><strong>~13–16</strong></td>
+<td>~3–4</td>
+<td><strong>~17–19</strong></td>
+</tr>
+<tr>
+<td><strong>45 min</strong></td>
+<td>12–13</td>
+<td>~9–11</td>
+<td><strong>~22–25</strong></td>
+<td>~5–7</td>
+<td><strong>~26–28</strong></td>
+</tr>
+<tr>
+<td><strong>60 min</strong></td>
+<td>12–15</td>
+<td>~12–15</td>
+<td><strong>~32–36</strong></td>
+<td>~7–9</td>
+<td><strong>~38–41</strong></td>
+</tr>
+<tr>
+<td><strong>75 min</strong></td>
+<td>13–15</td>
+<td>~15–18</td>
+<td><strong>~43–47</strong></td>
+<td>~8–11</td>
+<td><strong>~50–53</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Read it as: <em>on a coached 60-min slot, plan ~32–36 minutes of actual work; solo, ~38–41.</em> The 30-min
+slot is the cautionary one — after a compressed ramp and overhead, a class leaves only ~13–16 working
+minutes, which is why a 30-min session should run <strong>one stimulus, not three</strong> (see "what to cut").</p>
+<h3 id="per-block-budget-guide-the-working-minutes-allocated">Per-block budget guide (the working minutes, allocated)<a class="headerlink" href="#per-block-budget-guide-the-working-minutes-allocated" title="Permanent link">&para;</a></h3>
+<p>Within the working minutes, follow the session anatomy in <a href="../training-system/"><code>training-system.md</code></a>
+§4 (skill/strength first while fresh → hypertrophy accessory → conditioning → cooldown mobility).
+A workable default split of <em>working time</em> (excludes ramp + overhead):</p>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Share of working time</th>
+<th>45-min solo (~27 min)</th>
+<th>60-min solo (~40 min)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strict skill / strength (P1, fresh)</td>
+<td>~40–50%</td>
+<td>~12–14 min</td>
+<td>~18–20 min</td>
+</tr>
+<tr>
+<td>Hypertrophy accessory (P2)</td>
+<td>~25–35%</td>
+<td>~7–9 min</td>
+<td>~12–14 min</td>
+</tr>
+<tr>
+<td>Conditioning (only on C-days)</td>
+<td>~20–30%</td>
+<td>~6–8 min</td>
+<td>~8–12 min</td>
+</tr>
+<tr>
+<td>Cooldown mobility (in-session touch)</td>
+<td>~10%</td>
+<td>~2–3 min</td>
+<td>~3–4 min</td>
+</tr>
+</tbody>
+</table>
+<p>The full ~20-min breathing+mobility block (rail 11) lives <strong>post-session or evening</strong>, <em>outside</em> this
+table — don't try to fit the whole wellness block inside the slot (see Topic B on placement).</p>
+<h3 id="practical-guidance">Practical guidance<a class="headerlink" href="#practical-guidance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Budget to the working number, never the slot.</strong> Write each block's target reps/sets against the
+  table above. If the plan only fits when you assume 60 working minutes out of a 60-min slot, it
+  doesn't fit.</li>
+<li><strong>Minimize station changes; group shared-equipment work.</strong> Every transition is pure overhead and a
+  pacing leak. Order the session so consecutive pieces share equipment (e.g. keep the rings up for
+  dips → rows → MU work; keep the barbell loaded across pressing variations). Couplets/triplets that
+  reuse one or two implements beat circuits that send you across the gym.</li>
+<li><strong>Solo: pre-set the space.</strong> Lay out every implement you'll need before the ramp so transitions are
+  walk-overs, not setup sessions (<a href="https://www.samsonequipment.com/blog/mastering-the-art-of-solo-training/">Samson</a>).
+  This is the solo athlete's biggest time lever and the reason solo overhead is ~10–15% not ~25%.</li>
+<li><strong>Tight self-brief.</strong> Solo, replace the coach's whiteboard with a 30-second self-brief: rounds,
+  target stimulus, expected duration, scaling line. A briefing is a time-saver
+  (<a href="https://www.crossfit.com/pro-coach/crossfit-coaching-briefing-plan">CrossFit</a>) — skipping it
+  <em>costs</em> mid-piece minutes deciding on the fly.</li>
+<li><strong>What to cut first when setup runs long (in order):</strong></li>
+<li><strong>Conditioning volume</strong> before skill quality — strict-skill is the protected priority (rail 4,
+     <a href="../training-system/"><code>training-system.md</code></a> §3.2). Cut metcon rounds/time before cutting P1.</li>
+<li><strong>Hypertrophy accessory volume</strong> — weekly <em>volume</em> drives hypertrophy, so a trimmed single
+     session costs little (<a href="../science-foundations/"><code>science-foundations.md</code></a> §7).</li>
+<li><strong>Never cut the ramp</strong> (rail 8) and <strong>never silently delete the post-session mobility block</strong>
+     (rail 9) — if the slot is gone, the mobility block moves to the evening, it doesn't vanish.</li>
+<li>On a true 30-min crunch: run <strong>one stimulus only</strong> — the fresh strict-skill priority plus a
+     2-minute cooldown touch — and bank conditioning/accessory for the next day.</li>
+</ul>
+<h3 id="what-this-means-for-the-program">What this means for the program<a class="headerlink" href="#what-this-means-for-the-program" title="Permanent link">&para;</a></h3>
+<p>Keep <strong>20–25% as the coached-class overhead default</strong> (the placeholder is correct; use 25–30% for
+station-heavy classes), and adopt <strong>~10–15% for solo sessions</strong>, where the brief/demo/heat overhead
+disappears but equipment changes remain. Plan every block to the <strong>working-minutes table</strong> above, not
+the slot. The 20-min wellness block lives outside the slot. This protects rail 4 (unhurried, never
+wrecked) and rail 9 (mobility survives) by construction: if the math only works at 100% slot
+utilization, the plan is overstuffed.</p>
+<h3 id="uncertainties">Uncertainties<a class="headerlink" href="#uncertainties" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The minute figures are <strong>practitioner/coaching estimates</strong>, not RCT data — there is no peer-reviewed
+  time-and-motion study of CrossFit class flow that this doc could find. Treat the table as a
+  calibratable default: log a few real sessions (actual ramp end, first working set, last working set,
+  block transitions) and adjust the overhead % to <em>your</em> gym and <em>your</em> solo habits.</li>
+<li>Overhead is highly box- and athlete-specific: a 6-person class with a tight coach and a solo athlete
+  with a pre-set garage gym are at opposite ends. The class-vs-solo split is the robust finding; the
+  exact percentages are tunable.</li>
+<li>"Working time" deliberately counts the ramp as protected-but-separate. A program that treats the
+  ramp as optional would show more nominal working minutes — but would be violating rail 8.</li>
+</ul>
+<hr />
+<h2 id="topic-b-mobility-stretching-timing-and-does-post-workout-mobility-help">Topic B — Mobility / stretching: timing, and does <em>post</em>-workout mobility help?<a class="headerlink" href="#topic-b-mobility-stretching-timing-and-does-post-workout-mobility-help" title="Permanent link">&para;</a></h2>
+<p>This topic extends <a href="../science-foundations/"><code>science-foundations.md</code></a> §2 (the honest stretching
+section) and §6 (mobility methods) with the specific <em>timing</em> question. The short version: <strong>mobility
+earns durable ROM and movement quality; it does <em>not</em> earn recovery or soreness relief; and <em>when</em> you
+place it matters mostly for protecting strength, not for the ROM gain itself.</strong></p>
+<h3 id="1-pre-workout-static-stretching-and-acute-strengthpower">1. Pre-workout static stretching and acute strength/power<a class="headerlink" href="#1-pre-workout-static-stretching-and-acute-strengthpower" title="Permanent link">&para;</a></h3>
+<p>Long static holds immediately before strength/power work transiently impair output, and the effect is
+<strong>dose-dependent on hold duration</strong>:</p>
+<ul>
+<li>The anchor meta-analysis (104 studies) found acute static stretching reduced <strong>strength −5.4%
+  (95% CI −6.6 to −4.2), power −1.9%, explosive −2.0%</strong> (Simic et al., <em>Scand J Med Sci Sports</em>,
+  2013; <a href="https://pubmed.ncbi.nlm.nih.gov/22316148/">PubMed 22316148</a>).</li>
+<li>The effect is concentrated in <strong>longer holds</strong>: a more recent multilevel meta-analysis confirms a
+  dose–response stretch-induced force deficit, with the pronounced effects driven by <strong>bouts ≥60 s</strong>;
+  holds <strong>&lt;30–45 s show no meaningful strength decrease</strong> (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11336295/">Revisiting the stretch-induced force
+  deficit, 2024; PMC11336295</a>). So a short
+  (≤30–60 s) targeted hold inside a full warm-up is essentially harmless; a 2-minute hamstring hold
+  before heavy pulling is not.</li>
+<li><strong>Dynamic beats static (and beats nothing) for priming.</strong> A RAMP-style dynamic warm-up produced
+  <strong>significantly better sprint and jump performance</strong> than static stretching (d ≈ 0.41) and than no
+  warm-up (d ≈ 0.52), while static stretching was no better than control (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12234454/">RAMP warm-up RCT,
+  <em>Frontiers Physiol.</em> 2025; PMC12234454</a>).
+  Dynamic stretching gives small-but-real improvements in single and repeated sprints versus static
+  or no warm-up.</li>
+</ul>
+<p><strong>Implication:</strong> keep long static/PNF holds out of the immediate pre-lift window (rail 8); use the
+dynamic, temperature-raising ramp. Short targeted holds for a specific blocking restriction (e.g. a
+brief ankle or overhead hold) are fine inside the ramp.</p>
+<h3 id="2-does-mobility-chronically-improve-rom-and-by-what-mechanism">2. Does mobility chronically improve ROM — and by what mechanism?<a class="headerlink" href="#2-does-mobility-chronically-improve-rom-and-by-what-mechanism" title="Permanent link">&para;</a></h3>
+<p>Yes, chronic stretching/mobility reliably improves ROM — but the <strong>mechanism is mostly neural
+(increased stretch tolerance), not the muscle getting longer</strong>:</p>
+<ul>
+<li>A 2025 systematic review + meta-regression on the mechanisms of ROM change found that chronic
+  static stretching improved ROM via <strong>decreased passive stiffness and increased stretch tolerance
+  (max tolerable passive torque)</strong> — and <strong>neither acute nor chronic stretching altered fascicle
+  length</strong> (i.e. the muscle is not architecturally lengthening) (<em>Sports Medicine</em>, 2025;
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12152101/">PMC12152101</a>;
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10271914/">muscle-architecture meta, PMC10271914</a>). Most
+  early "tightness" is the nervous system guarding end range, not short tissue.</li>
+<li>This is why <strong>loaded, full-ROM work is at least as effective as passive stretching</strong> for ROM and
+  adds usable strength through range: full-ROM resistance training produces ROM gains <em>equal to
+  stretching</em> with no moderating effect of age/sex (Afonso/Behm et al., <em>Sports Medicine</em>, 2023 —
+  see <a href="../science-foundations/"><code>science-foundations.md</code></a> §6). Gains are <strong>specific to the ranges
+  actually loaded</strong>, so the movement must reach true end range.</li>
+<li>For one tissue — the <strong>hamstrings — long-length eccentrics add a genuine structural adaptation
+  stretching doesn't</strong>: training at long muscle length lengthened biceps femoris fascicles ~9% and
+  built eccentric strength/resilience (<a href="../science-foundations/"><code>science-foundations.md</code></a> §6). That
+  is the exception that proves the rule: <em>load at end range</em> does more than passive hold.</li>
+</ul>
+<p><strong>Does timing (post-workout-when-warm vs separate session) change the ROM gain?</strong> The evidence says
+<strong>no, not materially.</strong> Chronic ROM adaptation is driven by <em>cumulative exposure</em> (frequency + reaching
+true end range), and the effective dose is small — most of the benefit is captured around <strong>~4 min per
+session and ~10 min/week per muscle group</strong>, with frequency mattering more than long single holds
+(<a href="../science-foundations/"><code>science-foundations.md</code></a> §6). Tissue <em>is</em> warmer and more compliant
+post-workout, which can make end range more comfortable to reach, but no study shows the post-workout
+<em>timing</em> produces a larger durable ROM gain than a separate session. <strong>Pick the slot you'll actually
+adhere to</strong> — adherence is the real moderator.</p>
+<h3 id="3-does-post-workout-mobility-help-recovery-reduce-doms-prevent-injury">3. Does post-workout mobility help recovery / reduce DOMS / prevent injury?<a class="headerlink" href="#3-does-post-workout-mobility-help-recovery-reduce-doms-prevent-injury" title="Permanent link">&para;</a></h3>
+<p><strong>Recovery / DOMS: honestly, no.</strong> This is the section to be straight about.</p>
+<ul>
+<li>The <strong>Cochrane review</strong> (Herbert et al., CD004577; 12 studies including a 2377-person field trial)
+  found stretching — before, after, or both — produces <strong>no clinically important reduction in DOMS</strong>:
+  the average effect was <strong>~1 point on a 100-point soreness scale at 24/48/72 h</strong>, which the authors
+  treat as clinically insignificant (<a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD004577.pub3/abstract">Cochrane CD004577</a>;
+  <a href="https://www.cochrane.org/evidence/CD004577_stretching-prevent-or-reduce-muscle-soreness-after-exercise">plain-language summary</a>).</li>
+<li>Later meta-analyses agree: <strong>no effect of post-exercise stretching on 24/48/72 h DOMS vs passive
+  recovery</strong>, and post-exercise stretching does not meaningfully improve strength, performance, or
+  pain-threshold recovery (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8133317/"><em>Front. Physiol.</em> 2021, post-exercise stretching meta;
+  PMC8133317</a>). For actually blunting soreness,
+  <em>other</em> tools (active recovery, massage, immersion/contrast, compression, sleep, load management)
+  have small-to-moderate effects where stretching has none (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5932411/">recovery-techniques meta, PMC5932411</a>).</li>
+<li><strong>Injury prevention:</strong> weak and mixed. Some consensus work suggests static stretching may <em>slightly</em>
+  reduce muscle-specific injuries, but the effect is small and possibly offset by other joint risks —
+  this is not a strong evidence-based reason to program mobility. The injury-relevant payoff of the
+  program's mobility work is better framed as <strong>building strength and control through end range</strong>
+  (loaded full-ROM work), not as passive stretching reducing injury.</li>
+</ul>
+<p><strong>The honest framing (already adopted in <a href="../science-foundations/"><code>science-foundations.md</code></a> §2):</strong> sell
+mobility as <strong>"moves better / feels better / owns more range,"</strong> <em>not</em> as "less sore" or "recovers
+faster." Real recovery comes from sleep, load management, and protein — not stretching.</p>
+<h3 id="4-loaded-end-range-eccentric-work-vs-passive-static-stretching">4. Loaded / end-range / eccentric work vs passive static stretching<a class="headerlink" href="#4-loaded-end-range-eccentric-work-vs-passive-static-stretching" title="Permanent link">&para;</a></h3>
+<p>For <strong>durable, usable</strong> ROM, loaded end-range and eccentric work is the better tool and matches
+passive stretching on ROM while adding strength:</p>
+<ul>
+<li>Low-load eccentric protocols match static stretching on flexibility gains while <strong>also building
+  strength through the lengthened range</strong> (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11881989/">low-load eccentric vs static stretch, hamstrings;
+  PMC11881989</a>; <a href="https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2022.873370/full">eccentric strength training &amp;
+  flexibility review, <em>Front. Physiol.</em> 2022</a>).</li>
+<li><strong>End-range strengthening</strong> specifically closes the gap between <em>passive</em> and <em>active</em> flexibility —
+  it teaches the nervous system to produce force where it currently braces, which is exactly the
+  limiter for a strong, tight, lower-body-dominant athlete
+  (<a href="../science-foundations/"><code>science-foundations.md</code></a> §6).</li>
+</ul>
+<p>So the program's mobility <em>driver</em> is light, deep-range loaded work (cossack/ATG split squats, slow
+light RDLs, overhead/t-spine loaded end-range); passive static holds are a low-cost <em>supplement</em> for
+adherence, not the main lever. (Mind rail 7 on any loaded end-range <em>spinal flexion</em> — keep it light,
+earned, and physio-screened.)</p>
+<h3 id="5-net-recommendation-when-to-place-mobility">5. Net recommendation — when to place mobility<a class="headerlink" href="#5-net-recommendation-when-to-place-mobility" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th>Put here</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-session ramp</strong> (rail 8)</td>
+<td>Dynamic mobility, foam rolling, movement-specific ramp sets, short (≤30–60 s) targeted holds only</td>
+<td>Primes performance; long static holds here cost up to 4–7.5% strength (Simic; &gt;60 s deficit)</td>
+</tr>
+<tr>
+<td><strong>In-session cooldown</strong> (~2–4 min)</td>
+<td>A brief loaded end-range touch on the day's priority area</td>
+<td>Tissue is warm; low cost; <em>not</em> the main dose</td>
+</tr>
+<tr>
+<td><strong>Post-session or evening</strong> (the ~20-min block, rail 11)</td>
+<td>The real mobility + paced-breathing dose: overhead/t-spine → hips → hamstrings → ankles, light loaded end-range</td>
+<td>Away from the sympathetic spike, so the breathing's next-day HRV/sleep benefit registers (<a href="../science-foundations/"><code>science-foundations.md</code></a> §2); ROM gain doesn't need the post-WOD slot specifically</td>
+</tr>
+<tr>
+<td><strong>Separate / daily floor</strong></td>
+<td>A short static floor routine (~30 s holds), ~10 min/week per area</td>
+<td>Frequency drives ROM more than long holds; pick the slot you'll adhere to</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What to expect:</strong> noticeably looser in <strong>2–4 weeks</strong>, measured ROM change by <strong>~6–12 weeks</strong>, then a
+permanent low-dose maintenance habit (gains hold for weeks but slowly regress;
+<a href="../science-foundations/"><code>science-foundations.md</code></a> §6). Expect <strong>better range and movement quality —
+not less soreness and not faster recovery.</strong></p>
+<h3 id="what-this-means-for-the-program_1">What this means for the program<a class="headerlink" href="#what-this-means-for-the-program_1" title="Permanent link">&para;</a></h3>
+<p>This confirms and operationalizes the rails: keep long static holds <strong>out of the pre-lift ramp</strong> (rail
+8); make <strong>loaded, full-ROM end-range work the primary mobility driver</strong> (rail 9), with passive static
+holds a cheap adherence supplement; and anchor the <strong>~20-min mobility + paced-breathing block
+post-session or in the evening</strong> (rail 11), where the breathing's sleep/HRV payoff lands. Place a small
+warm-tissue mobility touch in the in-session cooldown if the working-minutes budget allows (Topic A),
+but the main dose lives outside the slot. <strong>Stop selling mobility as recovery/soreness relief</strong> — sell
+it as durable range and movement quality, with sleep and load management doing the recovery work.</p>
+<h3 id="uncertainties_1">Uncertainties<a class="headerlink" href="#uncertainties_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Most ROM and stretching data come from general/untrained populations; magnitudes are likely smaller
+  and slower for a long-trained athlete near a structural ceiling (consistent with
+  <a href="../science-foundations/"><code>science-foundations.md</code></a> §6 caveats).</li>
+<li>The "timing doesn't change the ROM gain" conclusion is an <strong>inference from mechanism + dose-response
+  data</strong>, not from a head-to-head RCT of <em>post-workout vs separate-session</em> mobility for chronic ROM —
+  no such direct trial was found. The mechanism (cumulative exposure + stretch tolerance) makes it the
+  defensible default, but it's an extrapolation, not a settled trial result.</li>
+<li>How much of any individual's tightness is neural guarding vs genuine tissue architecture is unknown
+  without assessment — which is why the program tracks ROM markers periodically rather than assuming a
+  cause.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
