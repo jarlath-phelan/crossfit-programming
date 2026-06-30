@@ -269,3 +269,82 @@ describe("buildDemoBlock", () => {
     });
   });
 });
+
+describe("snapping-hip management (standing emphasis)", () => {
+  const { sessions } = buildDemoBlock("2026-06-15");
+  const HIP_MOVES = [
+    "cossack-squat",
+    "lateral-band-walk",
+    "side-lying-hip-abduction",
+    "eccentric-iliopsoas-lower",
+    "figure-4-glute-stretch",
+    "half-kneeling-hip-flexor-stretch",
+    "adductor-rock-back",
+    "glute-bridge",
+  ];
+
+  it("the hip toolkit is in the movement library", () => {
+    for (const id of HIP_MOVES) {
+      expect(movementById[id], `missing movement ${id}`).toBeDefined();
+    }
+  });
+
+  it("every session opens its warm-up with the daily hip opener (glute-med + Cossack)", () => {
+    for (const s of sessions) {
+      const warmup = s.blocks[0];
+      expect(warmup?.type).toBe("warmup");
+      if (warmup?.type === "warmup") {
+        const ids = warmup.items.map((i) => i.movement);
+        expect(ids, `session ${s.id}`).toContain("cossack-squat");
+        expect(ids, `session ${s.id}`).toContain("lateral-band-walk");
+      }
+    }
+  });
+
+  it("runs an eccentric hip-stability slot ~2×/week (both external & internal levers)", () => {
+    const hipStrengthSessions = sessions.filter((s) =>
+      s.blocks.some(
+        (b) =>
+          b.type === "strength" &&
+          (b.movement === "side-lying-hip-abduction" || b.movement === "eccentric-iliopsoas-lower"),
+      ),
+    );
+    // 2 easy days/week × 6 weeks = 12.
+    expect(hipStrengthSessions.length).toBe(12);
+    const moves = new Set(
+      hipStrengthSessions.flatMap((s) =>
+        s.blocks
+          .filter((b) => b.type === "strength")
+          .map((b) => (b as { movement: string }).movement),
+      ),
+    );
+    expect(moves.has("side-lying-hip-abduction")).toBe(true); // external (glute-med)
+    expect(moves.has("eccentric-iliopsoas-lower")).toBe(true); // internal (iliopsoas)
+  });
+
+  it("pairs the hip-stability slot with the optional screen note (red flags, non-gating)", () => {
+    for (const s of sessions) {
+      const hasHipStrength = s.blocks.some(
+        (b) =>
+          b.type === "strength" &&
+          (b.movement === "side-lying-hip-abduction" || b.movement === "eccentric-iliopsoas-lower"),
+      );
+      if (!hasHipStrength) continue;
+      const note = s.blocks.find((b) => b.type === "note" && b.id === "note-hip-screen");
+      expect(note, `session ${s.id} missing hip screen note`).toBeDefined();
+    }
+  });
+
+  it("treats hip strength as accessory only — legs stay at maintenance (no extra squat/hinge volume)", () => {
+    for (const s of sessions) {
+      const squatHingeStrength = s.blocks.filter(
+        (b) =>
+          b.type === "strength" &&
+          (b.movement === "back-squat" || b.movement === "romanian-deadlift"),
+      );
+      // Hip work must not add lower-body strength volume: at most the one maintenance
+      // squat + one hinge that already lived on the lower-maintenance day.
+      expect(squatHingeStrength.length, `session ${s.id}`).toBeLessThanOrEqual(2);
+    }
+  });
+});

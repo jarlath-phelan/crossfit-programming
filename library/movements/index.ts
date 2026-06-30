@@ -529,6 +529,138 @@ export const MOVEMENTS: Movement[] = [
     equipment: ["wall"],
     cues: ["Knee over the toes", "Heel stays down", "Drive ROM under control"],
   },
+  // ── Hip health — snapping-hip toolkit (mobility + eccentric stability) ────────
+  // Standing emphasis (like the unilateral/anti-rotation rail): deep-glute &
+  // iliopsoas mobility + eccentric-biased abductor/flexor strength. Conservative,
+  // health/stability work — NOT a lower-body hypertrophy bump (legs stay at maintenance).
+  {
+    id: "cossack-squat",
+    name: "Cossack Squat",
+    category: "mobility",
+    pattern: "mobility-hip",
+    equipment: [],
+    scaling: {
+      green: {
+        note: "Controlled bodyweight reps/side; sit into the loaded hip, opposite leg straight. Quality ROM over depth chased.",
+      },
+      amber: { note: "Reduce depth; hold a support for balance." },
+      red: {
+        movement: "ninety-ninety-hip-switch",
+        note: "Gentle 90/90 instead if anything pinches.",
+      },
+    },
+    cues: [
+      "Sit into the bent hip",
+      "Heel down, tall chest",
+      "Stop short of any groin pinch — quality ROM, don't chase depth",
+    ],
+  },
+  {
+    id: "lateral-band-walk",
+    name: "Lateral Band Walk (Glute-Med Activation)",
+    category: "accessory",
+    pattern: "hip-abduction",
+    equipment: ["bands"],
+    cues: [
+      "Band above the knees",
+      "Athletic quarter-squat",
+      "Push the knees out — feel the side of the hip",
+      "Slow, controlled steps",
+    ],
+  },
+  {
+    id: "side-lying-hip-abduction",
+    name: "Side-Lying Hip Abduction (Eccentric Glute-Med)",
+    category: "accessory",
+    pattern: "hip-abduction",
+    equipment: [],
+    scaling: {
+      green: {
+        note: "Slow ~3 s lower; the best-evidenced lever for external snapping hip (abductor strength).",
+      },
+      amber: { note: "Fewer reps, same slow lower." },
+      red: {
+        movement: "glute-bridge",
+        note: "Easy glute bridges or skip — never grind on a RED day.",
+      },
+    },
+    cues: [
+      "Lead with the heel, toe slightly down",
+      "Lift from the side of the hip, not the hip flexor",
+      "3 s lower — own the eccentric",
+    ],
+  },
+  {
+    id: "eccentric-iliopsoas-lower",
+    name: "Eccentric Hip-Flexor Lower (Iliopsoas)",
+    category: "accessory",
+    pattern: "hip-flexion",
+    equipment: [],
+    loadsTendon: true,
+    scaling: {
+      green: {
+        note: "From a supported hip-flexed position, lower the leg slowly (~3 s). The iliopsoas is a tendon — progress gently (≤~10%/wk).",
+      },
+      amber: { note: "Bend the knee to shorten the lever; fewer reps." },
+      red: {
+        movement: "dead-bug",
+        note: "Gentle dead-bugs instead; back off anterior-groin work if it pinches.",
+      },
+    },
+    cues: [
+      "Slow ~3 s lower",
+      "Anterior groin pinch → drop to isometrics, don't push through",
+      "Bend the knee to regress",
+    ],
+  },
+  {
+    id: "glute-bridge",
+    name: "Glute Bridge",
+    category: "accessory",
+    pattern: "hip-extension",
+    equipment: [],
+    cues: [
+      "Posterior tilt, ribs down",
+      "Drive through the heels",
+      "Squeeze the glutes at the top — don't arch the back",
+    ],
+  },
+  {
+    id: "figure-4-glute-stretch",
+    name: "Figure-4 Deep-Glute Stretch",
+    category: "mobility",
+    pattern: "mobility-hip",
+    equipment: [],
+    cues: [
+      "Ankle over the opposite knee",
+      "Draw the knee in until you feel the deep glute",
+      "Breathe and lengthen — no forcing",
+    ],
+  },
+  {
+    id: "half-kneeling-hip-flexor-stretch",
+    name: "Half-Kneeling Hip-Flexor Stretch (Iliopsoas)",
+    category: "mobility",
+    pattern: "mobility-hip",
+    equipment: [],
+    cues: [
+      "Tuck the pelvis under",
+      "Squeeze the down-side glute",
+      "Tall torso; feel the front of the hip — 20–30 s holds",
+    ],
+  },
+  {
+    id: "adductor-rock-back",
+    name: "Adductor Rock-Back",
+    category: "mobility",
+    pattern: "mobility-hip",
+    equipment: [],
+    cues: [
+      "One leg out to the side, foot flat",
+      "Rock the hips back slowly",
+      "Feel the inner thigh — gentle, full-ROM",
+    ],
+  },
   // ── Meditation / breathing ───────────────────────────────────────────────────
   {
     id: "resonance-breathing",

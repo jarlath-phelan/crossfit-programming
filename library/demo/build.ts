@@ -31,19 +31,30 @@ export function addDays(isoDate: string, days: number): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-/** A temperature-raising warmup (rail 8) — dynamic ramp shared across days. */
+/**
+ * A temperature-raising warmup (rail 8) — dynamic ramp shared across days.
+ * Closes with a daily hip-health opener (glute-med activation + a light Cossack
+ * squat): a standing emphasis, like the unilateral/anti-rotation rail, for ongoing
+ * snapping-hip management. Quality ROM only — never forced depth.
+ */
 function warmupBlock(): Block {
   return {
     id: "warmup",
     type: "warmup",
-    label: "Temperature-raising ramp (dynamic only)",
-    durationMin: 13,
+    label: "Temperature-raising ramp (dynamic only) + hip opener",
+    durationMin: 15,
     items: [
       { movement: "row-easy", durationSec: 180, note: "Zone 1, nasal breathing" },
       { movement: "thoracic-extension-opener", durationSec: 60, note: "Open the t-spine first" },
       { movement: "scap-pull-up", reps: 10 },
       { movement: "wall-handstand-hold", durationSec: 30 },
       { movement: "band-press-warmup", reps: 15 },
+      { movement: "lateral-band-walk", reps: 12, note: "Glute-med activation — knees out" },
+      {
+        movement: "cossack-squat",
+        reps: 6,
+        note: "Light bodyweight hip opener, ~3/side — quality ROM, stop short of any pinch",
+      },
     ],
   };
 }
@@ -68,14 +79,26 @@ function mobilityBlock(template: DayTemplate): Block {
         ],
       };
     case "hip":
+      // The dedicated hip day — the deliberate snapping-hip progression slot:
+      // deep-glute + iliopsoas release (the PT-flagged tightness) + a progressed
+      // Cossack squat, alongside the standing couch stretch.
       return {
         id: "mobility",
         type: "mobility",
-        label: "Hip floor work (loaded end-range)",
+        label: "Hip floor work — deep glute + hip-flexor release + Cossack progression",
         target: "hip",
         items: [
           { movement: "couch-stretch", holdSec: 90, sides: 2 },
-          { movement: "ninety-ninety-hip-switch", holdSec: 60, sides: 2 },
+          { movement: "figure-4-glute-stretch", holdSec: 45, sides: 2 },
+          { movement: "half-kneeling-hip-flexor-stretch", holdSec: 30, sides: 2 },
+          { movement: "adductor-rock-back", holdSec: 45, sides: 2 },
+          {
+            movement: "cossack-squat",
+            holdSec: 0,
+            sides: 2,
+            loadNote:
+              "Progressed: ~6–8 controlled reps/side, gradually deeper/loaded over weeks. Quality ROM, not range chased.",
+          },
         ],
       };
     case "hamstring":
@@ -140,6 +163,58 @@ function meditationBlock(): Block {
 }
 
 /**
+ * Eccentric-biased hip strengthening — the snapping-hip progression slot, folded
+ * onto easy days (~2×/week) so it never competes with a hard skill/MetCon day.
+ * Alternates the external lever (glute-med) and the internal lever (iliopsoas).
+ * This is stability/health work, NOT a leg-hypertrophy bump — legs stay at maintenance.
+ */
+function hipStabilityBlock(dayIndex: number): Block {
+  if (dayIndex === 3) {
+    return {
+      id: "hip-iliopsoas-eccentric",
+      type: "strength",
+      label: "Hip health — eccentric iliopsoas (internal snapping-hip; tendon-governed, gentle)",
+      movement: "eccentric-iliopsoas-lower",
+      sets: 3,
+      reps: "12/side (3 s lower)",
+      loadPrescription: { kind: "bodyweight" },
+      restSec: 45,
+      scalingNote:
+        "Stability/health, not a leg-hypertrophy bump — legs stay at maintenance. Iliopsoas is a tendon: progress ≤~10%/wk; back off to isometrics on any anterior-groin pinch.",
+      variants: { amber: { sets: 2 }, red: "skip" },
+    };
+  }
+  return {
+    id: "hip-glute-med-eccentric",
+    type: "strength",
+    label: "Hip health — eccentric glute-med abduction (external snapping-hip; abductor strength)",
+    movement: "side-lying-hip-abduction",
+    sets: 3,
+    reps: "12/side (3 s lower)",
+    loadPrescription: { kind: "bodyweight" },
+    restSec: 45,
+    scalingNote:
+      "Stability/health, not a leg-hypertrophy bump — legs stay at maintenance. Eccentric-biased glute-med is the best-evidenced lever for external snapping hip.",
+    variants: { amber: { sets: 2 }, red: "skip" },
+  };
+}
+
+/**
+ * Optional screen note (same spirit as the end-range-spinal-flexion rail): keep
+ * doing conservative hip work; get a movement screen if red-flag symptoms appear.
+ * Generic by design (publishable) — no athlete-identifying detail.
+ */
+const hipScreenNote: Block = {
+  id: "note-hip-screen",
+  type: "note",
+  label: "Hip note — conservative work + when to get screened",
+  markdown:
+    "Standing hip-health work (Cossack opener daily, glute-med + iliopsoas eccentrics, deep-glute/hip-flexor mobility) is in by default — keep training it. A **painless** pop/click is usually benign 'snapping hip' and fine to work through gently. " +
+    "**Get a movement screen / clinician** (optional — this does NOT gate training) if you get painful **locking, catching, or giving-way**, sharp **deep-groin** pain, a mechanical **block**, or **progressive** pain — these point to a possible intra-articular (labral) cause rather than benign snapping. " +
+    "Load management: if a straight-leg raise snaps or pinches, cut the ROM or bend the knee; anterior-groin pain → drop to isometrics, don't push through.",
+};
+
+/**
  * Estimate session minutes from its blocks. Deliberately rough — the schema only
  * needs a positive number, and the runner shows the real clock. Kept ≤ 60 to honour
  * the unhurried 45–60 min envelope.
@@ -174,9 +249,14 @@ function estimateMinutes(blocks: Block[]): number {
 /** Build one day's Session from a template + its computed date and week index. */
 function buildSession(template: DayTemplate, date: string, weekIndex: number): Session {
   const isDeloadWeek = weekIndex === WEEKS - 1;
+  // Easy days carry the eccentric hip-stability slot (~2×/week) + the screen note —
+  // spaced off the hard skill/MetCon days so it's recovery-compatible.
+  const hipExtra: Block[] =
+    template.kind === "easy" ? [hipStabilityBlock(template.dayIndex), hipScreenNote] : [];
   const blocks: Block[] = [
     warmupBlock(),
     ...template.middleBlocks,
+    ...hipExtra,
     mobilityBlock(template),
     meditationBlock(),
   ];
@@ -219,7 +299,7 @@ export function buildDemoBlock(startISODate: string): {
     startDate: startISODate,
     weeks: WEEKS,
     focus: "pressing",
-    maintained: ["pulling", "mobility", "conditioning", "lower-body-strength"],
+    maintained: ["pulling", "mobility", "conditioning", "lower-body-strength", "hip-stability"],
     deloadWeek: WEEKS,
     swcBaseline: {
       metric: "lnRMSSD",

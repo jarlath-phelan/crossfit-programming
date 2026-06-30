@@ -5,6 +5,7 @@
 
 # Your real athlete profile (keep a local copy; see profile/README.md)
 /profile/athlete-profile.md
+/profile/athlete.json
 /profile/*.private.md
 /profile/*.local.*
 
