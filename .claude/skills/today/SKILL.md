@@ -47,13 +47,23 @@ Build an ordered list of typed blocks that validates against the `Session` schem
 
 ### Time budget (wall-clock ≠ working time)
 
-The stated minutes are a **wall-clock slot**, not working minutes. Reserve **~20–25% for arrival,
-gathering/setting up equipment, and transitions** between pieces — training solo (no coach intro) but still
-real setup time. So a **45-min** slot ≈ **~33–36 min of programmed work**; **60-min** ≈ **~45–48 min**.
-Budget the blocks to the *working* number, not the slot, and **minimise station changes** (group work that
-shares equipment; prefer one conditioning station over a gear-heavy circuit on short days). Tell the athlete
-the working figure and "don't chase the clock." *(These splits are a sensible default pending the
-class-time-budgeting research — refine when that lands.)*
+The stated minutes are a **wall-clock slot**, not working minutes. Split the slot into the
+**temperature-raising ramp** (rail 8, ~12–15 min), **transition/setup overhead**, and the **working blocks**
+(skill/strength + conditioning + cooldown). Training **solo** the overhead is only **~10–15%** (no coach
+brief/demo/heats — just gathering and changing equipment), vs ~20–25% for a coached class. Evidence-based
+budget (see [`../docs/programming-guidelines.md`](../docs/programming-guidelines.md)):
+
+| Slot | Ramp | Solo overhead | **Working min (solo)** |
+|---|---|---|---|
+| 30 | 8–10 | ~3–4 | **~17–19** |
+| 45 | 12–13 | ~5–7 | **~26–28** |
+| 60 | 12–15 | ~7–9 | **~38–41** |
+| 75 | 13–15 | ~8–11 | **~50–53** |
+
+Budget the working blocks to that number (not the slot), **minimise station changes** (group shared-equipment
+work; prefer one conditioning station over a gear-heavy circuit on short days), tell the athlete the working
+figure, and say "don't chase the clock." On an easy/recovery day, **don't fill the time just because it's
+there** — a light session can use less than the working budget.
 
 Then **gate by tier**: GREEN = as authored; AMBER = keep skill/strength, trim conditioning ~30–50%, drop
 to Zone 2; RED = mobility + breathing + easy flush only (offer a true rest day — never compel activity).
