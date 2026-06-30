@@ -2,16 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import type { Tier } from "@/library/schema";
+import type { Session, Tier } from "@/library/schema";
 import { TierChip } from "@/components/TierChip";
 import { TierPicker } from "@/components/TierPicker";
 import { StaticBlock } from "@/components/StaticBlock";
 import { ConditioningTimer } from "@/components/ConditioningTimer";
 import { MeditationBlock } from "@/components/MeditationBlock";
-import { pickSession, tieredBlocks } from "@/lib/runner/session";
+import { decodeSessionFromHash, pickSession, tieredBlocks } from "@/lib/runner/session";
 import { loadTier, saveFelt, saveTier } from "@/lib/runner/store";
-
-const SESSION = pickSession(0);
 
 const BLOCK_KIND: Record<string, string> = {
   warmup: "Warm-up",
@@ -30,6 +28,8 @@ const BLOCK_KIND: Record<string, string> = {
  * capture saved to localStorage.
  */
 export default function RunnerPage() {
+  const [session, setSession] = useState<Session>(() => pickSession(0));
+  const [source, setSource] = useState<"demo" | "today">("demo");
   const [tier, setTier] = useState<Tier>("GREEN");
   const [showPicker, setShowPicker] = useState(false);
   const [step, setStep] = useState(0);
@@ -39,9 +39,16 @@ export default function RunnerPage() {
   useEffect(() => {
     const stored = loadTier();
     if (stored) setTier(stored);
+    // A real "today" session can be handed in client-side via the URL fragment
+    // (#s=...), which never reaches the server. Otherwise we run the demo.
+    const fromHash = decodeSessionFromHash(window.location.hash);
+    if (fromHash) {
+      setSession(fromHash);
+      setSource("today");
+    }
   }, []);
 
-  const blocks = useMemo(() => tieredBlocks(SESSION, tier), [tier]);
+  const blocks = useMemo(() => tieredBlocks(session, tier), [session, tier]);
 
   // Clamp the step when the block count changes (a tier downshift can drop blocks).
   const safeStep = Math.min(step, blocks.length);
@@ -64,7 +71,7 @@ export default function RunnerPage() {
 
   function finish(score: number) {
     setFelt(score);
-    saveFelt(SESSION.id, score);
+    saveFelt(session.id, score);
   }
 
   return (
@@ -91,6 +98,16 @@ export default function RunnerPage() {
           <TierPicker value={tier} onChange={choose} />
         </div>
       ) : null}
+
+      {/* Session label — flag a real "today" session vs the demo */}
+      <p
+        className={`pb-2 text-xs font-medium uppercase tracking-widest ${
+          source === "today" ? "text-tier-green" : "text-neutral-500"
+        }`}
+      >
+        {source === "today" ? "Today · " : "Demo · "}
+        {session.title}
+      </p>
 
       {/* Progress */}
       {!atEnd ? (

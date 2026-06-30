@@ -5,8 +5,8 @@
  * Pure and deterministic: no `Date.now()` / `new Date()` here. The demo block is
  * built from a fixed start date so the app renders the same session every load.
  */
-import type { Block, LoadPrescription, Session, Tier } from "@/library/schema";
-import { toLb } from "@/library/schema";
+import { Session, toLb } from "@/library/schema";
+import type { Block, LoadPrescription, Tier } from "@/library/schema";
 import { buildDemoBlock } from "@/library/demo";
 import { movementById } from "@/library/movements";
 
@@ -23,6 +23,38 @@ export function pickSession(dayIndex = 0): Session {
   const n = DEMO_SESSIONS.length;
   const i = ((dayIndex % n) + n) % n;
   return DEMO_SESSIONS[i]!;
+}
+
+/**
+ * Decode a Session handed to the app **client-side** via the URL fragment
+ * (`/runner#s=<base64url(JSON)>`). The fragment is never sent to the server, so a
+ * personal session stays off Vercel's servers/logs and out of the repo — the
+ * privacy-safe way to run "today's" real session without committing it. Returns
+ * the validated Session, or `null` if absent/malformed (caller falls back to demo).
+ */
+export function decodeSessionFromHash(hash: string): Session | null {
+  const match = /[#&]s=([^&]+)/.exec(hash);
+  if (!match) return null;
+  try {
+    let b64 = match[1]!.replace(/-/g, "+").replace(/_/g, "/");
+    while (b64.length % 4 !== 0) b64 += "=";
+    const bin = atob(b64);
+    const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+    const json = new TextDecoder().decode(bytes);
+    const parsed = Session.safeParse(JSON.parse(json));
+    return parsed.success ? parsed.data : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Encode a Session into a base64url fragment payload (the inverse of decode). */
+export function encodeSessionToHash(session: Session): string {
+  const json = JSON.stringify(session);
+  const bytes = new TextEncoder().encode(json);
+  let bin = "";
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
 
 /** Human-readable movement name from its id (falls back to the raw id). */
